@@ -1,0 +1,12 @@
+
+
++ pegsol :: problem instances are derived from a book "The game Puzzle-Peg"
+            (Third Edition, 1924, Lubbers & Bell Mfg. Co.,Clinton, Iowa,
+            USA, 50 cents).
++ parcprinter :: newly introduced in ipc2008, but no generator provided
++ scanalizer :: same
++ sokoban :: generator exists, but no usage description. also, the ipc 2011
+             organizers have decided not use their generator, and all the
+             problems have been taken from IPC 2008. then ipc08's generator
+             is not available.
+
