@@ -108,12 +108,12 @@
    (sum-y y8 yrel0 y8)
    (zerox-rel xrel0) 
    (zeroy-rel yrel0) 
-   (object-goal thing0 x4 y4)
-   (object-goal thing0 x1 y2)
-   (object-goal thing1 x4 y5)
-   (object-goal thing2 x5 y4)
-   (object-goal thing3 x5 y5)
-   (object-goal thing3 x5 y1)
+   (thing-goal thing0 x4 y4)
+   (thing-goal thing0 x1 y2)
+   (thing-goal thing1 x4 y5)
+   (thing-goal thing2 x5 y4)
+   (thing-goal thing3 x5 y5)
+   (thing-goal thing3 x5 y1)
    
    (parked pr2)
    (not-pushing pr2)
@@ -144,10 +144,10 @@
    (not-pushed cart)
    (base-obstacle x0 y1)
    
-   (object-pos thing0 x4 y5)
-   (object-pos thing1 x5 y5)
-   (object-pos thing2 x1 y3)
-   (object-pos thing3 x5 y4)
+   (thing-pos thing0 x4 y5)
+   (thing-pos thing1 x5 y5)
+   (thing-pos thing2 x1 y3)
+   (thing-pos thing3 x5 y4)
    
    (gripper-empty pr2)
    (gripper-rel pr2 xrel0 yrel0)
@@ -159,8 +159,8 @@
   
   (:goal 
    (and 
-   (object-done object0)
-   (object-done object1)
-   (object-done object2)
-   (object-done object3)
+   (thing-done thing0)
+   (thing-done thing1)
+   (thing-done thing2)
+   (thing-done thing3)
   )))
