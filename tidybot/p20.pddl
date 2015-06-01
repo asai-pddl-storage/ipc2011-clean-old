@@ -5,18 +5,18 @@
   (:objects 
    pr2 - robot 
    cart - cart 
-   object0 - object 
-   object1 - object 
-   object2 - object 
-   object3 - object 
-   object4 - object 
-   object5 - object 
-   object6 - object 
-   object7 - object 
-   object8 - object 
-   object9 - object 
-   object10 - object 
-   object11 - object 
+   thing0 - thing 
+   thing1 - thing 
+   thing2 - thing 
+   thing3 - thing 
+   thing4 - thing 
+   thing5 - thing 
+   thing6 - thing 
+   thing7 - thing 
+   thing8 - thing 
+   thing9 - thing 
+   thing10 - thing 
+   thing11 - thing 
    x0 - xc 
    x1 - xc 
    x2 - xc 
@@ -156,25 +156,25 @@
    (sum-y y12 yrel0 y12)
    (zerox-rel xrel0) 
    (zeroy-rel yrel0) 
-   (object-goal object0 x8 y8)
-   (object-goal object0 x10 y2)
-   (object-goal object1 x8 y9)
-   (object-goal object2 x9 y8)
-   (object-goal object3 x9 y9)
-   (object-goal object3 x10 y2)
-   (object-goal object4 x3 y8)
-   (object-goal object5 x3 y9)
-   (object-goal object5 x9 y1)
-   (object-goal object6 x4 y8)
-   (object-goal object7 x4 y9)
-   (object-goal object7 x9 y3)
-   (object-goal object8 x4 y3)
-   (object-goal object8 x10 y1)
-   (object-goal object9 x4 y4)
-   (object-goal object9 x9 y3)
-   (object-goal object10 x5 y3)
-   (object-goal object11 x5 y4)
-   (object-goal object11 x10 y2)
+   (thing-goal thing0 x8 y8)
+   (thing-goal thing0 x10 y2)
+   (thing-goal thing1 x8 y9)
+   (thing-goal thing2 x9 y8)
+   (thing-goal thing3 x9 y9)
+   (thing-goal thing3 x10 y2)
+   (thing-goal thing4 x3 y8)
+   (thing-goal thing5 x3 y9)
+   (thing-goal thing5 x9 y1)
+   (thing-goal thing6 x4 y8)
+   (thing-goal thing7 x4 y9)
+   (thing-goal thing7 x9 y3)
+   (thing-goal thing8 x4 y3)
+   (thing-goal thing8 x10 y1)
+   (thing-goal thing9 x4 y4)
+   (thing-goal thing9 x9 y3)
+   (thing-goal thing10 x5 y3)
+   (thing-goal thing11 x5 y4)
+   (thing-goal thing11 x10 y2)
    
    (parked pr2)
    (not-pushing pr2)
@@ -236,18 +236,18 @@
    (not-pushed cart)
    (base-obstacle x0 y1)
    
-   (object-pos object0 x9 y9)
-   (object-pos object1 x9 y3)
-   (object-pos object2 x4 y3)
-   (object-pos object3 x8 y8)
-   (object-pos object4 x5 y3)
-   (object-pos object5 x3 y9)
-   (object-pos object6 x8 y9)
-   (object-pos object7 x4 y9)
-   (object-pos object8 x10 y2)
-   (object-pos object9 x10 y3)
-   (object-pos object10 x8 y1)
-   (object-pos object11 x4 y4)
+   (thing-pos thing0 x9 y9)
+   (thing-pos thing1 x9 y3)
+   (thing-pos thing2 x4 y3)
+   (thing-pos thing3 x8 y8)
+   (thing-pos thing4 x5 y3)
+   (thing-pos thing5 x3 y9)
+   (thing-pos thing6 x8 y9)
+   (thing-pos thing7 x4 y9)
+   (thing-pos thing8 x10 y2)
+   (thing-pos thing9 x10 y3)
+   (thing-pos thing10 x8 y1)
+   (thing-pos thing11 x4 y4)
    
    (gripper-empty pr2)
    (gripper-rel pr2 xrel0 yrel0)
@@ -267,16 +267,16 @@
   
   (:goal 
    (and 
-   (object-done object0)
-   (object-done object1)
-   (object-done object2)
-   (object-done object3)
-   (object-done object4)
-   (object-done object5)
-   (object-done object6)
-   (object-done object7)
-   (object-done object8)
-   (object-done object9)
-   (object-done object10)
-   (object-done object11)
+   (thing-done thing0)
+   (thing-done thing1)
+   (thing-done thing2)
+   (thing-done thing3)
+   (thing-done thing4)
+   (thing-done thing5)
+   (thing-done thing6)
+   (thing-done thing7)
+   (thing-done thing8)
+   (thing-done thing9)
+   (thing-done thing10)
+   (thing-done thing11)
   )))
