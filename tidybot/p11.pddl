@@ -5,10 +5,10 @@
   (:objects 
    pr2 - robot 
    cart - cart 
-   object0 - object 
-   object1 - object 
-   object2 - object 
-   object3 - object 
+   thing0 - thing 
+   thing1 - thing 
+   thing2 - thing 
+   thing3 - thing 
    x0 - xc 
    x1 - xc 
    x2 - xc 
@@ -138,13 +138,13 @@
    (sum-y y11 yrel0 y11)
    (zerox-rel xrel0) 
    (zeroy-rel yrel0) 
-   (object-goal object0 x4 y6)
-   (object-goal object0 x7 y3)
-   (object-goal object1 x4 y7)
-   (object-goal object1 x2 y1)
-   (object-goal object2 x5 y6)
-   (object-goal object2 x8 y1)
-   (object-goal object3 x5 y7)
+   (thing-goal thing0 x4 y6)
+   (thing-goal thing0 x7 y3)
+   (thing-goal thing1 x4 y7)
+   (thing-goal thing1 x2 y1)
+   (thing-goal thing2 x5 y6)
+   (thing-goal thing2 x8 y1)
+   (thing-goal thing3 x5 y7)
    
    (parked pr2)
    (not-pushing pr2)
@@ -193,10 +193,10 @@
    (not-pushed cart)
    (base-obstacle x0 y1)
    
-   (object-pos object0 x5 y1)
-   (object-pos object1 x9 y1)
-   (object-pos object2 x5 y3)
-   (object-pos object3 x1 y1)
+   (thing-pos thing0 x5 y1)
+   (thing-pos thing1 x9 y1)
+   (thing-pos thing2 x5 y3)
+   (thing-pos thing3 x1 y1)
    
    (gripper-empty pr2)
    (gripper-rel pr2 xrel0 yrel0)
@@ -208,8 +208,8 @@
   
   (:goal 
    (and 
-   (object-done object0)
-   (object-done object1)
-   (object-done object2)
-   (object-done object3)
+   (thing-done thing0)
+   (thing-done thing1)
+   (thing-done thing2)
+   (thing-done thing3)
   )))
