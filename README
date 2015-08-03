@@ -1,3 +1,5 @@
 
 branch "fdbench" contains those problems parsable by FD
 and also the problematic domain tyreworld
+branch "aaai16-prelim3" contains "fdbench" minus problems that are too old or too difficult
+
