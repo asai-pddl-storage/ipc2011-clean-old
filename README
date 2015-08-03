@@ -1,6 +1,7 @@
 
 branch "fdbench" contains those problems parsable by FD
 and also the problematic domain tyreworld
+
 branch "aaai16-prelim3" contains "fdbench" minus problems that are too old or too difficult
 
 removed problems:
@@ -28,4 +29,15 @@ removed problems:
  transport-opt14-strips
  visitall-opt14-strips
  woodworking-opt08-strips
+
+or the domains that are not supported by lmcut
+
+ optical-telegraphs
+ philosophers
+ assembly
+ briefcaseworld
+ citycar-opt14-adl
+ cavediving-opt14-adl
+ psr-middle
+ trucks
 
