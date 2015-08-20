@@ -9,7 +9,7 @@
              node5-6 node6-0 node6-1 node6-2 node6-3 node6-4 node6-5
              node6-6 triangle diamond square circle key0 key1 key2 key3 key4
              key5 key6 key7 key8 key9 key10)
-   (:init (arm-empty)
+   (:init  (= (total-cost) 0) (arm-empty)
           (place node0-0)
           (place node0-1)
           (place node0-2)
@@ -328,4 +328,5 @@
                (at key0 node0-5)
                (at key4 node5-6)
                (at key9 node1-0)
-               (at key1 node4-6))))
+               (at key1 node4-6)))
+   (:metric minimize (total-cost)))

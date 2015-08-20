@@ -8,7 +8,7 @@
              jealousy depression prostatitis grief dread boils-2 anxiety-1
              manitoba alsace bosnia kentucky pennsylvania goias mercury
              neptune mars jupiter)
-   (:init (food flounder)
+   (:init  (= (total-cost) 0) (food flounder)
           (food okra)
           (food ham)
           (food papaya)
@@ -165,4 +165,5 @@
           (eats bacon wonderbread)
           (eats wonderbread hotdog)
           (locale pistachio pennsylvania))
-   (:goal (and (craves laceration chicken))))
+   (:goal (and (craves laceration chicken)))
+   (:metric minimize (total-cost)))

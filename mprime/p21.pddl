@@ -9,7 +9,7 @@
              sciatica-16 laceration-5 laceration-10 jealousy-11 boils-12
              anxiety-13 dread-14 boils-30 grief-31 loneliness-32 hangover-9
              abrasion-29 alsace kentucky goias mars uranus neptune saturn)
-   (:init (food apple)
+   (:init  (= (total-cost) 0) (food apple)
           (food muffin)
           (food lemon)
           (food flounder)
@@ -161,4 +161,5 @@
           (craves grief-2 wurst)
           (attacks kentucky goias)
           (craves abrasion-29 guava))
-   (:goal (and (craves sciatica apple))))
+   (:goal (and (craves sciatica apple)))
+   (:metric minimize (total-cost)))

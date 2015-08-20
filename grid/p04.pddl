@@ -11,7 +11,7 @@
              node6-7 node7-0 node7-1 node7-2 node7-3 node7-4 node7-5
              node7-6 node7-7 triangle diamond square circle key0 key1 key2
              key3 key4 key5 key6 key7 key8 key9 key10 key11)
-   (:init (arm-empty)
+   (:init  (= (total-cost) 0) (arm-empty)
           (place node0-0)
           (place node0-1)
           (place node0-2)
@@ -415,4 +415,5 @@
           (at-robot node4-4))
    (:goal (and (at key0 node1-1)
                (at key4 node6-4)
-               (at key3 node3-0))))
+               (at key3 node3-0)))
+   (:metric minimize (total-cost)))

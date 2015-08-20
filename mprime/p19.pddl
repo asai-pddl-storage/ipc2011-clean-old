@@ -7,7 +7,7 @@
              abrasion anxiety dread boils jealousy prostatitis anger
              hangover depression angina bavaria manitoba pennsylvania
              oregon goias bosnia vulcan uranus saturn earth)
-   (:init (food bacon)
+   (:init  (= (total-cost) 0) (food bacon)
           (food tofu)
           (food lamb)
           (food lobster)
@@ -145,4 +145,5 @@
           (craves aesthetics bacon)
           (eats ham flounder)
           (craves entertainment lobster))
-   (:goal (and (craves abrasion lobster))))
+   (:goal (and (craves abrasion lobster)))
+   (:metric minimize (total-cost)))

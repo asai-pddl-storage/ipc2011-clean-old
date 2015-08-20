@@ -5,7 +5,7 @@
              angina grief prostatitis boils sciatica jealousy arizona
              pennsylvania alsace quebec manitoba bavaria oregon kentucky moravia
              earth pluto neptune uranus)
-   (:init (food papaya)
+   (:init  (= (total-cost) 0) (food papaya)
           (food scallop)
           (food melon)
           (food popover)
@@ -92,4 +92,5 @@
           (harmony achievement uranus)
           (eats broccoli shrimp))
    (:goal (and (craves jealousy shrimp)
-               (craves prostatitis shrimp))))
+               (craves prostatitis shrimp)))
+   (:metric minimize (total-cost)))

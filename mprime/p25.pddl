@@ -3,7 +3,7 @@
    (:objects wurst tuna pistachio chicken expectation rest
              depression angina bosnia kentucky bavaria pennsylvania surrey
              moravia jupiter uranus neptune earth)
-   (:init (food wurst)
+   (:init  (= (total-cost) 0) (food wurst)
           (food tuna)
           (food pistachio)
           (food chicken)
@@ -49,4 +49,5 @@
           (attacks bavaria pennsylvania)
           (locale chicken bavaria)
           (locale pistachio moravia))
-   (:goal (and (craves depression chicken))))
+   (:goal (and (craves depression chicken)))
+   (:metric minimize (total-cost)))

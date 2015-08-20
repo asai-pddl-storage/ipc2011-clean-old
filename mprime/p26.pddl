@@ -5,7 +5,7 @@
              learning entertainment empathy satisfaction depression boils
              hangover jealousy moravia kentucky quebec manitoba oregon
              bavaria earth neptune venus saturn)
-   (:init (food pepper)
+   (:init  (= (total-cost) 0) (food pepper)
           (food papaya)
           (food flounder)
           (food endive)
@@ -104,4 +104,5 @@
           (locale flounder quebec)
           (eats marzipan turkey)
           (orbits earth neptune))
-   (:goal (and (craves boils papaya))))
+   (:goal (and (craves boils papaya)))
+   (:metric minimize (total-cost)))

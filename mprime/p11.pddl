@@ -4,7 +4,7 @@
              tomato lubricity jealousy dread laceration loneliness
              sciatica hangover prostatitis boils alsace quebec bosnia surrey
              manitoba kentucky neptune uranus saturn)
-   (:init (food pistachio)
+   (:init  (= (total-cost) 0) (food pistachio)
           (food bacon)
           (food pear)
           (food sweetroll)
@@ -76,4 +76,5 @@
           (locale pistachio surrey)
           (harmony lubricity saturn))
    (:goal (and (craves laceration shrimp)
-               (craves loneliness shrimp))))
+               (craves loneliness shrimp)))
+   (:metric minimize (total-cost)))

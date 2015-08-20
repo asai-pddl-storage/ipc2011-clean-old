@@ -8,7 +8,7 @@
              f30 f31 f32 f33 f34 f35 f36 f37 f38 f39 )
 
 
-(:init
+(:init  (= (total-cost) 0)
 (passenger p0)
 (passenger p1)
 (passenger p2)
@@ -983,6 +983,7 @@
 (served p18)
 (served p19)
 ))
+(:metric minimize (total-cost))
 )
 
 

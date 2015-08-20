@@ -6,7 +6,7 @@
              sciatica hangover anxiety jealousy jealousy-2 depression-1
              grief-7 dread-8 prostatitis-3 boils-4 alsace arizona kentucky
              bosnia surrey mercury vulcan pluto jupiter)
-   (:init (food beef)
+   (:init  (= (total-cost) 0) (food beef)
           (food onion)
           (food tuna)
           (food flounder)
@@ -109,4 +109,5 @@
           (craves dread-8 ham)
           (craves depression beef))
    (:goal (and (craves grief-7 beef)
-               (craves depression-1 beef))))
+               (craves depression-1 beef)))
+   (:metric minimize (total-cost)))

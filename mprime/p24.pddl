@@ -11,7 +11,7 @@
              abrasion-27 dread-28 sciatica-29 depression-30 surrey arizona
              alsace goias manitoba bosnia oregon moravia guanabara bavaria
              vulcan uranus saturn earth)
-   (:init (food turkey)
+   (:init  (= (total-cost) 0) (food turkey)
           (food cherry)
           (food tofu)
           (food lettuce)
@@ -190,4 +190,5 @@
           (craves loneliness-1 pepper))
    (:goal (and (craves jealousy-8 pepper)
                (craves anxiety-4 pepper)
-               (craves anger-12 cherry))))
+               (craves anger-12 cherry)))
+   (:metric minimize (total-cost)))

@@ -1,7 +1,7 @@
 (define (problem depotprob7654) (:domain Depot)
 (:objects
 	depot0 depot1 depot2 distributor0 distributor1 distributor2 truck0 truck1 pallet0 pallet1 pallet2 pallet3 pallet4 pallet5 crate0 crate1 crate2 crate3 crate4 crate5 hoist0 hoist1 hoist2 hoist3 hoist4 hoist5 )
-(:init
+(:init  (= (total-cost) 0)
 	(pallet pallet0)
 	(surface pallet0)
 	(at pallet0 depot0)
@@ -86,4 +86,5 @@
 		(on crate3 pallet0)
 		(on crate4 pallet5)
 	)
-))
+       )
+(:metric minimize (total-cost)))

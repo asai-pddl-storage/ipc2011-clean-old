@@ -5,7 +5,7 @@
              node2-3 node2-4 node3-0 node3-1 node3-2 node3-3 node3-4
              node4-0 node4-1 node4-2 node4-3 node4-4 triangle diamond
              square circle key0 key1 key2 key3 key4 key5 key6 key7 key8)
-   (:init (arm-empty)
+   (:init  (= (total-cost) 0) (arm-empty)
           (place node0-0)
           (place node0-1)
           (place node0-2)
@@ -176,4 +176,5 @@
           (key-shape key8 triangle)
           (at key8 node2-2)
           (at-robot node2-4))
-   (:goal (and (at key0 node1-1))))
+   (:goal (and (at key0 node1-1)))
+   (:metric minimize (total-cost)))

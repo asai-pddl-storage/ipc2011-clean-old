@@ -7,7 +7,7 @@
              jealousy anger-8 prostatitis-3 laceration-4 grief-1
              loneliness-6 depression-7 sciatica-5 alsace surrey quebec uranus
              earth mars saturn)
-   (:init (food lemon)
+   (:init  (= (total-cost) 0) (food lemon)
           (food potato)
           (food muffin)
           (food hamburger)
@@ -118,4 +118,5 @@
           (locale melon alsace)
           (eats muffin potato)
           (craves grief-1 melon))
-   (:goal (and (craves angina lobster))))
+   (:goal (and (craves angina lobster)))
+   (:metric minimize (total-cost)))

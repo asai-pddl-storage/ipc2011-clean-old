@@ -39,7 +39,7 @@
 	p8-5
 	p9-4
 	)
-	(:init
+	(:init  (= (total-cost) 0)
 	(at driver1 s9)
 	(DRIVER driver1)
 	(at driver2 s2)
@@ -210,6 +210,7 @@
 	(at package5 s3)
 	(at package6 s5)
 	))
+        (:metric minimize (total-cost))
 
 
 )

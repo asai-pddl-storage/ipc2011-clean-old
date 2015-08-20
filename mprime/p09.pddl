@@ -5,7 +5,7 @@
              abrasion prostatitis loneliness anger hangover anxiety
              laceration boils jealousy angina grief bosnia bavaria arizona
              manitoba kentucky earth uranus saturn venus)
-   (:init (food apple)
+   (:init  (= (total-cost) 0) (food apple)
           (food flounder)
           (food haroset)
           (food hamburger)
@@ -88,4 +88,5 @@
           (locale apple arizona)
           (eats haroset hamburger))
    (:goal (and (craves sciatica hamburger)
-               (craves jealousy wurst))))
+               (craves jealousy wurst)))
+   (:metric minimize (total-cost)))

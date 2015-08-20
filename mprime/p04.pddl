@@ -4,7 +4,7 @@
              arugula scallop wurst aesthetics hangover dread sciatica
              jealousy loneliness abrasion anger surrey quebec bosnia oregon
              kentucky mars vulcan)
-   (:init (food muffin)
+   (:init  (= (total-cost) 0) (food muffin)
           (food ham)
           (food scallion)
           (food shrimp)
@@ -81,4 +81,5 @@
           (locale shrimp bosnia)
           (craves jealousy bacon)
           (eats wurst grapefruit))
-   (:goal (and (craves sciatica wurst))))
+   (:goal (and (craves sciatica wurst)))
+   (:metric minimize (total-cost)))

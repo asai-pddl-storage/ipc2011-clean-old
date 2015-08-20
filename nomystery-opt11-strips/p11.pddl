@@ -8,7 +8,7 @@ p0 p1 p2 - package
 level0 level1 level2 level3 level4 level5 level6 level7 level8 level9 level10 level11 level12 level13 level14 level15 level16 level17 level18 level19 level20 level21 level22 level23 level24 level25 level26 - fuellevel
 )
 
-(:init
+(:init  (= (total-cost) 0)
 (sum level0 level0 level0)
 (sum level0 level1 level1)
 (sum level0 level2 level2)
@@ -429,4 +429,5 @@ level0 level1 level2 level3 level4 level5 level6 level7 level8 level9 level10 le
 (at p2 l0)
 )
 )
+(:metric minimize (total-cost))
 (:metric minimize (total-cost)))

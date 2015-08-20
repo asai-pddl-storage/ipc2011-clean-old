@@ -7,7 +7,7 @@
              depression-4 abrasion-1 loneliness-2 angina-8 sciatica-16 grief-5
              anger-6 prostatitis-7 boils-15 arizona manitoba moravia
              surrey mercury saturn)
-   (:init (food mutton)
+   (:init  (= (total-cost) 0) (food mutton)
           (food haroset)
           (food popover)
           (food shrimp)
@@ -119,4 +119,5 @@
           (locale pear arizona)
           (eats muffin mutton)
           (craves boils shrimp))
-   (:goal (and (craves jealousy muffin))))
+   (:goal (and (craves jealousy muffin)))
+   (:metric minimize (total-cost)))

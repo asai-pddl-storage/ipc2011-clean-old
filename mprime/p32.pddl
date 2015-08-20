@@ -5,7 +5,7 @@
              prostatitis anger hangover angina boils depression sciatica
              jealousy loneliness laceration dread alsace goias kentucky mars
              neptune uranus pluto)
-   (:init (food turkey)
+   (:init  (= (total-cost) 0) (food turkey)
           (food chicken)
           (food cod)
           (food onion)
@@ -93,4 +93,5 @@
           (craves abrasion chicken)
           (eats cucumber pork)
           (eats turkey chicken))
-   (:goal (and (craves sciatica cantelope))))
+   (:goal (and (craves sciatica cantelope)))
+   (:metric minimize (total-cost)))

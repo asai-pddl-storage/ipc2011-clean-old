@@ -4,7 +4,7 @@
              excitement intoxication love rest abrasion grief anger kentucky
              pennsylvania quebec arizona surrey guanabara goias pluto jupiter
              neptune)
-   (:init (food broccoli)
+   (:init  (= (total-cost) 0) (food broccoli)
           (food turkey)
           (food lettuce)
           (food kale)
@@ -76,4 +76,5 @@
           (eats wurst pork)
           (eats hotdog turkey)
           (attacks arizona surrey))
-   (:goal (and (craves anger kale))))
+   (:goal (and (craves anger kale)))
+   (:metric minimize (total-cost)))

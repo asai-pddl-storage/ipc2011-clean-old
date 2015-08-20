@@ -4,7 +4,7 @@
              loneliness anxiety hangover anger angina boils grief goias bosnia
              pennsylvania moravia quebec oregon alsace kentucky neptune vulcan
              earth)
-   (:init (food wurst)
+   (:init  (= (total-cost) 0) (food wurst)
           (food shrimp)
           (food muffin)
           (food broccoli)
@@ -64,4 +64,5 @@
           (eats muffin broccoli)
           (attacks bosnia pennsylvania))
    (:goal (and (craves anger lamb)
-               (craves boils lamb))))
+               (craves boils lamb)))
+   (:metric minimize (total-cost)))

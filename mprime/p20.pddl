@@ -7,7 +7,7 @@
              understanding achievement dread abrasion grief laceration manitoba
              guanabara quebec alsace kentucky moravia bosnia goias arizona
              oregon surrey bavaria saturn neptune venus pluto)
-   (:init (food mutton)
+   (:init  (= (total-cost) 0) (food mutton)
           (food cod)
           (food muffin)
           (food tuna)
@@ -162,4 +162,5 @@
           (attacks guanabara quebec)
           (eats cherry marzipan)
           (harmony understanding neptune))
-   (:goal (and (craves abrasion pepper))))
+   (:goal (and (craves abrasion pepper)))
+   (:metric minimize (total-cost)))

@@ -12,7 +12,7 @@
              anxiety-23 prostatitis-24 jealousy-25 dread-26 depression-27
              goias kentucky oregon alsace bosnia bavaria uranus mars
              mercury neptune)
-   (:init (food chicken)
+   (:init  (= (total-cost) 0) (food chicken)
           (food turkey)
           (food sweetroll)
           (food potato)
@@ -181,4 +181,5 @@
           (eats popover chicken)
           (craves laceration sweetroll)
           (harmony intoxication neptune))
-   (:goal (and (craves anxiety haroset))))
+   (:goal (and (craves anxiety haroset)))
+   (:metric minimize (total-cost)))

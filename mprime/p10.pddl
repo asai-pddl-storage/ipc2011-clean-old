@@ -12,7 +12,7 @@
              angina-30 dread-31 boils-32 laceration-27 jealousy-28
              hangover-29 prostatitis-24 anxiety-25 grief-26 surrey moravia
              quebec oregon alsace kentucky mercury mars neptune pluto)
-   (:init (food tofu)
+   (:init  (= (total-cost) 0) (food tofu)
           (food snickers)
           (food popover)
           (food lamb)
@@ -221,4 +221,5 @@
           (locale lamb moravia)
           (harmony intoxication neptune)
           (eats pepper grapefruit))
-   (:goal (and (craves jealousy-16 tofu))))
+   (:goal (and (craves jealousy-16 tofu)))
+   (:metric minimize (total-cost)))

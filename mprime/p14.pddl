@@ -13,7 +13,7 @@
              laceration-26 hangover-27 prostatitis-23 loneliness-24 anxiety-25
              dread-22 grief-19 angina-20 abrasion-21 alsace arizona
              pennsylvania surrey quebec bavaria mars vulcan jupiter neptune)
-   (:init (food pea)
+   (:init  (= (total-cost) 0) (food pea)
           (food chocolate)
           (food lobster)
           (food potato)
@@ -247,4 +247,5 @@
           (locale scallion surrey)
           (craves dread-22 mutton))
    (:goal (and (craves prostatitis-23 potato)
-               (craves anxiety-25 potato))))
+               (craves anxiety-25 potato)))
+   (:metric minimize (total-cost)))

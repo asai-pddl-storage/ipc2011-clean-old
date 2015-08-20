@@ -6,7 +6,7 @@
              laceration anxiety boils sciatica abrasion quebec goias manitoba
              surrey pennsylvania alsace guanabara arizona oregon bosnia
              bavaria moravia kentucky mars vulcan neptune venus)
-   (:init (food turkey)
+   (:init  (= (total-cost) 0) (food turkey)
           (food cucumber)
           (food baguette)
           (food beef)
@@ -131,4 +131,5 @@
           (craves boils hamburger))
    (:goal (and (craves dread mutton)
                (craves boils mutton)
-               (craves anxiety chicken))))
+               (craves anxiety chicken)))
+   (:metric minimize (total-cost)))

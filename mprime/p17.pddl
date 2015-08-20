@@ -8,7 +8,7 @@
              anxiety boils jealousy-2 sciatica boils-1 loneliness-3
              abrasion-4 depression-7 laceration-8 goias bavaria guanabara
              bosnia alsace surrey mercury saturn earth uranus)
-   (:init (food papaya)
+   (:init  (= (total-cost) 0) (food papaya)
           (food endive)
           (food cherry)
           (food rice)
@@ -167,4 +167,5 @@
           (craves jealousy rice)
           (eats mutton marzipan)
           (craves hangover papaya))
-   (:goal (and (craves abrasion wonderbread))))
+   (:goal (and (craves abrasion wonderbread)))
+   (:metric minimize (total-cost)))

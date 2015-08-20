@@ -5,7 +5,7 @@
              f10 f11 f12 f13 f14 f15 f16 f17 f18 f19 )
 
 
-(:init
+(:init  (= (total-cost) 0)
 (passenger p0)
 (passenger p1)
 (passenger p2)
@@ -300,6 +300,7 @@
 (served p8)
 (served p9)
 ))
+(:metric minimize (total-cost))
 )
 
 

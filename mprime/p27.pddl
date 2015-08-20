@@ -5,7 +5,7 @@
              boils moravia surrey guanabara manitoba arizona
              pennsylvania alsace quebec kentucky oregon bavaria goias bosnia
              mercury mars uranus earth)
-   (:init (food wurst)
+   (:init  (= (total-cost) 0) (food wurst)
           (food guava)
           (food muffin)
           (food pork)
@@ -91,4 +91,5 @@
           (orbits mars uranus)
           (attacks moravia surrey))
    (:goal (and (craves grief guava)
-               (craves boils guava))))
+               (craves boils guava)))
+   (:metric minimize (total-cost)))

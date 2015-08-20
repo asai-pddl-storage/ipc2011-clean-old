@@ -5,7 +5,7 @@
              laceration anxiety grief depression boils angina hangover
              jealousy goias guanabara bavaria arizona manitoba vulcan venus
              neptune)
-   (:init (food pepper)
+   (:init  (= (total-cost) 0) (food pepper)
           (food pea)
           (food lemon)
           (food snickers)
@@ -97,4 +97,5 @@
           (eats pea lemon)
           (craves depression popover)
           (craves hangover chocolate))
-   (:goal (and (craves hangover ham))))
+   (:goal (and (craves hangover ham)))
+   (:metric minimize (total-cost)))

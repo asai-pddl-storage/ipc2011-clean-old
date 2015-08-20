@@ -4,7 +4,7 @@
              intoxication empathy excitement depression sciatica manitoba
              arizona kentucky bosnia guanabara goias uranus earth mars
              jupiter)
-   (:init (food marzipan)
+   (:init  (= (total-cost) 0) (food marzipan)
           (food tofu)
           (food chicken)
           (food snickers)
@@ -64,4 +64,5 @@
           (attacks guanabara goias)
           (orbits earth mars)
           (eats ham chicken))
-   (:goal (and (craves sciatica ham))))
+   (:goal (and (craves sciatica ham)))
+   (:metric minimize (total-cost)))

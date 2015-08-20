@@ -8,7 +8,7 @@
              jealousy loneliness hangover grief sciatica dread oregon goias
              surrey moravia bavaria alsace arizona manitoba bosnia
              pennsylvania quebec uranus mars neptune earth)
-   (:init (food turkey)
+   (:init  (= (total-cost) 0) (food turkey)
           (food lamb)
           (food pea)
           (food cod)
@@ -171,4 +171,5 @@
           (eats lemon broccoli)
           (craves dread onion)
           (harmony entertainment mars))
-   (:goal (and (craves jealousy chicken))))
+   (:goal (and (craves jealousy chicken)))
+   (:metric minimize (total-cost)))

@@ -7,7 +7,7 @@
              lubricity understanding triumph anger hangover sciatica grief
              abrasion prostatitis angina boils loneliness bosnia surrey
              kentucky alsace goias quebec arizona venus neptune mars saturn)
-   (:init (food tomato)
+   (:init  (= (total-cost) 0) (food tomato)
           (food rice)
           (food popover)
           (food cantelope)
@@ -165,4 +165,5 @@
           (craves curiosity potato)
           (eats tuna tomato))
    (:goal (and (craves anger turkey)
-               (craves abrasion turkey))))
+               (craves abrasion turkey)))
+   (:metric minimize (total-cost)))

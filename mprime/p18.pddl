@@ -7,7 +7,7 @@
              satisfaction jealousy prostatitis depression hangover angina anger
              grief boils sciatica guanabara manitoba surrey alsace bosnia
              oregon moravia arizona neptune vulcan pluto jupiter)
-   (:init (food guava)
+   (:init  (= (total-cost) 0) (food guava)
           (food chocolate)
           (food wonderbread)
           (food pepper)
@@ -166,4 +166,5 @@
           (locale wurst arizona)
           (eats scallop hotdog)
           (eats tofu wonderbread))
-   (:goal (and (craves angina chocolate))))
+   (:goal (and (craves angina chocolate)))
+   (:metric minimize (total-cost)))

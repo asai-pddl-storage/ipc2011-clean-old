@@ -10,7 +10,7 @@
              f40 f41 )
 
 
-(:init
+(:init  (= (total-cost) 0)
 (passenger p0)
 (passenger p1)
 (passenger p2)
@@ -1075,6 +1075,7 @@
 (served p19)
 (served p20)
 ))
+(:metric minimize (total-cost))
 )
 
 

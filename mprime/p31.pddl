@@ -6,7 +6,7 @@
              prostatitis grief dread depression sciatica abrasion hangover
              loneliness anger angina alsace quebec kentucky earth saturn
              neptune mars)
-   (:init (food grapefruit)
+   (:init  (= (total-cost) 0) (food grapefruit)
           (food chocolate)
           (food cantelope)
           (food ham)
@@ -110,4 +110,5 @@
           (craves depression cantelope)
           (locale pistachio alsace)
           (harmony love saturn))
-   (:goal (and (craves prostatitis cantelope))))
+   (:goal (and (craves prostatitis cantelope)))
+   (:metric minimize (total-cost)))

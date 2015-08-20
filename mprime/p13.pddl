@@ -14,7 +14,7 @@
              jealousy-22 angina-23 loneliness-17 prostatitis-18
              depression-19 laceration-20 oregon alsace bavaria quebec mars
              neptune vulcan venus)
-   (:init (food lettuce)
+   (:init  (= (total-cost) 0) (food lettuce)
           (food chocolate)
           (food mutton)
           (food marzipan)
@@ -236,4 +236,5 @@
           (craves sciatica-10 melon)
           (eats lemon baguette))
    (:goal (and (craves prostatitis-18 lobster)
-               (craves laceration-20 ham))))
+               (craves laceration-20 ham)))
+   (:metric minimize (total-cost)))

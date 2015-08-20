@@ -3,7 +3,7 @@
    (:objects rice pear flounder okra pork lamb rest hangover
              depression abrasion kentucky bosnia surrey pennsylvania alsace
              quebec guanabara mars earth uranus venus)
-   (:init (food rice)
+   (:init  (= (total-cost) 0) (food rice)
           (food pear)
           (food flounder)
           (food okra)
@@ -57,4 +57,5 @@
           (eats okra pork)
           (orbits uranus venus)
           (locale flounder alsace))
-   (:goal (and (craves abrasion rice))))
+   (:goal (and (craves abrasion rice)))
+   (:metric minimize (total-cost)))

@@ -6,7 +6,7 @@
              loneliness depression angina jealousy abrasion sciatica grief
              manitoba alsace bosnia kentucky pennsylvania goias mercury
              neptune vulcan earth)
-   (:init (food chicken)
+   (:init  (= (total-cost) 0) (food chicken)
           (food pepper)
           (food guava)
           (food marzipan)
@@ -110,4 +110,5 @@
           (locale wonderbread bosnia)
           (locale pepper kentucky))
    (:goal (and (craves abrasion rice)
-               (craves sciatica rice))))
+               (craves sciatica rice)))
+   (:metric minimize (total-cost)))

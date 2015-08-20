@@ -10,7 +10,7 @@
              abrasion sciatica laceration anxiety dread-2 sciatica-1
              hangover-4 abrasion-3 surrey alsace kentucky goias moravia oregon
              uranus neptune jupiter mercury)
-   (:init (food lettuce)
+   (:init  (= (total-cost) 0) (food lettuce)
           (food marzipan)
           (food wonderbread)
           (food onion)
@@ -218,4 +218,5 @@
           (craves stimulation lettuce)
           (locale beef alsace)
           (craves aesthetics scallop))
-   (:goal (and (craves hangover lamb))))
+   (:goal (and (craves hangover lamb)))
+   (:metric minimize (total-cost)))

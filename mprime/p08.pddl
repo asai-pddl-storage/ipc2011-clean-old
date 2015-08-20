@@ -6,7 +6,7 @@
              learning lubricity rest aesthetics excitement sciatica
              hangover anxiety abrasion anger bavaria goias pennsylvania
              bosnia surrey earth uranus vulcan jupiter)
-   (:init (food rice)
+   (:init  (= (total-cost) 0) (food rice)
           (food okra)
           (food hotdog)
           (food tofu)
@@ -137,4 +137,5 @@
           (craves stimulation muffin)
           (eats pepper pistachio)
           (locale arugula bavaria))
-   (:goal (and (craves anxiety wonderbread))))
+   (:goal (and (craves anxiety wonderbread)))
+   (:metric minimize (total-cost)))

@@ -5,7 +5,7 @@
              sciatica anxiety grief boils depression abrasion prostatitis
              angina jealousy laceration anger grief-2 dread loneliness
              hangover alsace kentucky goias arizona uranus mercury earth mars)
-   (:init (food broccoli)
+   (:init  (= (total-cost) 0) (food broccoli)
           (food chocolate)
           (food turkey)
           (food tuna)
@@ -96,4 +96,5 @@
           (orbits earth mars)
           (eats turkey tuna))
    (:goal (and (craves loneliness shrimp)
-               (craves grief shrimp))))
+               (craves grief shrimp)))
+   (:metric minimize (total-cost)))
