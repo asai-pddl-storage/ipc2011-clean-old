@@ -7,7 +7,7 @@
 	depot1 depot2 depot3 - depot
 	level0 level1 level2 level3 level4 level5 level6 - level)
 
-(:init
+(:init  (= (total-cost) 0)
 	(next level1 level0)
 	(next level2 level1)
 	(next level3 level2)
@@ -548,5 +548,6 @@
 	(stored goods17 level3)
 	(stored goods18 level2)
 	(stored goods19 level4)))
+(:metric minimize (total-cost))
 
 )

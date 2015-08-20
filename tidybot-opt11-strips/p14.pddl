@@ -35,7 +35,7 @@
    yrel1 - yrel 
   ) 
   
-  (:init 
+  (:init  (= (total-cost) 0) 
    (leftof x0 x1)
    (leftof x1 x2)
    (leftof x2 x3)
@@ -109,6 +109,7 @@
    (zerox-rel xrel0) 
    (zeroy-rel yrel0) 
    (object-goal object0 x4 y3)
+   (:metric minimize (total-cost))
    (object-goal object0 x1 y6)
    (object-goal object1 x4 y4)
    (object-goal object2 x5 y3)

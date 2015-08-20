@@ -25,7 +25,7 @@
 	fl5
 	fl6
 	)
-(:init
+(:init  (= (total-cost) 0)
 	(at plane1 city0)
 	(aircraft plane1)
 	(fuel-level plane1 fl2)
@@ -81,5 +81,6 @@
 	(at person7 city4)
 	(at person8 city3)
 	))
+(:metric minimize (total-cost))
 
 )

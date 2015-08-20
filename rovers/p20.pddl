@@ -8,7 +8,7 @@
 	camera0 camera1 camera2 camera3 camera4 camera5 camera6 - Camera
 	objective0 objective1 objective2 objective3 objective4 objective5 objective6 objective7 - Objective
 	)
-(:init
+(:init  (= (total-cost) 0)
 	(visible waypoint0 waypoint5)
 	(visible waypoint5 waypoint0)
 	(visible waypoint0 waypoint15)
@@ -851,4 +851,5 @@
 (communicated_image_data objective5 high_res)
 	)
 )
+(:metric minimize (total-cost))
 )

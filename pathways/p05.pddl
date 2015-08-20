@@ -1,5 +1,5 @@
 ;; NOTE [Malte]: I modified this file from the original IPC file
-;; because it contained duplicate object definitions. Please check the
+;; because it contained duplicate object definit  (= (total-costi 0ons. Please check the
 ;; repository log for the revision where this comment was added for
 ;; details.
 
@@ -224,5 +224,6 @@
 	(goal4)
 	(goal5)
 	(goal6)))
+(:metric minimize (total-cost))
 
 )
