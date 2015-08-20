@@ -179,7 +179,7 @@
 	l14 - level)
 
 
-(:init
+(:init  (= (total-cost) 0)
 	(possible SP1)
 	(possible Skp2)
 	(possible Skp1)

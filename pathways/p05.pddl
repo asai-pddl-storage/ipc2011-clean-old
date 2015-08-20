@@ -105,7 +105,7 @@
 	l7 - level)
 
 
-(:init
+(:init  (= (total-cost) 0)
 	(possible SP1)
 	(possible PCNA)
 	(possible p53)

@@ -308,7 +308,7 @@
 	l20 - level)
 
 
-(:init
+(:init  (= (total-cost) 0)
 	(possible SP1)
 	(possible Skp1)
 	(possible pRbp2)

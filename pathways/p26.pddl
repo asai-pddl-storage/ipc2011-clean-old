@@ -403,7 +403,7 @@
 	l29 - level)
 
 
-(:init
+(:init  (= (total-cost) 0)
 	(possible SP1)
 	(possible SL1)
 	(possible Skp2)

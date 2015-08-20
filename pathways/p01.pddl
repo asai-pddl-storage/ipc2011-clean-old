@@ -37,7 +37,7 @@
 	l3 - level)
 
 
-(:init
+(:init  (= (total-cost) 0)
 	(possible SP1)
 	(possible Raf1)
 	(possible pRbp2)

@@ -357,7 +357,7 @@
 	l22 - level)
 
 
-(:init
+(:init  (= (total-cost) 0)
 	(possible Wee1)
 	(possible Skp2)
 	(possible Skp1)

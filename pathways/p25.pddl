@@ -413,7 +413,7 @@
 	l34 - level)
 
 
-(:init
+(:init  (= (total-cost) 0)
 	(possible Wee1)
 	(possible SP1)
 	(possible SL1)

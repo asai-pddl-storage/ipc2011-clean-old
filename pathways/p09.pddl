@@ -205,7 +205,7 @@
 	l12 - level)
 
 
-(:init
+(:init  (= (total-cost) 0)
 	(possible Wee1)
 	(possible SL1)
 	(possible Raf1)

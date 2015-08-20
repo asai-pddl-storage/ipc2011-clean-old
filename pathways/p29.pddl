@@ -365,7 +365,7 @@
 	l27 - level)
 
 
-(:init
+(:init  (= (total-cost) 0)
 	(possible Skp2)
 	(possible RPA)
 	(possible Raf1)
