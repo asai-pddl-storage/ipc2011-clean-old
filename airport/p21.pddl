@@ -16,7 +16,7 @@
 (:objects
 )
 
-(:init
+(:init (= (total-cost) 0)
 
       (at-segment airplane_CFBEG seg_A8_a_0_157_785)
       (at-segment airplane_DAEW7 seg_p118_0_76)
@@ -952,4 +952,5 @@
             (airborne airplane_DAEW7 seg_08l_0_80)
       )
 )
+(:metric minimize (total-cost))
 )

@@ -10,7 +10,7 @@
 
 (define (domain airport_fixed_structure)
 
-(:requirements :typing)
+(:requirements :typing :action-costs)
 
 (:types airplane segment direction airplanetype)
 
@@ -71,6 +71,7 @@
                 (is-parked ?a - airplane ?s - segment)
 
 )
+(:functions (total-cost) - number)
 
 (:action move_seg_pp_0_60_seg_ppdoor_0_40_north_north_medium
 
@@ -87,6 +88,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_pp_0_60))
                  (not_occupied seg_pp_0_60)
                  (not (at-segment ?a seg_pp_0_60))
@@ -117,6 +119,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_ppdoor_0_40))
                  (not_occupied seg_ppdoor_0_40)
                  (not (at-segment ?a seg_ppdoor_0_40))
@@ -153,6 +156,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_tww1_0_200))
                  (not_occupied seg_tww1_0_200)
                  (not (at-segment ?a seg_tww1_0_200))
@@ -188,6 +192,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_twe1_0_200))
                  (not_occupied seg_twe1_0_200)
                  (not (at-segment ?a seg_twe1_0_200))
@@ -221,6 +226,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_twe2_0_50))
                  (not_occupied seg_twe2_0_50)
                  (not (at-segment ?a seg_twe2_0_50))
@@ -252,6 +258,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_twe3_0_50))
                  (not_occupied seg_twe3_0_50)
                  (not (at-segment ?a seg_twe3_0_50))
@@ -283,6 +290,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_twe4_0_50))
                  (not_occupied seg_twe4_0_50)
                  (not (at-segment ?a seg_twe4_0_50))
@@ -314,6 +322,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_rwe_0_50))
                  (not_occupied seg_rwe_0_50)
                  (not (at-segment ?a seg_rwe_0_50))
@@ -346,6 +355,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_rw_0_400))
                  (not_occupied seg_rw_0_400)
                  (not (at-segment ?a seg_rw_0_400))
@@ -376,6 +386,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_rww_0_50))
                  (not_occupied seg_rww_0_50)
                  (not (at-segment ?a seg_rww_0_50))
@@ -413,6 +424,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_tww4_0_50))
                  (not_occupied seg_tww4_0_50)
                  (not (at-segment ?a seg_tww4_0_50))
@@ -446,6 +458,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_tww3_0_50))
                  (not_occupied seg_tww3_0_50)
                  (not (at-segment ?a seg_tww3_0_50))
@@ -477,6 +490,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_tww2_0_50))
                  (not_occupied seg_tww2_0_50)
                  (not (at-segment ?a seg_tww2_0_50))
@@ -509,6 +523,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_tww1_0_200))
                  (not_occupied seg_tww1_0_200)
                  (not (at-segment ?a seg_tww1_0_200))
@@ -544,6 +559,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_ppdoor_0_40))
                  (not_occupied seg_ppdoor_0_40)
                  (not (at-segment ?a seg_ppdoor_0_40))

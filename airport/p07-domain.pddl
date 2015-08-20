@@ -10,7 +10,7 @@
 
 (define (domain airport_fixed_structure)
 
-(:requirements :typing)
+(:requirements :typing :action-costs)
 
 (:types airplane segment direction airplanetype)
 
@@ -95,6 +95,7 @@
                 (is-parked ?a - airplane ?s - segment)
 
 )
+(:functions (total-cost) - number)
 
 (:action move_seg_A02_0_100_seg_C5_C_A02_0_100_north_north_medium
 
@@ -112,6 +113,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_A02_0_100))
                  (not_occupied seg_A02_0_100)
                  (not (at-segment ?a seg_A02_0_100))
@@ -144,6 +146,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C5_C_A02_0_100))
                  (not_occupied seg_C5_C_A02_0_100)
                  (not (at-segment ?a seg_C5_C_A02_0_100))
@@ -182,6 +185,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C5_C6_0_50))
                  (not_occupied seg_C5_C6_0_50)
                  (not (at-segment ?a seg_C5_C6_0_50))
@@ -218,6 +222,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C6_C7_0_100))
                  (not_occupied seg_C6_C7_0_100)
                  (not (at-segment ?a seg_C6_C7_0_100))
@@ -250,6 +255,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C5_C6_0_50))
                  (not_occupied seg_C5_C6_0_50)
                  (not (at-segment ?a seg_C5_C6_0_50))
@@ -286,6 +292,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C4_C5_0_50))
                  (not_occupied seg_C4_C5_0_50)
                  (not (at-segment ?a seg_C4_C5_0_50))
@@ -322,6 +329,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C_C2_0_84))
                  (not_occupied seg_C_C2_0_84)
                  (not (at-segment ?a seg_C_C2_0_84))
@@ -354,6 +362,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C_C2_2_0_83))
                  (not_occupied seg_C_C2_2_0_83)
                  (not (at-segment ?a seg_C_C2_2_0_83))
@@ -386,6 +395,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C_C2_1_0_83))
                  (not_occupied seg_C_C2_1_0_83)
                  (not (at-segment ?a seg_C_C2_1_0_83))
@@ -419,6 +429,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N_C_0_100))
                  (not_occupied seg_N_C_0_100)
                  (not (at-segment ?a seg_N_C_0_100))
@@ -453,6 +464,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N3_N_0_100))
                  (not_occupied seg_N3_N_0_100)
                  (not (at-segment ?a seg_N3_N_0_100))
@@ -487,6 +499,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N2_N3_0_85))
                  (not_occupied seg_N2_N3_0_85)
                  (not (at-segment ?a seg_N2_N3_0_85))
@@ -519,6 +532,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N2_N3_6_0_86))
                  (not_occupied seg_N2_N3_6_0_86)
                  (not (at-segment ?a seg_N2_N3_6_0_86))
@@ -551,6 +565,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N2_N3_5_0_86))
                  (not_occupied seg_N2_N3_5_0_86)
                  (not (at-segment ?a seg_N2_N3_5_0_86))
@@ -583,6 +598,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N2_N3_4_0_85))
                  (not_occupied seg_N2_N3_4_0_85)
                  (not (at-segment ?a seg_N2_N3_4_0_85))
@@ -615,6 +631,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N2_N3_3_0_86))
                  (not_occupied seg_N2_N3_3_0_86)
                  (not (at-segment ?a seg_N2_N3_3_0_86))
@@ -647,6 +664,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N2_N3_2_0_86))
                  (not_occupied seg_N2_N3_2_0_86)
                  (not (at-segment ?a seg_N2_N3_2_0_86))
@@ -679,6 +697,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N2_N3_1_0_86))
                  (not_occupied seg_N2_N3_1_0_86)
                  (not (at-segment ?a seg_N2_N3_1_0_86))
@@ -711,6 +730,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N1_N2_0_100))
                  (not_occupied seg_N1_N2_0_100)
                  (not (at-segment ?a seg_N1_N2_0_100))
@@ -745,6 +765,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N1_A_0_100))
                  (not_occupied seg_N1_A_0_100)
                  (not (at-segment ?a seg_N1_A_0_100))
@@ -777,6 +798,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_A_09_0_100))
                  (not_occupied seg_A_09_0_100)
                  (not (at-segment ?a seg_A_09_0_100))
@@ -809,6 +831,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_09_0_150))
                  (not_occupied seg_09_0_150)
                  (not (at-segment ?a seg_09_0_150))
@@ -842,6 +865,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_Rwy_0_1300))
                  (not_occupied seg_Rwy_0_1300)
                  (not (at-segment ?a seg_Rwy_0_1300))
@@ -873,6 +897,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_27_0_150))
                  (not_occupied seg_27_0_150)
                  (not (at-segment ?a seg_27_0_150))
@@ -911,6 +936,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_B_27_0_100))
                  (not_occupied seg_B_27_0_100)
                  (not (at-segment ?a seg_B_27_0_100))
@@ -945,6 +971,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N6_B_0_100))
                  (not_occupied seg_N6_B_0_100)
                  (not (at-segment ?a seg_N6_B_0_100))
@@ -977,6 +1004,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N5_N6_0_100))
                  (not_occupied seg_N5_N6_0_100)
                  (not (at-segment ?a seg_N5_N6_0_100))
@@ -1009,6 +1037,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N4_N5_0_86))
                  (not_occupied seg_N4_N5_0_86)
                  (not (at-segment ?a seg_N4_N5_0_86))
@@ -1041,6 +1070,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N4_N5_6_0_86))
                  (not_occupied seg_N4_N5_6_0_86)
                  (not (at-segment ?a seg_N4_N5_6_0_86))
@@ -1073,6 +1103,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N4_N5_5_0_86))
                  (not_occupied seg_N4_N5_5_0_86)
                  (not (at-segment ?a seg_N4_N5_5_0_86))
@@ -1105,6 +1136,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N4_N5_4_0_85))
                  (not_occupied seg_N4_N5_4_0_85)
                  (not (at-segment ?a seg_N4_N5_4_0_85))
@@ -1137,6 +1169,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N4_N5_3_0_86))
                  (not_occupied seg_N4_N5_3_0_86)
                  (not (at-segment ?a seg_N4_N5_3_0_86))
@@ -1169,6 +1202,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N4_N5_2_0_86))
                  (not_occupied seg_N4_N5_2_0_86)
                  (not (at-segment ?a seg_N4_N5_2_0_86))
@@ -1201,6 +1235,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N4_N5_1_0_85))
                  (not_occupied seg_N4_N5_1_0_85)
                  (not (at-segment ?a seg_N4_N5_1_0_85))
@@ -1234,6 +1269,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N_N4_0_100))
                  (not_occupied seg_N_N4_0_100)
                  (not (at-segment ?a seg_N_N4_0_100))
@@ -1270,6 +1306,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_N_C_0_100))
                  (not_occupied seg_N_C_0_100)
                  (not (at-segment ?a seg_N_C_0_100))
@@ -1304,6 +1341,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C_C2_1_0_83))
                  (not_occupied seg_C_C2_1_0_83)
                  (not (at-segment ?a seg_C_C2_1_0_83))
@@ -1336,6 +1374,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C_C2_2_0_83))
                  (not_occupied seg_C_C2_2_0_83)
                  (not (at-segment ?a seg_C_C2_2_0_83))
@@ -1368,6 +1407,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C_C2_0_84))
                  (not_occupied seg_C_C2_0_84)
                  (not (at-segment ?a seg_C_C2_0_84))
@@ -1402,6 +1442,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C4_C5_0_50))
                  (not_occupied seg_C4_C5_0_50)
                  (not (at-segment ?a seg_C4_C5_0_50))
@@ -1438,6 +1479,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C5_C_A02_0_100))
                  (not_occupied seg_C5_C_A02_0_100)
                  (not (at-segment ?a seg_C5_C_A02_0_100))
@@ -1474,6 +1516,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_B02_0_100))
                  (not_occupied seg_B02_0_100)
                  (not (at-segment ?a seg_B02_0_100))
@@ -1506,6 +1549,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C5_C_B02_0_100))
                  (not_occupied seg_C5_C_B02_0_100)
                  (not (at-segment ?a seg_C5_C_B02_0_100))
@@ -1546,6 +1590,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C4_C5_0_50))
                  (not_occupied seg_C4_C5_0_50)
                  (not (at-segment ?a seg_C4_C5_0_50))
@@ -1582,6 +1627,7 @@
               )
 
  :effect        (and
+                 (increase (total-cost) 1)
                  (not (occupied seg_C5_C_B02_0_100))
                  (not_occupied seg_C5_C_B02_0_100)
                  (not (at-segment ?a seg_C5_C_B02_0_100))
