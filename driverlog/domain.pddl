@@ -1,5 +1,5 @@
 (define (domain driverlog)
-  (:requirements :strips) 
+  (:requirements :strips :action-costs) 
   (:predicates 	(OBJ ?obj)
 	       	(TRUCK ?truck)
                	(LOCATION ?loc)
@@ -10,6 +10,7 @@
 		(link ?x ?y) (path ?x ?y)
 		(empty ?v)
 )
+(:functions (total-cost) - number)
 
 
 (:action LOAD-TRUCK
@@ -67,7 +68,8 @@
    (at ?truck ?loc-from)
    (driving ?driver ?truck) (link ?loc-from ?loc-to))
   :effect
-   (and (not (at ?truck ?loc-from)) (at ?truck ?loc-to)))
+  (and (not (at ?truck ?loc-from)) (at ?truck ?loc-to)
+       (increase (total-cost) 1)))
 
 (:action WALK
   :parameters

@@ -1,5 +1,5 @@
 (define (domain Rover)
-(:requirements :typing)
+(:requirements :typing :action-costs)
 (:types rover waypoint store camera mode lander objective)
 
 (:predicates (at ?x - rover ?y - waypoint) 
@@ -30,6 +30,7 @@
 
 )
 
+(:functions (total-cost) - number)
 	
 (:action navigate
 :parameters (?x - rover ?y - waypoint ?z - waypoint) 
@@ -37,7 +38,7 @@
                 (visible ?y ?z)
 	    )
 :effect (and (not (at ?x ?y)) (at ?x ?z)
-		)
+             (increase (total-cost) 1))
 )
 
 (:action sample_soil

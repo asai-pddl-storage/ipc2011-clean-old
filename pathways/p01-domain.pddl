@@ -2,7 +2,7 @@
 ; Authors: Yannis Dimopoulos, Alfonso Gerevini and Alessandro Saetti
 
 (define (domain Pathways-Propositional) 
-(:requirements :typing :adl)  
+(:requirements :typing :adl :action-costs)
 
 (:types level molecule - object
 	simple complex - molecule) 
@@ -19,6 +19,7 @@
 	     (next ?l1 ?l2 - level)
 	     (num-subs ?l - level)
 	     (goal1))
+(:functions (total-cost) - number)
 
 
 (:action choose
@@ -36,13 +37,15 @@
  :parameters (?x1 ?x2 - molecule ?x3 - complex)
  :precondition (and (association-reaction ?x1  ?x2  ?x3) 
 		    (available ?x1) (available ?x2))
- :effect (and  (not (available ?x1)) (not (available ?x2)) (available ?x3)))
+ :effect (and  (not (available ?x1)) (not (available ?x2)) (available ?x3)
+                 (increase (total-cost) 1)))
 
 (:action associate-with-catalyze 
  :parameters (?x1 ?x2 - molecule ?x3 - complex)
  :precondition (and (catalyzed-association-reaction ?x1 ?x2 ?x3) 
 		    (available ?x1) (available ?x2))
- :effect (and (not (available ?x1)) (available ?x3)))
+ :effect (and (not (available ?x1)) (available ?x3)
+                 (increase (total-cost) 1)))
 
 (:action synthesize
  :parameters (?x1 ?x2 - molecule)

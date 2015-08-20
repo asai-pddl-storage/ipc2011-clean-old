@@ -1,5 +1,5 @@
 (define (domain miconic)
-  (:requirements :strips)
+  (:requirements :strips :action-costs)
   
 
 (:predicates 
@@ -46,7 +46,8 @@
 (:action up
   :parameters (?f1 ?f2)
   :precondition (and (floor ?f1) (floor ?f2) (lift-at ?f1) (above ?f1 ?f2))
-  :effect (and (lift-at ?f2) (not (lift-at ?f1))))
+  :effect (and (lift-at ?f2) (not (lift-at ?f1))
+               (increase (total-cost) 1)))
 
 
 ;;drive down

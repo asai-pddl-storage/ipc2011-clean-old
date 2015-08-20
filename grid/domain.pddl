@@ -1,5 +1,5 @@
 (define (domain grid)
-(:requirements :strips)
+(:requirements :strips :action-costs)
 (:predicates (conn ?x ?y)
              (key-shape ?k ?s)
              (lock-shape ?x ?s)
@@ -13,6 +13,7 @@
              (open ?x)
              (arm-empty ))
 
+(:functions (total-cost) - number)
 
 
 (:action unlock
@@ -28,7 +29,8 @@
 :parameters (?curpos ?nextpos)
 :precondition (and (place ?curpos) (place ?nextpos)
                (at-robot ?curpos) (conn ?curpos ?nextpos) (open ?nextpos))
-:effect (and (at-robot ?nextpos) (not (at-robot ?curpos))))
+:effect (and (at-robot ?nextpos) (not (at-robot ?curpos))
+             (increase (total-cost) 1)))
 
 (:action pickup
 :parameters (?curpos ?key)

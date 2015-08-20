@@ -1,13 +1,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;               Tidybot
+;;;               Tidybot
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; 0, 0 at top left
+;;; 0, 0 at top left
 
 (define (domain TIDYBOT)
-  (:requirements :strips :typing :equality)
+  (:requirements :strips :typing :equality :action-costs)
   (:types robot cart object xc yc xrel yrel)
   (:predicates
-   ;; Constant preds
+   ;;; Constant preds
    (leftof                   ?x1 - xc ?x2 - xc)
    (above                    ?y1 - yc ?y2 - yc)
    (leftof-rel               ?x1 - xrel ?x2 - xrel)
@@ -18,41 +18,43 @@
    (zeroy-rel    ?y - yrel)
    (object-goal  ?o - object ?x - xc  ?y - yc)
 
-   ;; Robot base
+   ;;; Robot base
    (parked       ?r - robot)
    (base-pos     ?r - robot  ?x - xc  ?y - yc)
    (base-obstacle            ?x - xc  ?y - yc)
 
-   ;; Objects
+   ;;; Objects
    (object-pos   ?o - object ?x - xc  ?y - yc)
    (object-done  ?o - object)
    (surface ?x - xc ?y - yc)
 
-   ;; Gripper
+   ;;; Gripper
    (holding       ?r - robot ?o - object)
    (gripper-empty ?r - robot)
    (gripper-rel   ?r - robot ?x - xrel ?y - yrel)
    (gripper-obstacle         ?x - xc  ?y - yc)
  
-   ;; Cart
+   ;;; Cart
    (pushing       ?r - robot ?c - cart)
    (not-pushing   ?r - robot)
    (not-pushed    ?c - cart)
    (cart-pos      ?c - cart ?x - xc ?y - yc)
    (on-cart       ?o - object ?c - cart) 
    )
+  (:functions (total-cost) - number)
 
-  ;; Base movement actions
+  ;;; Base movement actions
   (:action unpark
    :parameters (?r - robot ?x - xrel ?y - yrel)
    :precondition (and (parked ?r) (gripper-rel ?r ?x ?y) (zerox-rel ?x) (zeroy-rel ?y))
-   :effect       (not (parked ?r))
+   :effect       (not (parked ?r)
+                      (increase (total-cost) 1))
    )
 
   (:action park
    :parameters (?r - robot)
    :precondition (and (not (parked ?r)) (not-pushing ?r))
-   :effect       (parked ?r)
+   :effect       (and (parked ?r) (increase (total-cost) 1))
    )
   
   (:action base-left
@@ -63,7 +65,8 @@
                       (base-pos ?r ?cx ?y)
                       (not (base-obstacle ?dx ?y)))
    :effect       (and (not (base-pos ?r ?cx ?y)) (base-pos ?r ?dx ?y)
-                      (not (base-obstacle ?cx ?y)) (base-obstacle ?dx ?y))
+                      (not (base-obstacle ?cx ?y)) (base-obstacle ?dx ?y)
+                      (increase (total-cost) 1))
    )
 
   (:action base-right
@@ -74,7 +77,8 @@
                       (base-pos ?r ?cx ?y)
                       (not (base-obstacle ?dx ?y)))
    :effect       (and (not (base-pos ?r ?cx ?y)) (base-pos ?r ?dx ?y)
-                      (not (base-obstacle ?cx ?y)) (base-obstacle ?dx ?y))
+                      (not (base-obstacle ?cx ?y)) (base-obstacle ?dx ?y)
+                      (increase (total-cost) 1))
    )
 
   (:action base-up
@@ -85,7 +89,8 @@
                       (base-pos ?r ?x ?cy)
                       (not (base-obstacle ?x ?dy)))
    :effect       (and (not (base-pos ?r ?x ?cy)) (base-pos ?r ?x ?dy)
-                      (not (base-obstacle ?x ?cy)) (base-obstacle ?x ?dy))
+                      (not (base-obstacle ?x ?cy)) (base-obstacle ?x ?dy)
+                      (increase (total-cost) 1))
    )
 
   (:action base-down
@@ -96,10 +101,11 @@
                       (base-pos ?r ?x ?cy)
                       (not (base-obstacle ?x ?dy)))
    :effect       (and (not (base-pos ?r ?x ?cy)) (base-pos ?r ?x ?dy)
-                      (not (base-obstacle ?x ?cy)) (base-obstacle ?x ?dy))
+                      (not (base-obstacle ?x ?cy)) (base-obstacle ?x ?dy)
+                      (increase (total-cost) 1))
    )
 
-  ;; Base movement with cart
+  ;;; Base movement with cart
 
   (:action base-cart-left
    :parameters (?r - robot ?c - cart ?x1 - xc ?x2 - xc ?y - yc ?cx1 - xc ?cx2 - xc ?cy - yc)
@@ -109,7 +115,8 @@
    :effect       (and (not (base-pos ?r ?x1 ?y)) (base-pos ?r ?x2 ?y)
                       (not (cart-pos ?c ?cx1 ?cy)) (cart-pos ?c ?cx2 ?cy)
                       (not (base-obstacle ?x1 ?y)) (base-obstacle ?x2 ?y)
-                      (not (base-obstacle ?cx1 ?cy)) (base-obstacle ?cx2 ?cy)))
+                      (not (base-obstacle ?cx1 ?cy)) (base-obstacle ?cx2 ?cy)
+                      (increase (total-cost) 1)))
 
 
 
@@ -121,7 +128,8 @@
    :effect       (and (not (base-pos ?r ?x1 ?y)) (base-pos ?r ?x2 ?y)
                       (not (cart-pos ?c ?cx1 ?cy)) (cart-pos ?c ?cx2 ?cy)
                       (not (base-obstacle ?x1 ?y)) (base-obstacle ?x2 ?y)
-                      (not (base-obstacle ?cx1 ?cy)) (base-obstacle ?cx2 ?cy)))
+                      (not (base-obstacle ?cx1 ?cy)) (base-obstacle ?cx2 ?cy)
+                      (increase (total-cost) 1)))
 
   
   (:action base-cart-up
@@ -132,7 +140,8 @@
    :effect       (and (not (base-pos ?r ?x ?y1)) (base-pos ?r ?x ?y2)
                       (not (cart-pos ?c ?cx ?cy1)) (cart-pos ?c ?cx ?cy2)
                       (not (base-obstacle ?x ?y1)) (base-obstacle ?x ?y2)
-                      (not (base-obstacle ?cx ?cy2)) (base-obstacle ?cx ?cy2)))
+                      (not (base-obstacle ?cx ?cy2)) (base-obstacle ?cx ?cy2)
+                      (increase (total-cost) 1)))
 
   
   (:action base-cart-down
@@ -143,11 +152,12 @@
    :effect       (and (not (base-pos ?r ?x ?y1)) (base-pos ?r ?x ?y2)
                       (not (cart-pos ?c ?cx ?cy1)) (cart-pos ?c ?cx ?cy2)
                       (not (base-obstacle ?x ?y1)) (base-obstacle ?x ?y2)
-                      (not (base-obstacle ?cx ?cy2)) (base-obstacle ?cx ?cy2)))
+                      (not (base-obstacle ?cx ?cy2)) (base-obstacle ?cx ?cy2)
+                      (increase (total-cost) 1)))
 
 
 
-  ;; Gripper movement actions
+  ;;; Gripper movement actions
 
   (:action gripper-left
    :parameters (?r - robot ?basex - xc ?basey - yc
@@ -213,7 +223,7 @@
                       (not (gripper-obstacle ?gxabs ?cgyabs)) (gripper-obstacle ?gxabs ?dgyabs))
    )
 
-  ;; Cart grasping/ungrasping
+  ;;; Cart grasping/ungrasping
   (:action grasp-cart-left
    :parameters (?r - robot ?c - cart ?x - xc ?y - yc ?cx - xc)
    :precondition (and (not (parked ?r)) (not-pushed ?c)
@@ -248,7 +258,7 @@
    :precondition (and (pushing ?r ?c))
    :effect (and (not (pushing ?r ?c)) (not-pushing ?r) (not-pushed ?c)))
   
-  ;; Object manipulation actions
+  ;;; Object manipulation actions
 
 
   (:action get-left

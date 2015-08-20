@@ -2,7 +2,7 @@
 ; Authors: Alfonso Gerevini and Alessandro Saetti 
 
 (define (domain TPP-Propositional)
-(:requirements :strips :typing)
+(:requirements :strips :typing :action-costs)
 (:types place locatable level - object
 	depot market - place
 	truck goods - locatable)
@@ -15,10 +15,11 @@
 	     (at ?t - truck ?p - place)
 	     (connected ?p1 ?p2 - place))
 
+(:functions (total-cost) - number)
 (:action drive
  :parameters (?t - truck ?from ?to - place)
  :precondition (and (at ?t ?from) (connected ?from ?to))
- :effect (and (not (at ?t ?from)) (at ?t ?to)))
+ :effect (and (not (at ?t ?from)) (at ?t ?to) (increase (total-cost) 1)))
 
 
 ; ### LOAD ###

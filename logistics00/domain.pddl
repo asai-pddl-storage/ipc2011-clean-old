@@ -2,7 +2,7 @@
 ;;
 
 (define (domain logistics)
-  (:requirements :strips) 
+  (:requirements :strips :action-costs) 
   (:predicates 	(package ?obj)
 	       	(truck ?truck)
 		(airplane ?airplane)
@@ -13,7 +13,8 @@
 		(at ?obj ?loc)
 		(in ?obj ?obj))
 
- 
+ (:functions (total-cost) - number)
+
 (:action load-truck
   :parameters
    (?obj
@@ -70,7 +71,8 @@
    (in-city ?loc-from ?city)
    (in-city ?loc-to ?city))
   :effect
-   (and (not (at ?truck ?loc-from)) (at ?truck ?loc-to)))
+  (and (not (at ?truck ?loc-from)) (at ?truck ?loc-to)
+       (increase (total-cost) 1)))
 
 (:action fly-airplane
   :parameters
@@ -81,5 +83,6 @@
    (and (airplane ?airplane) (airport ?loc-from) (airport ?loc-to)
 	(at ?airplane ?loc-from))
   :effect
-   (and (not (at ?airplane ?loc-from)) (at ?airplane ?loc-to)))
+  (and (not (at ?airplane ?loc-from)) (at ?airplane ?loc-to)
+       (increase (total-cost) 5)))
 )

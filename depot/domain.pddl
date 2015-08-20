@@ -1,12 +1,15 @@
 (define (domain depot)
-(:predicates
+    (:requirements :strips :action-costs)
+  
+    (:predicates
 	 (at ?x ?y) (on ?x ?y) (in ?x ?y) (lifting ?x ?y) (available ?x) (clear ?x)(place ?x) (locatable ?x) (depot ?x) (distributor ?x) (truck ?x) (hoist ?x) (surface ?x) (pallet ?x) (crate ?x) )
+    (:functions (total-cost) - number)
 (:action drive
  :parameters ( ?x ?y ?z)
  :precondition
 	(and (truck ?x) (place ?y) (place ?z)  (at ?x ?y))
  :effect
-	(and (at ?x ?z) (not (at ?x ?y))))
+	(and (at ?x ?z) (not (at ?x ?y)) (increase (total-cost) 1)))
 
 (:action lift
  :parameters ( ?x ?y ?z ?p)

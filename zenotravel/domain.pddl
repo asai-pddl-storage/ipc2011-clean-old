@@ -1,6 +1,9 @@
 (define (domain zeno-travel)
 (:predicates
 	 (at ?x ?c) (in ?p ?a) (fuel-level ?a ?l) (next ?l1 ?l2)(aircraft ?p) (person ?x) (city ?x) (flevel ?x) )
+
+(:functions (total-cost) - number)
+
 (:action board
  :parameters ( ?p ?a ?c)
  :precondition
@@ -20,14 +23,16 @@
  :precondition
 	(and (aircraft ?a) (city ?c1) (city ?c2) (flevel ?l1) (flevel ?l2)  (at ?a ?c1) (fuel-level ?a ?l1) (next ?l2 ?l1))
  :effect
-	(and (at ?a ?c2) (fuel-level ?a ?l2) (not (at ?a ?c1)) (not (fuel-level ?a ?l1))))
+ (and (at ?a ?c2) (fuel-level ?a ?l2) (not (at ?a ?c1)) (not (fuel-level ?a ?l1))
+       (increase (total-cost) 1)))
 
 (:action zoom
  :parameters ( ?a ?c1 ?c2 ?l1 ?l2 ?l3)
  :precondition
 	(and (aircraft ?a) (city ?c1) (city ?c2) (flevel ?l1) (flevel ?l2) (flevel ?l3)  (at ?a ?c1) (fuel-level ?a ?l1) (next ?l2 ?l1) (next ?l3 ?l2))
  :effect
-	(and (at ?a ?c2) (fuel-level ?a ?l3) (not (at ?a ?c1)) (not (fuel-level ?a ?l1))))
+ (and (at ?a ?c2) (fuel-level ?a ?l3) (not (at ?a ?c1)) (not (fuel-level ?a ?l1))
+      (increase (total-cost) 2)))
 
 (:action refuel
  :parameters ( ?a ?c ?l ?l1)
