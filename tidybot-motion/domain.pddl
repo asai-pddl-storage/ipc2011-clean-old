@@ -47,7 +47,7 @@
   (:action unpark
    :parameters (?r - robot ?x - xrel ?y - yrel)
    :precondition (and (parked ?r) (gripper-rel ?r ?x ?y) (zerox-rel ?x) (zeroy-rel ?y))
-   :effect       (not (parked ?r)
+   :effect       (and (not (parked ?r)) 
                       (increase (total-cost) 1))
    )
 
