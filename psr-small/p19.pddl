@@ -1,6 +1,6 @@
 (define (problem grounded-STRIPS-PSR-S33-N3-L2-F30)
 (:domain grounded-STRIPS-PSR)
-(:init
+(:init (= (total-cost) 0)
 (do-normal)
 (NOT-UPDATED-CB2)
 (NOT-UPDATED-CB3)
@@ -22,4 +22,5 @@
 (GOAL-REACHED)
 )
 )
+(:metric minimize (total-cost))
 )
