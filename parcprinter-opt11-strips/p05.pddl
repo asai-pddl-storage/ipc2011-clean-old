@@ -9,7 +9,7 @@
 		image-2
 		image-3 - image_t
 )
-(:init
+(:init (= (total-cost) 0)
 		(Uninitialized)
 		(= (total-cost) 0)
 		(Oppositeside Front Back)
@@ -59,6 +59,7 @@
 		(Stackedin sheet1 sys_OutputTray)
 		(Stackedin sheet2 sys_OutputTray)
 		(Stackedin sheet3 sys_OutputTray))
-)
+       )
+(:metric minimize (total-cost))
 (:metric minimize (total-cost))
 )

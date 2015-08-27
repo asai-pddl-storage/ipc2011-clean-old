@@ -23,7 +23,7 @@
 		image-9
 		image-10 - image_t
 )
-(:init
+(:init (= (total-cost) 0)
 		(Uninitialized)
 		(= (total-cost) 0)
 		(Oppositeside Front Back)
@@ -171,6 +171,7 @@
 		(Stackedin sheet8 Finisher1_Tray)
 		(Stackedin sheet9 Finisher1_Tray)
 		(Stackedin sheet10 Finisher1_Tray))
-)
+       )
+(:metric minimize (total-cost))
 (:metric minimize (total-cost))
 )
