@@ -55,7 +55,6 @@
 		(not (on ?c2 ?s2))
 		(on ?c1 ?s2)
 		(on ?c2 ?s1)
-		(increase (total-cost) 1)
 	   )
   )
 
@@ -75,7 +74,6 @@
 		(on ?c2 ?s1)
 		(on ?c3 ?s2)
 		(on ?c4 ?s3)
-		(increase (total-cost) 1)
 	   )
    )
 )
