@@ -2,7 +2,7 @@
    (:domain gripper-strips)
    (:objects rooma roomb ball14 ball13 ball12 ball11 ball10 ball9
              ball8 ball7 ball6 ball5 ball4 ball3 ball2 ball1 left right)
-   (:init (room rooma)
+   (:init (= (total-cost) 0) (room rooma)
           (room roomb)
           (ball ball14)
           (ball ball13)
@@ -50,4 +50,5 @@
                (at ball4 roomb)
                (at ball3 roomb)
                (at ball2 roomb)
-               (at ball1 roomb))))
+               (at ball1 roomb)))
+   (:metric minimize (total-cost)))

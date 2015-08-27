@@ -1,11 +1,13 @@
-(define (problem strips-gripper-x-14)
+(define (problem strips-gripper-x-15)
    (:domain gripper-strips)
-   (:objects rooma roomb ball30 ball29 ball28 ball27 ball26 ball25
-             ball24 ball23 ball22 ball21 ball20 ball19 ball18 ball17 ball16
-             ball15 ball14 ball13 ball12 ball11 ball10 ball9 ball8 ball7
-             ball6 ball5 ball4 ball3 ball2 ball1 left right)
-   (:init (room rooma)
+   (:objects rooma roomb ball32 ball31 ball30 ball29 ball28 ball27
+             ball26 ball25 ball24 ball23 ball22 ball21 ball20 ball19 ball18
+             ball17 ball16 ball15 ball14 ball13 ball12 ball11 ball10 ball9
+             ball8 ball7 ball6 ball5 ball4 ball3 ball2 ball1 left right)
+   (:init (= (total-cost) 0) (room rooma)
           (room roomb)
+          (ball ball32)
+          (ball ball31)
           (ball ball30)
           (ball ball29)
           (ball ball28)
@@ -39,6 +41,8 @@
           (at-robby rooma)
           (free left)
           (free right)
+          (at ball32 rooma)
+          (at ball31 rooma)
           (at ball30 rooma)
           (at ball29 rooma)
           (at ball28 rooma)
@@ -71,7 +75,9 @@
           (at ball1 rooma)
           (gripper left)
           (gripper right))
-   (:goal (and (at ball30 roomb)
+   (:goal (and (at ball32 roomb)
+               (at ball31 roomb)
+               (at ball30 roomb)
                (at ball29 roomb)
                (at ball28 roomb)
                (at ball27 roomb)
@@ -100,4 +106,5 @@
                (at ball4 roomb)
                (at ball3 roomb)
                (at ball2 roomb)
-               (at ball1 roomb))))
+               (at ball1 roomb)))
+   (:metric minimize (total-cost)))

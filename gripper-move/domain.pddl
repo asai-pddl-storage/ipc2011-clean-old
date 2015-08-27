@@ -1,17 +1,20 @@
 (define (domain gripper-strips)
-   (:predicates (room ?r)
+    (:requirements :strips :action-costs)
+    (:predicates (room ?r)
 		(ball ?b)
 		(gripper ?g)
 		(at-robby ?r)
 		(at ?b ?r)
 		(free ?g)
 		(carry ?o ?g))
+   (:functions (total-cost) - number)
 
    (:action move
        :parameters  (?from ?to)
        :precondition (and  (room ?from) (room ?to) (at-robby ?from))
-       :effect (and  (at-robby ?to)
-		     (not (at-robby ?from))))
+       :effect (and (increase (total-cost) 1)
+                    (at-robby ?to)
+                    (not (at-robby ?from))))
 
 
 
