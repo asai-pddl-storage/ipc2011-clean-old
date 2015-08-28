@@ -464,8 +464,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD14)
 (not (CLOSED-SD14))
 )
@@ -481,8 +481,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD13)
 (not (CLOSED-SD13))
 )
@@ -498,8 +498,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD12)
 (not (CLOSED-SD12))
 )
@@ -515,8 +515,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD11)
 (not (CLOSED-SD11))
 )
@@ -532,8 +532,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD10)
 (not (CLOSED-SD10))
 )
@@ -549,8 +549,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD9)
 (not (CLOSED-SD9))
 )
@@ -566,8 +566,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD8)
 (not (CLOSED-SD8))
 )
@@ -583,8 +583,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD7)
 (not (CLOSED-SD7))
 )
@@ -600,8 +600,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD6)
 (not (CLOSED-SD6))
 )
@@ -617,8 +617,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD5)
 (not (CLOSED-SD5))
 )
@@ -634,8 +634,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD4)
 (not (CLOSED-SD4))
 )
@@ -651,8 +651,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD3)
 (not (CLOSED-SD3))
 )
@@ -668,8 +668,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD2)
 (not (CLOSED-SD2))
 )
@@ -685,8 +685,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD1)
 (not (CLOSED-SD1))
 )
@@ -702,8 +702,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-CB3)
 (not (CLOSED-CB3))
 )
@@ -719,8 +719,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-CB2)
 (not (CLOSED-CB2))
 )
@@ -736,8 +736,8 @@
 (UPDATED-CB3)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-CB1)
 (not (CLOSED-CB1))
 )

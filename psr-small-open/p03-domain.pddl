@@ -189,8 +189,8 @@
 (UPDATED-CB1)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD4)
 (not (CLOSED-SD4))
 )
@@ -204,8 +204,8 @@
 (UPDATED-CB1)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD3)
 (not (CLOSED-SD3))
 )
@@ -219,8 +219,8 @@
 (UPDATED-CB1)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD2)
 (not (CLOSED-SD2))
 )
@@ -234,8 +234,8 @@
 (UPDATED-CB1)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-SD1)
 (not (CLOSED-SD1))
 )
@@ -249,8 +249,8 @@
 (UPDATED-CB1)
 )
 :effect
-(increase (total-cost) 1)
 (and
+(increase (total-cost) 1)
 (NOT-CLOSED-CB1)
 (not (CLOSED-CB1))
 )
