@@ -68,6 +68,7 @@
 (done-0)
 (done-1)
 )
+(:functions (total-cost) - number)
 (:action REACH-GOAL-0
 :parameters ()
 :precondition

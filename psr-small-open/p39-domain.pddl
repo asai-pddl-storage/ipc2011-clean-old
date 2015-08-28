@@ -55,6 +55,7 @@
 (done-2)
 (done-3)
 )
+(:functions (total-cost) - number)
 (:action CLOSE_SD12
 :parameters ()
 :precondition

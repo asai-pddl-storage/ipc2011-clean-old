@@ -112,6 +112,7 @@
 (done-0)
 (done-1)
 )
+(:functions (total-cost) - number)
 (:action CLOSE_SD37
 :parameters ()
 :precondition

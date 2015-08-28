@@ -40,6 +40,7 @@
 (do-normal)
 (done-0)
 )
+(:functions (total-cost) - number)
 (:action CLOSE_SD11
 :parameters ()
 :precondition
