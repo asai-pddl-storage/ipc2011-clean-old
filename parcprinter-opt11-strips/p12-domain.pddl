@@ -1,625 +1,348 @@
-;; PARC's modular printer domain
-;; compiled into PDDL by Rong Zhou
-;; To report a problem, send email to rzhou@parc.com
-;; Papers:
-;; 1. Planning for Modular Printers: Beyond Productivity
-;;	Minh B. Do, Wheeler Ruml, and Rong Zhou. ICAPS'08
-;; 2. On-line Planning and Scheduling: An Application to Controlling Modular Printers
-;;	Minh B. Do, Wheeler Ruml, and Rong Zhou. AAAI'08
-;; 3. On-line Planning and Scheduling for High-speed Manufacturing
-;;	Wheeler Ruml, Minh B. Do, and Markus P.J. Fromherz. ICAPS'05
-(define (domain eTipp)
-(:requirements :typing :action-costs)
-(:types  size_t location_t side_t color_t image_t resource_t sheet_t)
-(:constants
-		Letter - size_t
 
-		Black
-		Color - color_t
-
-		Front
-		Back - side_t
-
-		Some_Feeder_Tray
-		Some_Finisher_Tray
-		fe1_Exit-im1_FeedEntry
-		rh1_Exit-im1_ReturnEntry
-		uc1_Entry-im1_TopExit
-		im1_BottomExit-lc1_Entry
-		ube_Entry-uc1_OffRamp
-		uc1_OnRamp-ube_Exit
-		uc2_Entry-uc1_Exit
-		lbe_Entry-lc1_OffRamp
-		lc1_OnRamp-lbe_Exit
-		lc1_Exit-lc2_Entry
-		rh1_Entry-rh2_Exit
-		ure_Entry-uc2_OffRamp
-		ure_Exit-uc2_OnRamp
-		uc2_Exit-om_TopEntry
-		ure_RodanTray1
-		ure_RodanTray2
-		lre_Entry-lc2_OffRamp
-		lc2_OnRamp-lre_Exit
-		om_BottomEntry-lc2_Exit
-		lre_RodanTray1
-		lre_RodanTray2
-		om_ReturnExit-rh2_Entry
-		om_OutputExit-sys_Entry
-		sys_OutputTray - location_t
-
-		fe1-RSRC
-		im1-RSRC
-		uc1-RSRC
-		ube-RSRC
-		lc1-RSRC
-		lbe-RSRC
-		rh1-RSRC
-		uc2-RSRC
-		ure-RSRC
-		lc2-RSRC
-		lre-RSRC
-		rh2-RSRC
-		om-RSRC
-		sys-RSRC - resource_t
-)
-(:predicates
-		(Sheetsize ?sheet - sheet_t ?size - size_t)
-		(Location ?sheet - sheet_t ?location - location_t)
-		(Hasimage ?sheet - sheet_t ?side - side_t ?image - image_t)
-		(Sideup ?sheet - sheet_t ?side - side_t)
-		(Stackedin ?sheet - sheet_t ?location - location_t)
-		(Imagecolor ?image - image_t ?color - color_t)
-		(Notprintedwith ?sheet - sheet_t ?side - side_t ?color - color_t)
-		(Oppositeside ?side1 - side_t ?side2 - side_t)
-		(Available ?resource - resource_t)
-		(Prevsheet ?sheet1 - sheet_t ?sheet2 - sheet_t)
-		(Uninitialized)
-
-)
-(:functions (total-cost) - number)
-(:action initialize
- :parameters ()
- :precondition (and
-		(Uninitialized))
- :effect (and
-		(not (Uninitialized))
-		(Available fe1-RSRC)
-		(Available im1-RSRC)
-		(Available uc1-RSRC)
-		(Available ube-RSRC)
-		(Available lc1-RSRC)
-		(Available lbe-RSRC)
-		(Available rh1-RSRC)
-		(Available uc2-RSRC)
-		(Available ure-RSRC)
-		(Available lc2-RSRC)
-		(Available lre-RSRC)
-		(Available rh2-RSRC)
-		(Available om-RSRC)
-		(Available sys-RSRC))
-)
-(:action fe1-FeedMSI-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available fe1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet Some_Feeder_Tray))
- :effect (and
-		(not (Available fe1-RSRC))
-		(Location ?sheet fe1_Exit-im1_FeedEntry)
-		(Sideup ?sheet Back)
-		(not (Location ?sheet Some_Feeder_Tray))
-		(Available fe1-RSRC)
-		(increase (total-cost) 500))
-)
-(:action fe1-Feed-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available fe1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet Some_Feeder_Tray))
- :effect (and
-		(not (Available fe1-RSRC))
-		(Location ?sheet fe1_Exit-im1_FeedEntry)
-		(Sideup ?sheet Back)
-		(not (Location ?sheet Some_Feeder_Tray))
-		(Available fe1-RSRC)
-		(increase (total-cost) 899))
-)
-(:action im1-MoveUpper-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available im1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet fe1_Exit-im1_FeedEntry))
- :effect (and
-		(not (Available im1-RSRC))
-		(Location ?sheet uc1_Entry-im1_TopExit)
-		(not (Location ?sheet fe1_Exit-im1_FeedEntry))
-		(Available im1-RSRC)
-		(increase (total-cost) 8171))
-)
-(:action im1-MoveLower-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available im1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet fe1_Exit-im1_FeedEntry))
- :effect (and
-		(not (Available im1-RSRC))
-		(Location ?sheet im1_BottomExit-lc1_Entry)
-		(not (Location ?sheet fe1_Exit-im1_FeedEntry))
-		(Available im1-RSRC)
-		(increase (total-cost) 3088))
-)
-(:action im1-LoopUpper-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available im1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet rh1_Exit-im1_ReturnEntry))
- :effect (and
-		(not (Available im1-RSRC))
-		(Location ?sheet uc1_Entry-im1_TopExit)
-		(not (Location ?sheet rh1_Exit-im1_ReturnEntry))
-		(Available im1-RSRC)
-		(increase (total-cost) 8164))
-)
-(:action im1-LoopLower-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available im1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet rh1_Exit-im1_ReturnEntry))
- :effect (and
-		(not (Available im1-RSRC))
-		(Location ?sheet im1_BottomExit-lc1_Entry)
-		(not (Location ?sheet rh1_Exit-im1_ReturnEntry))
-		(Available im1-RSRC)
-		(increase (total-cost) 3131))
-)
-(:action uc1-fMove-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available uc1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet uc1_Entry-im1_TopExit))
- :effect (and
-		(not (Available uc1-RSRC))
-		(Location ?sheet uc2_Entry-uc1_Exit)
-		(not (Location ?sheet uc1_Entry-im1_TopExit))
-		(Available uc1-RSRC)
-		(increase (total-cost) 10890))
-)
-(:action uc1-Divert-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?otherface - side_t)
- :precondition (and
-		(Available uc1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Oppositeside ?face ?otherface)
-		(Location ?sheet uc1_Entry-im1_TopExit)
-		(Sideup ?sheet ?face))
- :effect (and
-		(not (Available uc1-RSRC))
-		(Location ?sheet ube_Entry-uc1_OffRamp)
-		(Sideup ?sheet ?otherface)
-		(not (Location ?sheet uc1_Entry-im1_TopExit))
-		(not (Sideup ?sheet ?face))
-		(Available uc1-RSRC)
-		(increase (total-cost) 11805))
-)
-(:action uc1-Merge-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available uc1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet uc1_OnRamp-ube_Exit))
- :effect (and
-		(not (Available uc1-RSRC))
-		(Location ?sheet uc2_Entry-uc1_Exit)
-		(not (Location ?sheet uc1_OnRamp-ube_Exit))
-		(Available uc1-RSRC)
-		(increase (total-cost) 27709))
-)
-(:action uc1-MergeInvert-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?otherface - side_t)
- :precondition (and
-		(Available uc1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Oppositeside ?face ?otherface)
-		(Location ?sheet uc1_OnRamp-ube_Exit)
-		(Sideup ?sheet ?face))
- :effect (and
-		(not (Available uc1-RSRC))
-		(Location ?sheet uc2_Entry-uc1_Exit)
-		(Sideup ?sheet ?otherface)
-		(not (Location ?sheet uc1_OnRamp-ube_Exit))
-		(not (Sideup ?sheet ?face))
-		(Available uc1-RSRC)
-		(increase (total-cost) 28119))
-)
-(:action ube-Simplex-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?image - image_t)
- :precondition (and
-		(Available ube-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Sideup ?sheet ?face)
-		(Imagecolor ?image Black)
-		(Location ?sheet ube_Entry-uc1_OffRamp)
-		(Notprintedwith ?sheet ?face Black))
- :effect (and
-		(not (Available ube-RSRC))
-		(Location ?sheet uc1_OnRamp-ube_Exit)
-		(Hasimage ?sheet ?face ?image)
-		(not (Location ?sheet ube_Entry-uc1_OffRamp))
-		(not (Notprintedwith ?sheet ?face Black))
-		(Available ube-RSRC)
-		(increase (total-cost) 123749))
-)
-(:action lc1-fMove-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available lc1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet im1_BottomExit-lc1_Entry))
- :effect (and
-		(not (Available lc1-RSRC))
-		(Location ?sheet lc1_Exit-lc2_Entry)
-		(not (Location ?sheet im1_BottomExit-lc1_Entry))
-		(Available lc1-RSRC)
-		(increase (total-cost) 10890))
-)
-(:action lc1-Divert-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?otherface - side_t)
- :precondition (and
-		(Available lc1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Oppositeside ?face ?otherface)
-		(Location ?sheet im1_BottomExit-lc1_Entry)
-		(Sideup ?sheet ?face))
- :effect (and
-		(not (Available lc1-RSRC))
-		(Location ?sheet lbe_Entry-lc1_OffRamp)
-		(Sideup ?sheet ?otherface)
-		(not (Location ?sheet im1_BottomExit-lc1_Entry))
-		(not (Sideup ?sheet ?face))
-		(Available lc1-RSRC)
-		(increase (total-cost) 11805))
-)
-(:action lc1-Merge-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available lc1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet lc1_OnRamp-lbe_Exit))
- :effect (and
-		(not (Available lc1-RSRC))
-		(Location ?sheet lc1_Exit-lc2_Entry)
-		(not (Location ?sheet lc1_OnRamp-lbe_Exit))
-		(Available lc1-RSRC)
-		(increase (total-cost) 27709))
-)
-(:action lc1-MergeInvert-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?otherface - side_t)
- :precondition (and
-		(Available lc1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Oppositeside ?face ?otherface)
-		(Location ?sheet lc1_OnRamp-lbe_Exit)
-		(Sideup ?sheet ?face))
- :effect (and
-		(not (Available lc1-RSRC))
-		(Location ?sheet lc1_Exit-lc2_Entry)
-		(Sideup ?sheet ?otherface)
-		(not (Location ?sheet lc1_OnRamp-lbe_Exit))
-		(not (Sideup ?sheet ?face))
-		(Available lc1-RSRC)
-		(increase (total-cost) 28119))
-)
-(:action lbe-Simplex-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?image - image_t)
- :precondition (and
-		(Available lbe-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Sideup ?sheet ?face)
-		(Imagecolor ?image Black)
-		(Location ?sheet lbe_Entry-lc1_OffRamp)
-		(Notprintedwith ?sheet ?face Black))
- :effect (and
-		(not (Available lbe-RSRC))
-		(Location ?sheet lc1_OnRamp-lbe_Exit)
-		(Hasimage ?sheet ?face ?image)
-		(not (Location ?sheet lbe_Entry-lc1_OffRamp))
-		(not (Notprintedwith ?sheet ?face Black))
-		(Available lbe-RSRC)
-		(increase (total-cost) 123749))
-)
-(:action rh1-ReturnMove-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available rh1-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet rh1_Entry-rh2_Exit))
- :effect (and
-		(not (Available rh1-RSRC))
-		(Location ?sheet rh1_Exit-im1_ReturnEntry)
-		(not (Location ?sheet rh1_Entry-rh2_Exit))
-		(Available rh1-RSRC)
-		(increase (total-cost) 10869))
-)
-(:action uc2-fMove-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available uc2-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet uc2_Entry-uc1_Exit))
- :effect (and
-		(not (Available uc2-RSRC))
-		(Location ?sheet uc2_Exit-om_TopEntry)
-		(not (Location ?sheet uc2_Entry-uc1_Exit))
-		(Available uc2-RSRC)
-		(increase (total-cost) 11207))
-)
-(:action uc2-Divert-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?otherface - side_t)
- :precondition (and
-		(Available uc2-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Oppositeside ?face ?otherface)
-		(Location ?sheet uc2_Entry-uc1_Exit)
-		(Sideup ?sheet ?face))
- :effect (and
-		(not (Available uc2-RSRC))
-		(Location ?sheet ure_Entry-uc2_OffRamp)
-		(Sideup ?sheet ?otherface)
-		(not (Location ?sheet uc2_Entry-uc1_Exit))
-		(not (Sideup ?sheet ?face))
-		(Available uc2-RSRC)
-		(increase (total-cost) 17452))
-)
-(:action uc2-Merge-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?otherface - side_t)
- :precondition (and
-		(Available uc2-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Oppositeside ?face ?otherface)
-		(Location ?sheet ure_Exit-uc2_OnRamp)
-		(Sideup ?sheet ?face))
- :effect (and
-		(not (Available uc2-RSRC))
-		(Location ?sheet uc2_Exit-om_TopEntry)
-		(Sideup ?sheet ?otherface)
-		(not (Location ?sheet ure_Exit-uc2_OnRamp))
-		(not (Sideup ?sheet ?face))
-		(Available uc2-RSRC)
-		(increase (total-cost) 78919))
-)
-(:action uc2-MergeInvert-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available uc2-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet ure_Exit-uc2_OnRamp))
- :effect (and
-		(not (Available uc2-RSRC))
-		(Location ?sheet uc2_Exit-om_TopEntry)
-		(not (Location ?sheet ure_Exit-uc2_OnRamp))
-		(Available uc2-RSRC)
-		(increase (total-cost) 78919))
-)
-(:action ure-Simplex-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?image - image_t)
- :precondition (and
-		(Available ure-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Sideup ?sheet ?face)
-		(Imagecolor ?image Color)
-		(Location ?sheet ure_Entry-uc2_OffRamp)
-		(Notprintedwith ?sheet ?face Color))
- :effect (and
-		(not (Available ure-RSRC))
-		(Location ?sheet ure_Exit-uc2_OnRamp)
-		(Hasimage ?sheet ?face ?image)
-		(not (Location ?sheet ure_Entry-uc2_OffRamp))
-		(not (Notprintedwith ?sheet ?face Color))
-		(Available ure-RSRC)
-		(increase (total-cost) 211849))
-)
-(:action ure-SimplexMono-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?image - image_t)
- :precondition (and
-		(Available ure-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Sideup ?sheet ?face)
-		(Imagecolor ?image Black)
-		(Location ?sheet ure_Entry-uc2_OffRamp)
-		(Notprintedwith ?sheet ?face Black))
- :effect (and
-		(not (Available ure-RSRC))
-		(Location ?sheet ure_Exit-uc2_OnRamp)
-		(Hasimage ?sheet ?face ?image)
-		(not (Location ?sheet ure_Entry-uc2_OffRamp))
-		(not (Notprintedwith ?sheet ?face Black))
-		(Available ure-RSRC)
-		(increase (total-cost) 211849))
-)
-(:action lc2-fMove-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available lc2-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet lc1_Exit-lc2_Entry))
- :effect (and
-		(not (Available lc2-RSRC))
-		(Location ?sheet om_BottomEntry-lc2_Exit)
-		(not (Location ?sheet lc1_Exit-lc2_Entry))
-		(Available lc2-RSRC)
-		(increase (total-cost) 11207))
-)
-(:action lc2-Divert-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?otherface - side_t)
- :precondition (and
-		(Available lc2-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Oppositeside ?face ?otherface)
-		(Location ?sheet lc1_Exit-lc2_Entry)
-		(Sideup ?sheet ?face))
- :effect (and
-		(not (Available lc2-RSRC))
-		(Location ?sheet lre_Entry-lc2_OffRamp)
-		(Sideup ?sheet ?otherface)
-		(not (Location ?sheet lc1_Exit-lc2_Entry))
-		(not (Sideup ?sheet ?face))
-		(Available lc2-RSRC)
-		(increase (total-cost) 17452))
-)
-(:action lc2-Merge-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?otherface - side_t)
- :precondition (and
-		(Available lc2-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Oppositeside ?face ?otherface)
-		(Location ?sheet lc2_OnRamp-lre_Exit)
-		(Sideup ?sheet ?face))
- :effect (and
-		(not (Available lc2-RSRC))
-		(Location ?sheet om_BottomEntry-lc2_Exit)
-		(Sideup ?sheet ?otherface)
-		(not (Location ?sheet lc2_OnRamp-lre_Exit))
-		(not (Sideup ?sheet ?face))
-		(Available lc2-RSRC)
-		(increase (total-cost) 78919))
-)
-(:action lc2-MergeInvert-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available lc2-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet lc2_OnRamp-lre_Exit))
- :effect (and
-		(not (Available lc2-RSRC))
-		(Location ?sheet om_BottomEntry-lc2_Exit)
-		(not (Location ?sheet lc2_OnRamp-lre_Exit))
-		(Available lc2-RSRC)
-		(increase (total-cost) 78919))
-)
-(:action lre-Simplex-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?image - image_t)
- :precondition (and
-		(Available lre-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Sideup ?sheet ?face)
-		(Imagecolor ?image Color)
-		(Location ?sheet lre_Entry-lc2_OffRamp)
-		(Notprintedwith ?sheet ?face Color))
- :effect (and
-		(not (Available lre-RSRC))
-		(Location ?sheet lc2_OnRamp-lre_Exit)
-		(Hasimage ?sheet ?face ?image)
-		(not (Location ?sheet lre_Entry-lc2_OffRamp))
-		(not (Notprintedwith ?sheet ?face Color))
-		(Available lre-RSRC)
-		(increase (total-cost) 211849))
-)
-(:action lre-SimplexMono-Letter
- :parameters ( ?sheet - sheet_t ?face - side_t ?image - image_t)
- :precondition (and
-		(Available lre-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Sideup ?sheet ?face)
-		(Imagecolor ?image Black)
-		(Location ?sheet lre_Entry-lc2_OffRamp)
-		(Notprintedwith ?sheet ?face Black))
- :effect (and
-		(not (Available lre-RSRC))
-		(Location ?sheet lc2_OnRamp-lre_Exit)
-		(Hasimage ?sheet ?face ?image)
-		(not (Location ?sheet lre_Entry-lc2_OffRamp))
-		(not (Notprintedwith ?sheet ?face Black))
-		(Available lre-RSRC)
-		(increase (total-cost) 211849))
-)
-(:action rh2-ReturnMove-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available rh2-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet om_ReturnExit-rh2_Entry))
- :effect (and
-		(not (Available rh2-RSRC))
-		(Location ?sheet rh1_Entry-rh2_Exit)
-		(not (Location ?sheet om_ReturnExit-rh2_Entry))
-		(Available rh2-RSRC)
-		(increase (total-cost) 10869))
-)
-(:action om-UpperOut-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available om-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet uc2_Exit-om_TopEntry))
- :effect (and
-		(not (Available om-RSRC))
-		(Location ?sheet om_OutputExit-sys_Entry)
-		(not (Location ?sheet uc2_Exit-om_TopEntry))
-		(Available om-RSRC)
-		(increase (total-cost) 8037))
-)
-(:action om-LowerOut-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available om-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet om_BottomEntry-lc2_Exit))
- :effect (and
-		(not (Available om-RSRC))
-		(Location ?sheet om_OutputExit-sys_Entry)
-		(not (Location ?sheet om_BottomEntry-lc2_Exit))
-		(Available om-RSRC)
-		(increase (total-cost) 3251))
-)
-(:action om-UpperReturn-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available om-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet uc2_Exit-om_TopEntry))
- :effect (and
-		(not (Available om-RSRC))
-		(Location ?sheet om_ReturnExit-rh2_Entry)
-		(not (Location ?sheet uc2_Exit-om_TopEntry))
-		(Available om-RSRC)
-		(increase (total-cost) 8343))
-)
-(:action om-LowerReturn-Letter
- :parameters ( ?sheet - sheet_t)
- :precondition (and
-		(Available om-RSRC)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet om_BottomEntry-lc2_Exit))
- :effect (and
-		(not (Available om-RSRC))
-		(Location ?sheet om_ReturnExit-rh2_Entry)
-		(not (Location ?sheet om_BottomEntry-lc2_Exit))
-		(Available om-RSRC)
-		(increase (total-cost) 3568))
-)
-(:action sys-Stack-Letter
- :parameters ( ?sheet - sheet_t ?prevsheet - sheet_t)
- :precondition (and
-		(Available sys-RSRC)
-		(Prevsheet ?sheet ?prevsheet)
-		(Location ?prevsheet Some_Finisher_Tray)
-		(Sheetsize ?sheet Letter)
-		(Location ?sheet om_OutputExit-sys_Entry))
- :effect (and
-		(not (Available sys-RSRC))
-		(Location ?sheet Some_Finisher_Tray)
-		(Stackedin ?sheet sys_OutputTray)
-		(not (Location ?sheet om_OutputExit-sys_Entry))
-		(Available sys-RSRC)
-		(increase (total-cost) 1499))
-)
-)
-
-
+(define (domain etipp) (:requirements :typing :action-costs)
+ (:predicates (prevsheet ?sheet1 - sheet_t ?sheet2 - sheet_t)
+  (location ?sheet - sheet_t ?location - location_t)
+  (imagecolor ?image - image_t ?color - color_t)
+  (sheetsize ?sheet - sheet_t ?size - size_t)
+  (notprintedwith ?sheet - sheet_t ?side - side_t ?color - color_t)
+  (hasimage ?sheet - sheet_t ?side - side_t ?image - image_t)
+  (sideup ?sheet - sheet_t ?side - side_t) (available ?resource - resource_t)
+  (oppositeside ?side1 - side_t ?side2 - side_t)
+  (stackedin ?sheet - sheet_t ?location - location_t) (uninitialized))
+ (:types size_t location_t side_t color_t image_t resource_t sheet_t)
+ (:constants letter - size_t black color - color_t front back - side_t
+  some_feeder_tray some_finisher_tray fe1_exit-im1_feedentry
+  rh1_exit-im1_returnentry uc1_entry-im1_topexit im1_bottomexit-lc1_entry
+  ube_entry-uc1_offramp uc1_onramp-ube_exit uc2_entry-uc1_exit
+  lbe_entry-lc1_offramp lc1_onramp-lbe_exit lc1_exit-lc2_entry
+  rh1_entry-rh2_exit ure_entry-uc2_offramp ure_exit-uc2_onramp
+  uc2_exit-om_topentry ure_rodantray1 ure_rodantray2 lre_entry-lc2_offramp
+  lc2_onramp-lre_exit om_bottomentry-lc2_exit lre_rodantray1 lre_rodantray2
+  om_returnexit-rh2_entry om_outputexit-sys_entry sys_outputtray - location_t
+  fe1-rsrc im1-rsrc uc1-rsrc ube-rsrc lc1-rsrc lbe-rsrc rh1-rsrc uc2-rsrc
+  ure-rsrc lc2-rsrc lre-rsrc rh2-rsrc om-rsrc sys-rsrc - resource_t)
+ (:functions (total-cost) - number)
+ (:action ugly1ugly32uc2-fmove-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available uc2-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet uc2_entry-uc1_exit))
+  :effect
+  (and (not (available uc2-rsrc)) (location ?sheet uc2_exit-om_topentry)
+       (not (location ?sheet uc2_entry-uc1_exit)) (available uc2-rsrc)
+       (increase (total-cost) 11207)))
+ (:action ugly2ugly18uc1-fmove-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available uc1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet uc1_entry-im1_topexit))
+  :effect
+  (and (not (available uc1-rsrc)) (location ?sheet uc2_entry-uc1_exit)
+       (not (location ?sheet uc1_entry-im1_topexit)) (available uc1-rsrc)
+       (increase (total-cost) 10890)))
+ (:action ugly3ugly28lc1-merge-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available lc1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet lc1_onramp-lbe_exit))
+  :effect
+  (and (not (available lc1-rsrc)) (location ?sheet lc1_exit-lc2_entry)
+       (not (location ?sheet lc1_onramp-lbe_exit)) (available lc1-rsrc)
+       (increase (total-cost) 27709)))
+ (:action ugly4ugly21lc1-divert-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?otherface - side_t) :precondition
+  (and (available lc1-rsrc) (sheetsize ?sheet letter)
+       (oppositeside ?face ?otherface)
+       (location ?sheet im1_bottomexit-lc1_entry) (sideup ?sheet ?face))
+  :effect
+  (and (not (available lc1-rsrc)) (location ?sheet lbe_entry-lc1_offramp)
+       (sideup ?sheet ?otherface)
+       (not (location ?sheet im1_bottomexit-lc1_entry))
+       (not (sideup ?sheet ?face)) (available lc1-rsrc)
+       (increase (total-cost) 11805)))
+ (:action ugly5ugly24lre-simplexmono-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?image - image_t) :precondition
+  (and (available lre-rsrc) (sheetsize ?sheet letter) (sideup ?sheet ?face)
+       (imagecolor ?image black) (location ?sheet lre_entry-lc2_offramp)
+       (notprintedwith ?sheet ?face black))
+  :effect
+  (and (not (available lre-rsrc)) (location ?sheet lc2_onramp-lre_exit)
+       (hasimage ?sheet ?face ?image)
+       (not (location ?sheet lre_entry-lc2_offramp))
+       (not (notprintedwith ?sheet ?face black)) (available lre-rsrc)
+       (increase (total-cost) 211849)))
+ (:action ugly6ugly29uc1-divert-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?otherface - side_t) :precondition
+  (and (available uc1-rsrc) (sheetsize ?sheet letter)
+       (oppositeside ?face ?otherface) (location ?sheet uc1_entry-im1_topexit)
+       (sideup ?sheet ?face))
+  :effect
+  (and (not (available uc1-rsrc)) (location ?sheet ube_entry-uc1_offramp)
+       (sideup ?sheet ?otherface) (not (location ?sheet uc1_entry-im1_topexit))
+       (not (sideup ?sheet ?face)) (available uc1-rsrc)
+       (increase (total-cost) 11805)))
+ (:action ugly7ugly17fe1-feed-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available fe1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet some_feeder_tray))
+  :effect
+  (and (not (available fe1-rsrc)) (location ?sheet fe1_exit-im1_feedentry)
+       (sideup ?sheet back) (not (location ?sheet some_feeder_tray))
+       (available fe1-rsrc) (increase (total-cost) 899)))
+ (:action ugly8ugly26initialize :parameters () :precondition
+  (and (uninitialized)) :effect
+  (and (not (uninitialized)) (available fe1-rsrc) (available im1-rsrc)
+       (available uc1-rsrc) (available ube-rsrc) (available lc1-rsrc)
+       (available lbe-rsrc) (available rh1-rsrc) (available uc2-rsrc)
+       (available ure-rsrc) (available lc2-rsrc) (available lre-rsrc)
+       (available rh2-rsrc) (available om-rsrc) (available sys-rsrc)))
+ (:action ugly9ugly33ure-simplex-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?image - image_t) :precondition
+  (and (available ure-rsrc) (sheetsize ?sheet letter) (sideup ?sheet ?face)
+       (imagecolor ?image color) (location ?sheet ure_entry-uc2_offramp)
+       (notprintedwith ?sheet ?face color))
+  :effect
+  (and (not (available ure-rsrc)) (location ?sheet ure_exit-uc2_onramp)
+       (hasimage ?sheet ?face ?image)
+       (not (location ?sheet ure_entry-uc2_offramp))
+       (not (notprintedwith ?sheet ?face color)) (available ure-rsrc)
+       (increase (total-cost) 211849)))
+ (:action ugly10ugly35fe1-feedmsi-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available fe1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet some_feeder_tray))
+  :effect
+  (and (not (available fe1-rsrc)) (location ?sheet fe1_exit-im1_feedentry)
+       (sideup ?sheet back) (not (location ?sheet some_feeder_tray))
+       (available fe1-rsrc) (increase (total-cost) 500)))
+ (:action ugly11ugly5ure-simplexmono-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?image - image_t) :precondition
+  (and (available ure-rsrc) (sheetsize ?sheet letter) (sideup ?sheet ?face)
+       (imagecolor ?image black) (location ?sheet ure_entry-uc2_offramp)
+       (notprintedwith ?sheet ?face black))
+  :effect
+  (and (not (available ure-rsrc)) (location ?sheet ure_exit-uc2_onramp)
+       (hasimage ?sheet ?face ?image)
+       (not (location ?sheet ure_entry-uc2_offramp))
+       (not (notprintedwith ?sheet ?face black)) (available ure-rsrc)
+       (increase (total-cost) 211849)))
+ (:action ugly12ugly6lre-simplex-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?image - image_t) :precondition
+  (and (available lre-rsrc) (sheetsize ?sheet letter) (sideup ?sheet ?face)
+       (imagecolor ?image color) (location ?sheet lre_entry-lc2_offramp)
+       (notprintedwith ?sheet ?face color))
+  :effect
+  (and (not (available lre-rsrc)) (location ?sheet lc2_onramp-lre_exit)
+       (hasimage ?sheet ?face ?image)
+       (not (location ?sheet lre_entry-lc2_offramp))
+       (not (notprintedwith ?sheet ?face color)) (available lre-rsrc)
+       (increase (total-cost) 211849)))
+ (:action ugly13ugly27lc1-mergeinvert-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?otherface - side_t) :precondition
+  (and (available lc1-rsrc) (sheetsize ?sheet letter)
+       (oppositeside ?face ?otherface) (location ?sheet lc1_onramp-lbe_exit)
+       (sideup ?sheet ?face))
+  :effect
+  (and (not (available lc1-rsrc)) (location ?sheet lc1_exit-lc2_entry)
+       (sideup ?sheet ?otherface) (not (location ?sheet lc1_onramp-lbe_exit))
+       (not (sideup ?sheet ?face)) (available lc1-rsrc)
+       (increase (total-cost) 28119)))
+ (:action ugly14ugly4uc2-merge-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?otherface - side_t) :precondition
+  (and (available uc2-rsrc) (sheetsize ?sheet letter)
+       (oppositeside ?face ?otherface) (location ?sheet ure_exit-uc2_onramp)
+       (sideup ?sheet ?face))
+  :effect
+  (and (not (available uc2-rsrc)) (location ?sheet uc2_exit-om_topentry)
+       (sideup ?sheet ?otherface) (not (location ?sheet ure_exit-uc2_onramp))
+       (not (sideup ?sheet ?face)) (available uc2-rsrc)
+       (increase (total-cost) 78919)))
+ (:action ugly15ugly11im1-movelower-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available im1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet fe1_exit-im1_feedentry))
+  :effect
+  (and (not (available im1-rsrc)) (location ?sheet im1_bottomexit-lc1_entry)
+       (not (location ?sheet fe1_exit-im1_feedentry)) (available im1-rsrc)
+       (increase (total-cost) 3088)))
+ (:action ugly16ugly12im1-loopupper-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available im1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet rh1_exit-im1_returnentry))
+  :effect
+  (and (not (available im1-rsrc)) (location ?sheet uc1_entry-im1_topexit)
+       (not (location ?sheet rh1_exit-im1_returnentry)) (available im1-rsrc)
+       (increase (total-cost) 8164)))
+ (:action ugly17ugly3lc2-mergeinvert-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available lc2-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet lc2_onramp-lre_exit))
+  :effect
+  (and (not (available lc2-rsrc)) (location ?sheet om_bottomentry-lc2_exit)
+       (not (location ?sheet lc2_onramp-lre_exit)) (available lc2-rsrc)
+       (increase (total-cost) 78919)))
+ (:action ugly18ugly8lc2-divert-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?otherface - side_t) :precondition
+  (and (available lc2-rsrc) (sheetsize ?sheet letter)
+       (oppositeside ?face ?otherface) (location ?sheet lc1_exit-lc2_entry)
+       (sideup ?sheet ?face))
+  :effect
+  (and (not (available lc2-rsrc)) (location ?sheet lre_entry-lc2_offramp)
+       (sideup ?sheet ?otherface) (not (location ?sheet lc1_exit-lc2_entry))
+       (not (sideup ?sheet ?face)) (available lc2-rsrc)
+       (increase (total-cost) 17452)))
+ (:action ugly19ugly31im1-looplower-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available im1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet rh1_exit-im1_returnentry))
+  :effect
+  (and (not (available im1-rsrc)) (location ?sheet im1_bottomexit-lc1_entry)
+       (not (location ?sheet rh1_exit-im1_returnentry)) (available im1-rsrc)
+       (increase (total-cost) 3131)))
+ (:action ugly20ugly10om-lowerreturn-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available om-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet om_bottomentry-lc2_exit))
+  :effect
+  (and (not (available om-rsrc)) (location ?sheet om_returnexit-rh2_entry)
+       (not (location ?sheet om_bottomentry-lc2_exit)) (available om-rsrc)
+       (increase (total-cost) 3568)))
+ (:action ugly21ugly14im1-moveupper-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available im1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet fe1_exit-im1_feedentry))
+  :effect
+  (and (not (available im1-rsrc)) (location ?sheet uc1_entry-im1_topexit)
+       (not (location ?sheet fe1_exit-im1_feedentry)) (available im1-rsrc)
+       (increase (total-cost) 8171)))
+ (:action ugly22ugly13lc2-merge-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?otherface - side_t) :precondition
+  (and (available lc2-rsrc) (sheetsize ?sheet letter)
+       (oppositeside ?face ?otherface) (location ?sheet lc2_onramp-lre_exit)
+       (sideup ?sheet ?face))
+  :effect
+  (and (not (available lc2-rsrc)) (location ?sheet om_bottomentry-lc2_exit)
+       (sideup ?sheet ?otherface) (not (location ?sheet lc2_onramp-lre_exit))
+       (not (sideup ?sheet ?face)) (available lc2-rsrc)
+       (increase (total-cost) 78919)))
+ (:action ugly23ugly20uc1-merge-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available uc1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet uc1_onramp-ube_exit))
+  :effect
+  (and (not (available uc1-rsrc)) (location ?sheet uc2_entry-uc1_exit)
+       (not (location ?sheet uc1_onramp-ube_exit)) (available uc1-rsrc)
+       (increase (total-cost) 27709)))
+ (:action ugly24ugly30uc2-mergeinvert-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available uc2-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet ure_exit-uc2_onramp))
+  :effect
+  (and (not (available uc2-rsrc)) (location ?sheet uc2_exit-om_topentry)
+       (not (location ?sheet ure_exit-uc2_onramp)) (available uc2-rsrc)
+       (increase (total-cost) 78919)))
+ (:action ugly25ugly36lc2-fmove-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available lc2-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet lc1_exit-lc2_entry))
+  :effect
+  (and (not (available lc2-rsrc)) (location ?sheet om_bottomentry-lc2_exit)
+       (not (location ?sheet lc1_exit-lc2_entry)) (available lc2-rsrc)
+       (increase (total-cost) 11207)))
+ (:action ugly26ugly1om-upperout-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available om-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet uc2_exit-om_topentry))
+  :effect
+  (and (not (available om-rsrc)) (location ?sheet om_outputexit-sys_entry)
+       (not (location ?sheet uc2_exit-om_topentry)) (available om-rsrc)
+       (increase (total-cost) 8037)))
+ (:action ugly27ugly16ube-simplex-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?image - image_t) :precondition
+  (and (available ube-rsrc) (sheetsize ?sheet letter) (sideup ?sheet ?face)
+       (imagecolor ?image black) (location ?sheet ube_entry-uc1_offramp)
+       (notprintedwith ?sheet ?face black))
+  :effect
+  (and (not (available ube-rsrc)) (location ?sheet uc1_onramp-ube_exit)
+       (hasimage ?sheet ?face ?image)
+       (not (location ?sheet ube_entry-uc1_offramp))
+       (not (notprintedwith ?sheet ?face black)) (available ube-rsrc)
+       (increase (total-cost) 123749)))
+ (:action ugly28ugly15uc1-mergeinvert-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?otherface - side_t) :precondition
+  (and (available uc1-rsrc) (sheetsize ?sheet letter)
+       (oppositeside ?face ?otherface) (location ?sheet uc1_onramp-ube_exit)
+       (sideup ?sheet ?face))
+  :effect
+  (and (not (available uc1-rsrc)) (location ?sheet uc2_entry-uc1_exit)
+       (sideup ?sheet ?otherface) (not (location ?sheet uc1_onramp-ube_exit))
+       (not (sideup ?sheet ?face)) (available uc1-rsrc)
+       (increase (total-cost) 28119)))
+ (:action ugly29ugly9om-lowerout-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available om-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet om_bottomentry-lc2_exit))
+  :effect
+  (and (not (available om-rsrc)) (location ?sheet om_outputexit-sys_entry)
+       (not (location ?sheet om_bottomentry-lc2_exit)) (available om-rsrc)
+       (increase (total-cost) 3251)))
+ (:action ugly30ugly22lc1-fmove-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available lc1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet im1_bottomexit-lc1_entry))
+  :effect
+  (and (not (available lc1-rsrc)) (location ?sheet lc1_exit-lc2_entry)
+       (not (location ?sheet im1_bottomexit-lc1_entry)) (available lc1-rsrc)
+       (increase (total-cost) 10890)))
+ (:action ugly31ugly7lbe-simplex-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?image - image_t) :precondition
+  (and (available lbe-rsrc) (sheetsize ?sheet letter) (sideup ?sheet ?face)
+       (imagecolor ?image black) (location ?sheet lbe_entry-lc1_offramp)
+       (notprintedwith ?sheet ?face black))
+  :effect
+  (and (not (available lbe-rsrc)) (location ?sheet lc1_onramp-lbe_exit)
+       (hasimage ?sheet ?face ?image)
+       (not (location ?sheet lbe_entry-lc1_offramp))
+       (not (notprintedwith ?sheet ?face black)) (available lbe-rsrc)
+       (increase (total-cost) 123749)))
+ (:action ugly32ugly19rh2-returnmove-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available rh2-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet om_returnexit-rh2_entry))
+  :effect
+  (and (not (available rh2-rsrc)) (location ?sheet rh1_entry-rh2_exit)
+       (not (location ?sheet om_returnexit-rh2_entry)) (available rh2-rsrc)
+       (increase (total-cost) 10869)))
+ (:action ugly33ugly23uc2-divert-letter :parameters
+  (?sheet - sheet_t ?face - side_t ?otherface - side_t) :precondition
+  (and (available uc2-rsrc) (sheetsize ?sheet letter)
+       (oppositeside ?face ?otherface) (location ?sheet uc2_entry-uc1_exit)
+       (sideup ?sheet ?face))
+  :effect
+  (and (not (available uc2-rsrc)) (location ?sheet ure_entry-uc2_offramp)
+       (sideup ?sheet ?otherface) (not (location ?sheet uc2_entry-uc1_exit))
+       (not (sideup ?sheet ?face)) (available uc2-rsrc)
+       (increase (total-cost) 17452)))
+ (:action ugly34ugly34om-upperreturn-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available om-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet uc2_exit-om_topentry))
+  :effect
+  (and (not (available om-rsrc)) (location ?sheet om_returnexit-rh2_entry)
+       (not (location ?sheet uc2_exit-om_topentry)) (available om-rsrc)
+       (increase (total-cost) 8343)))
+ (:action ugly35ugly2rh1-returnmove-letter :parameters (?sheet - sheet_t)
+  :precondition
+  (and (available rh1-rsrc) (sheetsize ?sheet letter)
+       (location ?sheet rh1_entry-rh2_exit))
+  :effect
+  (and (not (available rh1-rsrc)) (location ?sheet rh1_exit-im1_returnentry)
+       (not (location ?sheet rh1_entry-rh2_exit)) (available rh1-rsrc)
+       (increase (total-cost) 10869)))
+ (:action ugly36ugly25sys-stack-letter :parameters
+  (?sheet - sheet_t ?prevsheet - sheet_t) :precondition
+  (and (available sys-rsrc) (prevsheet ?sheet ?prevsheet)
+       (location ?prevsheet some_finisher_tray) (sheetsize ?sheet letter)
+       (location ?sheet om_outputexit-sys_entry))
+  :effect
+  (and (not (available sys-rsrc)) (location ?sheet some_finisher_tray)
+       (stackedin ?sheet sys_outputtray)
+       (not (location ?sheet om_outputexit-sys_entry)) (available sys-rsrc)
+       (increase (total-cost) 1499)))) 
