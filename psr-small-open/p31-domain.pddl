@@ -1,15557 +1,3636 @@
-(define (domain grounded-STRIPS-PSR)
-(:requirements
- :strips
- :action-costs
-)
-(:predicates
-(NOT-CLOSED-CB1)
-(UPDATED-CB1)
-(NOT-CLOSED-CB2)
-(UPDATED-CB2)
-(NOT-CLOSED-CB4)
-(UPDATED-CB4)
-(CLOSED-SD3)
-(NOT-CLOSED-CB3)
-(CLOSED-SD6)
-(CLOSED-SD8)
-(CLOSED-SD12)
-(NOT-CLOSED-SD1)
-(NOT-CLOSED-SD2)
-(NOT-CLOSED-SD4)
-(NOT-CLOSED-SD5)
-(NOT-CLOSED-SD7)
-(NOT-CLOSED-SD9)
-(NOT-CLOSED-SD10)
-(NOT-CLOSED-SD11)
-(NOT-CLOSED-SD13)
-(NOT-CLOSED-SD14)
-(NOT-CLOSED-SD15)
-(NOT-CLOSED-SD16)
-(NOT-UPDATED-CB3)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-CB2)
-(UPDATED-CB3)
-(CLOSED-SD16)
-(CLOSED-SD15)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD11)
-(CLOSED-SD10)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD5)
-(CLOSED-SD4)
-(CLOSED-SD2)
-(CLOSED-SD1)
-(CLOSED-CB1)
-(NOT-CLOSED-SD12)
-(NOT-CLOSED-SD8)
-(NOT-CLOSED-SD6)
-(NOT-CLOSED-SD3)
-(NOT-UPDATED-CB4)
-(NOT-UPDATED-CB2)
-(NOT-UPDATED-CB1)
-(GOAL-REACHED)
-(do-CLOSE_SD16-condeffs)
-(do-CLOSE_SD11-condeffs)
-(do-CLOSE_SD10-condeffs)
-(do-CLOSE_SD9-condeffs)
-(do-CLOSE_SD7-condeffs)
-(do-CLOSE_SD4-condeffs)
-(do-WAIT_CB3-condeffs)
-(do-CLOSE_SD8-condeffs)
-(do-CLOSE_SD6-condeffs)
-(do-WAIT_CB4-condeffs)
-(do-WAIT_CB2-condeffs)
-(do-normal)
-(done-0)
-(done-1)
-)
-(:functions (total-cost) - number)
-(:action REACH-GOAL-0
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-3
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-4
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-5
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-6
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-7
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-8
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-9
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-10
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-11
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-12
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-13
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-14
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-15
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-16
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-17
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-18
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-19
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-20
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-21
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-22
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-23
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-24
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-25
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-26
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-27
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-28
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-29
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-30
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD7)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-31
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB3)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-32
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB4)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-33
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-34
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-35
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-36
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-37
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-38
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-39
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-40
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-41
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-42
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-43
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-44
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-45
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-46
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-47
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-48
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-49
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-50
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-51
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-52
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-53
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-54
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-55
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-56
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-57
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-58
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-59
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-60
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-61
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-62
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD7)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-63
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB3)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-64
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB4)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-65
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-66
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-67
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-68
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-69
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-70
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-71
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-72
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-73
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-74
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-75
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-76
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-77
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-78
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-79
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-80
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-81
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-82
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-83
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-84
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-85
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-86
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-87
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-88
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-89
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-90
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-91
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-92
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-93
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-94
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD7)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-95
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB3)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-96
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB4)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-97
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-98
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-99
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-100
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-101
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-102
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-103
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-104
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-105
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-106
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-107
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-108
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-109
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-110
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-111
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-112
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-113
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-114
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-115
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-116
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-117
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-118
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-119
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-120
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-121
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-122
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-123
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-124
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-125
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-126
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD7)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-127
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB3)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-128
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB4)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-129
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-130
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-131
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-132
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-133
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-134
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-135
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-136
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-137
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-138
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-139
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-140
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-141
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-142
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-143
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-144
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-145
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-146
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-147
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-148
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-149
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-150
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-151
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-152
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-153
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-154
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-155
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-156
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-157
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-158
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD7)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-159
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB3)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-160
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB4)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-161
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-162
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-163
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-164
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-165
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-166
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-167
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-168
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-169
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-170
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-171
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-172
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-173
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-174
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-175
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-176
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-177
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-178
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-179
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-180
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-181
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-182
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-183
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-184
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-185
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-186
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-187
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-188
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD8)
-(CLOSED-SD13)
-(CLOSED-SD16)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-189
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-190
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD7)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-191
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB3)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-192
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB4)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-193
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-194
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-195
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-196
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-197
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-198
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-199
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-200
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-201
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-202
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-203
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-204
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-205
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-206
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-207
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-208
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-209
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-210
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-211
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-212
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-213
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-214
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-215
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-216
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-217
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-218
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-219
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-220
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-221
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-222
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD7)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-223
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB3)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-224
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB4)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-225
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-226
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-227
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-228
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-229
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-230
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-231
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-232
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-233
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-234
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-235
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-236
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-237
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-238
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-239
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-240
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-241
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-242
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-243
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-244
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-245
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-246
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-247
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-248
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-249
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-250
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-251
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-252
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD16)
-(CLOSED-SD13)
-(CLOSED-SD8)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-253
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-254
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD7)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-255
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-CB3)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-256
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-CB4)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-257
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-258
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-259
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-260
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-261
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-262
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-263
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-264
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-265
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-266
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-267
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-268
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-269
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-270
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-271
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-272
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-273
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-274
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-275
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-276
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-277
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-278
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-279
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-280
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-281
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-282
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-283
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-284
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-285
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-286
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD7)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-287
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB3)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-288
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB4)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-289
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-290
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-291
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-292
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-293
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-294
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-295
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-296
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-297
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-298
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-299
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-300
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-301
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-302
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-303
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-304
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-305
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-306
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-307
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-308
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-309
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-310
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-311
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-312
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-313
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-314
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-315
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-316
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-317
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-318
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD7)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-319
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB3)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-320
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB4)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-321
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-322
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-323
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-324
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-325
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-326
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-327
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-328
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-329
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-330
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-331
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-332
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-333
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-334
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-335
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-336
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-337
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-338
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-339
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-340
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-341
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-342
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-343
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-344
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-345
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-346
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-347
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-348
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-349
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-350
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD7)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-351
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB3)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-352
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB4)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-353
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-354
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-355
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-356
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-357
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-358
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-359
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-360
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-361
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-362
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-363
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-364
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-365
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-366
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-367
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-368
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-369
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-370
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-371
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-372
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-373
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-374
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-375
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-376
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-377
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-378
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-379
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-380
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-381
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-382
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD7)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-383
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB3)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-384
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB4)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-385
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-386
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-387
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-388
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-389
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-390
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-391
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-392
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-393
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-394
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-395
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-396
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-397
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-398
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-399
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-400
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-401
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-402
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-403
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-404
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-405
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-406
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-407
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-408
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-409
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-410
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-411
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-412
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-413
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-414
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD7)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-415
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB3)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-416
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB4)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-417
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-418
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-419
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-420
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-421
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-422
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-423
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-424
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-425
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-426
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-427
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-428
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-429
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-430
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-431
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-432
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-433
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-434
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-435
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-436
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-437
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-438
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-439
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-440
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-441
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-442
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-443
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-444
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD8)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-445
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-446
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD7)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-447
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB3)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-448
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-CB4)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-449
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-450
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-451
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-452
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-453
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-454
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-455
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-456
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-457
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-458
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-459
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-460
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-461
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-462
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-463
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-464
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-465
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-466
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-467
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-468
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-469
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-470
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-471
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-472
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-473
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-474
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-475
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-476
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-477
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-478
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD7)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-479
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB3)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-480
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-CB4)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-481
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-482
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-483
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-484
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-485
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-486
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-487
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-488
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-489
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-490
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-491
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-492
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-493
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-494
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD7)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-495
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-CB3)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-496
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-CB4)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-497
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-498
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-499
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-500
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-501
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-502
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-503
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-504
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-505
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-506
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-507
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-508
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-SD7)
-(CLOSED-CB4)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD16)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-509
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-510
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB3)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action REACH-GOAL-511
-:parameters ()
-:precondition
-(and
-(do-normal)
-(UPDATED-CB4)
-(UPDATED-CB3)
-(UPDATED-CB2)
-(UPDATED-CB1)
-(CLOSED-CB2)
-(CLOSED-CB4)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD9)
-(CLOSED-SD10)
-(CLOSED-SD14)
-(CLOSED-SD13)
-(CLOSED-SD15)
-)
-:effect
-(and
-(GOAL-REACHED)
-)
-)
-(:action CLOSE_SD16
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD16)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD16-condeffs)
-(CLOSED-SD16)
-(not (NOT-CLOSED-SD16))
-)
-)
-(:action CLOSE_SD16-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(CLOSED-SD11)
-(CLOSED-SD10)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action CLOSE_SD16-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(NOT-CLOSED-SD11)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD16-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(NOT-CLOSED-SD10)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD16-condeff0-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(NOT-CLOSED-SD9)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD16-condeff0-no-3
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD16-condeff0-no-4
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD16-condeff0-no-5
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(NOT-CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD16-condeff1-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(CLOSED-SD6)
-(CLOSED-SD8)
-(CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-(NOT-CLOSED-CB4)
-(not (CLOSED-CB4))
-)
-)
-(:action CLOSE_SD16-condeff1-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(NOT-CLOSED-SD6)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD16-condeff1-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD16-condeff1-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(NOT-CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD16-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD16-condeffs)
-(done-0)
-(done-1)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD16-condeffs))
-(not (done-0))
-(not (done-1))
-)
-)
-(:action CLOSE_SD15
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD15)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-SD15)
-(not (NOT-CLOSED-SD15))
-)
-)
-(:action CLOSE_SD14
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD14)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-SD14)
-(not (NOT-CLOSED-SD14))
-)
-)
-(:action CLOSE_SD13
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD13)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-SD13)
-(not (NOT-CLOSED-SD13))
-)
-)
-(:action CLOSE_SD11
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD11)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD11-condeffs)
-(CLOSED-SD11)
-(not (NOT-CLOSED-SD11))
-)
-)
-(:action CLOSE_SD11-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(CLOSED-SD10)
-(CLOSED-SD9)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action CLOSE_SD11-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(NOT-CLOSED-SD10)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD11-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(NOT-CLOSED-SD9)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD11-condeff0-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(NOT-CLOSED-SD16)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD11-condeff0-no-3
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD11-condeff0-no-4
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD11-condeff0-no-5
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(NOT-CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD11-condeff1-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(CLOSED-SD10)
-(CLOSED-SD9)
-(CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-(NOT-CLOSED-CB4)
-(not (CLOSED-CB4))
-)
-)
-(:action CLOSE_SD11-condeff1-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(NOT-CLOSED-SD10)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD11-condeff1-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(NOT-CLOSED-SD9)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD11-condeff1-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(NOT-CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD11-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD11-condeffs)
-(done-0)
-(done-1)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD11-condeffs))
-(not (done-0))
-(not (done-1))
-)
-)
-(:action CLOSE_SD10
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD10)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD10-condeffs)
-(CLOSED-SD10)
-(not (NOT-CLOSED-SD10))
-)
-)
-(:action CLOSE_SD10-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(CLOSED-SD11)
-(CLOSED-SD9)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action CLOSE_SD10-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(NOT-CLOSED-SD11)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD10-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(NOT-CLOSED-SD9)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD10-condeff0-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(NOT-CLOSED-SD16)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD10-condeff0-no-3
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD10-condeff0-no-4
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD10-condeff0-no-5
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(NOT-CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD10-condeff1-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(CLOSED-SD11)
-(CLOSED-SD9)
-(CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-(NOT-CLOSED-CB4)
-(not (CLOSED-CB4))
-)
-)
-(:action CLOSE_SD10-condeff1-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(NOT-CLOSED-SD11)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD10-condeff1-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(NOT-CLOSED-SD9)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD10-condeff1-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(NOT-CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD10-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD10-condeffs)
-(done-0)
-(done-1)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD10-condeffs))
-(not (done-0))
-(not (done-1))
-)
-)
-(:action CLOSE_SD9
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD9)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD9-condeffs)
-(CLOSED-SD9)
-(not (NOT-CLOSED-SD9))
-)
-)
-(:action CLOSE_SD9-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(CLOSED-SD11)
-(CLOSED-SD10)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action CLOSE_SD9-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(NOT-CLOSED-SD11)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD9-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(NOT-CLOSED-SD10)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD9-condeff0-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(NOT-CLOSED-SD16)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD9-condeff0-no-3
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD9-condeff0-no-4
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD9-condeff0-no-5
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(NOT-CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD9-condeff1-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(CLOSED-SD11)
-(CLOSED-SD10)
-(CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-(NOT-CLOSED-CB4)
-(not (CLOSED-CB4))
-)
-)
-(:action CLOSE_SD9-condeff1-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(NOT-CLOSED-SD11)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD9-condeff1-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(NOT-CLOSED-SD10)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD9-condeff1-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(NOT-CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD9-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD9-condeffs)
-(done-0)
-(done-1)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD9-condeffs))
-(not (done-0))
-(not (done-1))
-)
-)
-(:action CLOSE_SD7
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD7)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD7-condeffs)
-(CLOSED-SD7)
-(not (NOT-CLOSED-SD7))
-)
-)
-(:action CLOSE_SD7-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(CLOSED-SD6)
-(CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action CLOSE_SD7-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-SD6)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD7-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD7-condeff1-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(CLOSED-SD11)
-(CLOSED-SD10)
-(CLOSED-SD9)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-CB3)
-)
-:effect
-(and
-(done-1)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action CLOSE_SD7-condeff1-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-SD11)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD7-condeff1-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-SD10)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD7-condeff1-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-SD9)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD7-condeff1-no-3
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-SD16)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD7-condeff1-no-4
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD7-condeff1-no-5
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-CB3)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD7-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(done-0)
-(done-1)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD7-condeffs))
-(not (done-0))
-(not (done-1))
-)
-)
-(:action CLOSE_SD5
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD5)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-SD5)
-(not (NOT-CLOSED-SD5))
-)
-)
-(:action CLOSE_SD4
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD4)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD4-condeffs)
-(CLOSED-SD4)
-(not (NOT-CLOSED-SD4))
-)
-)
-(:action CLOSE_SD4-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD4-condeffs)
-(CLOSED-CB2)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB2)
-(not (CLOSED-CB2))
-)
-)
-(:action CLOSE_SD4-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD4-condeffs)
-(NOT-CLOSED-CB2)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD4-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD4-condeffs)
-(done-0)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD4-condeffs))
-(not (done-0))
-)
-)
-(:action CLOSE_SD2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD2)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-SD2)
-(not (NOT-CLOSED-SD2))
-)
-)
-(:action CLOSE_SD1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD1)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-SD1)
-(not (NOT-CLOSED-SD1))
-)
-)
-(:action CLOSE_CB4
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-CB4)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-CB4)
-(NOT-UPDATED-CB4)
-(not (NOT-CLOSED-CB4))
-(not (UPDATED-CB4))
-)
-)
-(:action WAIT_CB3
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-UPDATED-CB3)
-)
-:effect
-(and
-(not (do-normal))
-(do-WAIT_CB3-condeffs)
-(UPDATED-CB3)
-(not (NOT-UPDATED-CB3))
-)
-)
-(:action WAIT_CB3-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(CLOSED-SD6)
-(CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action WAIT_CB3-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(NOT-CLOSED-SD6)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action WAIT_CB3-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action WAIT_CB3-condeff1-yes
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(CLOSED-SD11)
-(CLOSED-SD10)
-(CLOSED-SD9)
-(CLOSED-SD16)
-(CLOSED-SD8)
-(CLOSED-SD7)
-)
-:effect
-(and
-(done-1)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action WAIT_CB3-condeff1-no-0
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(NOT-CLOSED-SD11)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action WAIT_CB3-condeff1-no-1
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(NOT-CLOSED-SD10)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action WAIT_CB3-condeff1-no-2
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(NOT-CLOSED-SD9)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action WAIT_CB3-condeff1-no-3
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(NOT-CLOSED-SD16)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action WAIT_CB3-condeff1-no-4
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action WAIT_CB3-condeff1-no-5
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action WAIT_CB3-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB3-condeffs)
-(done-0)
-(done-1)
-)
-:effect
-(and
-(do-normal)
-(not (do-WAIT_CB3-condeffs))
-(not (done-0))
-(not (done-1))
-)
-)
-(:action CLOSE_CB3
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-CB3)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-CB3)
-(NOT-UPDATED-CB3)
-(not (NOT-CLOSED-CB3))
-(not (UPDATED-CB3))
-)
-)
-(:action CLOSE_CB2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-CB2)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-CB2)
-(NOT-UPDATED-CB2)
-(not (NOT-CLOSED-CB2))
-(not (UPDATED-CB2))
-)
-)
-(:action CLOSE_CB1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-CB1)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-CB1)
-(NOT-UPDATED-CB1)
-(not (NOT-CLOSED-CB1))
-(not (UPDATED-CB1))
-)
-)
-(:action OPEN-SD16
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD16)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD16)
-(not (CLOSED-SD16))
-)
-)
-(:action OPEN-SD15
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD15)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD15)
-(not (CLOSED-SD15))
-)
-)
-(:action OPEN-SD14
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD14)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD14)
-(not (CLOSED-SD14))
-)
-)
-(:action OPEN-SD13
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD13)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD13)
-(not (CLOSED-SD13))
-)
-)
-(:action OPEN-SD12
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD12)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD12)
-(not (CLOSED-SD12))
-)
-)
-(:action OPEN-SD11
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD11)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD11)
-(not (CLOSED-SD11))
-)
-)
-(:action OPEN-SD10
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD10)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD10)
-(not (CLOSED-SD10))
-)
-)
-(:action OPEN-SD9
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD9)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD9)
-(not (CLOSED-SD9))
-)
-)
-(:action OPEN-SD8
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD8)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD8)
-(not (CLOSED-SD8))
-)
-)
-(:action OPEN-SD7
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD7)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD7)
-(not (CLOSED-SD7))
-)
-)
-(:action OPEN-SD6
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD6)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD6)
-(not (CLOSED-SD6))
-)
-)
-(:action OPEN-SD5
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD5)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD5)
-(not (CLOSED-SD5))
-)
-)
-(:action OPEN-SD4
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD4)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD4)
-(not (CLOSED-SD4))
-)
-)
-(:action OPEN-SD3
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD3)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD3)
-(not (CLOSED-SD3))
-)
-)
-(:action OPEN-SD2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD2)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD2)
-(not (CLOSED-SD2))
-)
-)
-(:action OPEN-SD1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD1)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-SD1)
-(not (CLOSED-SD1))
-)
-)
-(:action OPEN-CB4
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-CB4)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-CB4)
-(not (CLOSED-CB4))
-)
-)
-(:action OPEN-CB3
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-CB3)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action OPEN-CB2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-CB2)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-CB2)
-(not (CLOSED-CB2))
-)
-)
-(:action OPEN-CB1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-CB1)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(increase (total-cost) 1)
-(NOT-CLOSED-CB1)
-(not (CLOSED-CB1))
-)
-)
-(:action CLOSE_SD12
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD12)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-SD12)
-(not (NOT-CLOSED-SD12))
-)
-)
-(:action CLOSE_SD8
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD8)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD8-condeffs)
-(CLOSED-SD8)
-(not (NOT-CLOSED-SD8))
-)
-)
-(:action CLOSE_SD8-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(CLOSED-SD11)
-(CLOSED-SD10)
-(CLOSED-SD9)
-(CLOSED-SD16)
-(CLOSED-SD7)
-(CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action CLOSE_SD8-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-SD11)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD8-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-SD10)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD8-condeff0-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-SD9)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD8-condeff0-no-3
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-SD16)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD8-condeff0-no-4
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD8-condeff0-no-5
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD8-condeff1-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(CLOSED-SD6)
-(CLOSED-SD16)
-(CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-(NOT-CLOSED-CB4)
-(not (CLOSED-CB4))
-)
-)
-(:action CLOSE_SD8-condeff1-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-SD6)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD8-condeff1-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-SD16)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD8-condeff1-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD8-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(done-0)
-(done-1)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD8-condeffs))
-(not (done-0))
-(not (done-1))
-)
-)
-(:action CLOSE_SD6
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD6)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD6-condeffs)
-(CLOSED-SD6)
-(not (NOT-CLOSED-SD6))
-)
-)
-(:action CLOSE_SD6-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD6-condeffs)
-(CLOSED-SD7)
-(CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB3)
-(not (CLOSED-CB3))
-)
-)
-(:action CLOSE_SD6-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD6-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD6-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD6-condeffs)
-(NOT-CLOSED-CB3)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD6-condeff1-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD6-condeffs)
-(CLOSED-SD8)
-(CLOSED-SD16)
-(CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-(NOT-CLOSED-CB4)
-(not (CLOSED-CB4))
-)
-)
-(:action CLOSE_SD6-condeff1-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD6-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD6-condeff1-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD6-condeffs)
-(NOT-CLOSED-SD16)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD6-condeff1-no-2
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD6-condeffs)
-(NOT-CLOSED-CB4)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action CLOSE_SD6-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD6-condeffs)
-(done-0)
-(done-1)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD6-condeffs))
-(not (done-0))
-(not (done-1))
-)
-)
-(:action CLOSE_SD3
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD3)
-(UPDATED-CB1)
-(UPDATED-CB2)
-(UPDATED-CB3)
-(UPDATED-CB4)
-)
-:effect
-(and
-(CLOSED-SD3)
-(not (NOT-CLOSED-SD3))
-)
-)
-(:action WAIT_CB4
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-UPDATED-CB4)
-)
-:effect
-(and
-(not (do-normal))
-(do-WAIT_CB4-condeffs)
-(UPDATED-CB4)
-(not (NOT-UPDATED-CB4))
-)
-)
-(:action WAIT_CB4-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB4-condeffs)
-(CLOSED-SD11)
-(CLOSED-SD10)
-(CLOSED-SD9)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB4)
-(not (CLOSED-CB4))
-)
-)
-(:action WAIT_CB4-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB4-condeffs)
-(NOT-CLOSED-SD11)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action WAIT_CB4-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB4-condeffs)
-(NOT-CLOSED-SD10)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action WAIT_CB4-condeff0-no-2
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB4-condeffs)
-(NOT-CLOSED-SD9)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action WAIT_CB4-condeff1-yes
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB4-condeffs)
-(CLOSED-SD6)
-(CLOSED-SD8)
-(CLOSED-SD16)
-)
-:effect
-(and
-(done-1)
-(NOT-CLOSED-CB4)
-(not (CLOSED-CB4))
-)
-)
-(:action WAIT_CB4-condeff1-no-0
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB4-condeffs)
-(NOT-CLOSED-SD6)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action WAIT_CB4-condeff1-no-1
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB4-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action WAIT_CB4-condeff1-no-2
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB4-condeffs)
-(NOT-CLOSED-SD16)
-)
-:effect
-(and
-(done-1)
-)
-)
-(:action WAIT_CB4-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB4-condeffs)
-(done-0)
-(done-1)
-)
-:effect
-(and
-(do-normal)
-(not (do-WAIT_CB4-condeffs))
-(not (done-0))
-(not (done-1))
-)
-)
-(:action WAIT_CB2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-UPDATED-CB2)
-)
-:effect
-(and
-(not (do-normal))
-(do-WAIT_CB2-condeffs)
-(UPDATED-CB2)
-(not (NOT-UPDATED-CB2))
-)
-)
-(:action WAIT_CB2-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB2-condeffs)
-(CLOSED-SD4)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB2)
-(not (CLOSED-CB2))
-)
-)
-(:action WAIT_CB2-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB2-condeffs)
-(NOT-CLOSED-SD4)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action WAIT_CB2-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB2-condeffs)
-(done-0)
-)
-:effect
-(and
-(do-normal)
-(not (do-WAIT_CB2-condeffs))
-(not (done-0))
-)
-)
-(:action WAIT_CB1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-UPDATED-CB1)
-)
-:effect
-(and
-(NOT-CLOSED-CB1)
-(UPDATED-CB1)
-(not (CLOSED-CB1))
-(not (NOT-UPDATED-CB1))
-)
-)
-)
+
+(define (domain grounded-strips-psr) (:requirements :strips :action-costs)
+ (:predicates (updated-cb4) (closed-sd4) (not-updated-cb2) (do-normal)
+  (not-closed-sd16) (not-closed-sd8) (do-close_sd4-condeffs) (not-closed-sd1)
+  (do-wait_cb3-condeffs) (closed-sd16) (closed-sd9) (do-close_sd16-condeffs)
+  (closed-sd6) (not-closed-cb1) (closed-cb3) (not-closed-sd2) (closed-sd10)
+  (done-1) (updated-cb1) (not-closed-sd10) (not-closed-sd6)
+  (do-close_sd7-condeffs) (not-closed-cb4) (goal-reached) (done-0) (closed-sd8)
+  (closed-cb4) (not-updated-cb1) (closed-sd5) (do-close_sd8-condeffs)
+  (not-closed-sd9) (closed-sd13) (not-closed-sd15) (not-updated-cb4)
+  (updated-cb3) (do-wait_cb2-condeffs) (not-closed-sd14) (closed-sd1)
+  (do-close_sd10-condeffs) (not-closed-sd4) (not-closed-sd7) (closed-sd7)
+  (do-close_sd11-condeffs) (closed-sd3) (not-closed-sd13)
+  (do-close_sd9-condeffs) (not-closed-cb2) (closed-sd12) (not-updated-cb3)
+  (not-closed-sd11) (closed-cb1) (closed-sd11) (not-closed-sd5)
+  (not-closed-sd3) (closed-sd2) (closed-cb2) (not-closed-sd12)
+  (do-wait_cb4-condeffs) (do-close_sd6-condeffs) (closed-sd15) (updated-cb2)
+  (closed-sd14) (not-closed-cb3))
+ (:functions (total-cost) - number)
+ (:action ugly1ugly172ugly464reach-goal-290 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly2ugly148ugly187reach-goal-482 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly3ugly268ugly150reach-goal-255 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13) (closed-cb3)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly4ugly146ugly469reach-goal-140 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly5ugly525ugly104reach-goal-211 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly6ugly313ugly538close_sd16-condeff0-no-3 :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (not-closed-sd8)) :effect
+  (and (done-0)))
+ (:action ugly7ugly262ugly255reach-goal-448 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb4) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly8ugly416ugly429reach-goal-251 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly9ugly369ugly244reach-goal-151 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly10ugly634ugly263reach-goal-298 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly11ugly100ugly654reach-goal-181 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly12ugly383ugly86close_sd16-condeff1-yes :parameters ()
+  :precondition
+  (and (do-close_sd16-condeffs) (closed-sd6) (closed-sd8) (closed-cb4)) :effect
+  (and (done-1) (not-closed-cb4) (not (closed-cb4))))
+ (:action ugly13ugly195ugly529reach-goal-460 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly14ugly122ugly222wait_cb2-endof-condeffs :parameters ()
+  :precondition (and (do-wait_cb2-condeffs) (done-0)) :effect
+  (and (do-normal) (not (do-wait_cb2-condeffs)) (not (done-0))))
+ (:action ugly15ugly54ugly111reach-goal-395 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly16ugly32ugly340close_sd9-condeff0-no-1 :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (not-closed-sd10)) :effect
+  (and (done-0)))
+ (:action ugly17ugly470ugly392reach-goal-89 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly18ugly325ugly322reach-goal-216 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly19ugly355ugly287reach-goal-332 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly20ugly524ugly531reach-goal-336 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly21ugly233ugly311reach-goal-193 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly22ugly158ugly175reach-goal-242 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly23ugly361ugly372reach-goal-352 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-cb4) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly24ugly2ugly148reach-goal-186 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly25ugly471ugly225reach-goal-376 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly26ugly381ugly75reach-goal-299 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly27ugly480ugly220reach-goal-170 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly28ugly293ugly394reach-goal-187 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly29ugly324ugly343reach-goal-452 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly30ugly116ugly49reach-goal-77 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly31ugly174ugly11reach-goal-99 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly32ugly340ugly558reach-goal-13 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly33ugly605ugly599reach-goal-263 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly34ugly80ugly460reach-goal-440 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly35ugly318ugly596wait_cb4 :parameters () :precondition
+  (and (do-normal) (not-updated-cb4)) :effect
+  (and (not (do-normal)) (do-wait_cb4-condeffs) (updated-cb4)
+       (not (not-updated-cb4))))
+ (:action ugly36ugly494ugly156reach-goal-73 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly37ugly551ugly4reach-goal-145 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly38ugly144ugly306reach-goal-476 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd8) (closed-sd16) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly39ugly203ugly153close_sd10-condeff1-no-2 :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (not-closed-cb4)) :effect
+  (and (done-1)))
+ (:action ugly40ugly151ugly370reach-goal-59 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly41ugly371ugly164close_sd11-condeff0-no-4 :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (not-closed-sd7)) :effect
+  (and (done-0)))
+ (:action ugly42ugly260ugly45reach-goal-357 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly43ugly192ugly432reach-goal-293 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly44ugly595ugly472reach-goal-475 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly45ugly358ugly631reach-goal-276 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly46ugly522ugly196reach-goal-220 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd8) (closed-sd16) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly47ugly272ugly67reach-goal-422 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly48ugly58ugly653close_sd3 :parameters () :precondition
+  (and (do-normal) (not-closed-sd3) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (closed-sd3) (not (not-closed-sd3))))
+ (:action ugly49ugly78ugly592reach-goal-477 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly50ugly345ugly388reach-goal-453 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly51ugly642ugly29reach-goal-323 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly52ugly574ugly389reach-goal-334 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly53ugly587ugly536reach-goal-123 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly54ugly111ugly396close_sd4 :parameters () :precondition
+  (and (do-normal) (not-closed-sd4) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (not (do-normal)) (do-close_sd4-condeffs) (closed-sd4)
+       (not (not-closed-sd4))))
+ (:action ugly55ugly121ugly61reach-goal-268 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly56ugly376ugly573reach-goal-424 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly57ugly604ugly231reach-goal-164 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly58ugly653ugly646reach-goal-36 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly59ugly282ugly216reach-goal-390 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly60ugly474ugly418close_sd8-condeff0-no-4 :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (not-closed-sd7)) :effect
+  (and (done-0)))
+ (:action ugly61ugly269ugly193reach-goal-72 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly62ugly41ugly371reach-goal-163 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly63ugly641ugly347reach-goal-260 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly64ugly304ugly360reach-goal-50 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly65ugly386ugly258close_sd9-condeff0-no-0 :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (not-closed-sd11)) :effect
+  (and (done-0)))
+ (:action ugly66ugly205ugly159reach-goal-67 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly67ugly423ugly302reach-goal-238 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly68ugly157ugly64reach-goal-303 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly69ugly103ugly276reach-goal-363 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly70ugly169ugly181reach-goal-240 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly71ugly564ugly257close_sd12 :parameters () :precondition
+  (and (do-normal) (not-closed-sd12) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (closed-sd12) (not (not-closed-sd12))))
+ (:action ugly72ugly656ugly143close_sd9 :parameters () :precondition
+  (and (do-normal) (not-closed-sd9) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (not (do-normal)) (do-close_sd9-condeffs) (closed-sd9)
+       (not (not-closed-sd9))))
+ (:action ugly73ugly569ugly586reach-goal-405 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly74ugly21ugly233reach-goal-310 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly75ugly300ugly399reach-goal-87 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly76ugly16ugly32reach-goal-339 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly77ugly385ugly223reach-goal-494 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly78ugly592ugly478reach-goal-46 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly79ugly659ugly155reach-goal-203 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly80ugly460ugly441reach-goal-478 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd7) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly81ugly211ugly83reach-goal-297 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly82ugly154ugly404wait_cb1 :parameters () :precondition
+  (and (do-normal) (not-updated-cb1)) :effect
+  (and (not-closed-cb1) (updated-cb1) (not (closed-cb1))
+       (not (not-updated-cb1))))
+ (:action ugly83ugly298ugly119close_sd16-condeff0-no-4 :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (not-closed-sd7)) :effect
+  (and (done-0)))
+ (:action ugly84ugly527ugly320reach-goal-274 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly85ugly434ugly613reach-goal-32 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-cb4) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly86ugly521ugly655close_sd6-condeff1-no-2 :parameters ()
+  :precondition (and (do-close_sd6-condeffs) (not-closed-cb4)) :effect
+  (and (done-1)))
+ (:action ugly87ugly102ugly537reach-goal-500 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly88ugly500ugly69reach-goal-102 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly89ugly651ugly215close_sd7-condeff1-no-3 :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (not-closed-sd16)) :effect
+  (and (done-1)))
+ (:action ugly90ugly540ugly9reach-goal-368 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly91ugly514ugly249reach-goal-302 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly92ugly140ugly18reach-goal-324 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly93ugly289ugly520wait_cb3-condeff1-no-0 :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (not-closed-sd11)) :effect
+  (and (done-1)))
+ (:action ugly94ugly342ugly366reach-goal-200 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly95ugly639ugly577reach-goal-45 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly96ugly253ugly422reach-goal-457 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly97ugly457ugly427reach-goal-41 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly98ugly348ugly612reach-goal-201 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly99ugly162ugly451reach-goal-472 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly100ugly654ugly182close_sd16-condeff0-no-2 :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (not-closed-sd9)) :effect
+  (and (done-0)))
+ (:action ugly101ugly285ugly89wait_cb4-condeff0-no-2 :parameters ()
+  :precondition (and (do-wait_cb4-condeffs) (not-closed-sd9)) :effect
+  (and (done-0)))
+ (:action ugly102ugly537ugly501reach-goal-361 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly103ugly276ugly364reach-goal-122 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly104ugly212ugly359reach-goal-507 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly105ugly625ugly485reach-goal-444 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd14) (closed-sd8) (closed-sd13) (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly106ugly603ugly114reach-goal-446 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd7) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly107ugly543ugly565close_sd16-condeff0-no-1 :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (not-closed-sd10)) :effect
+  (and (done-0)))
+ (:action ugly108ugly528ugly570reach-goal-198 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly109ugly542ugly234reach-goal-22 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly110ugly462ugly25reach-goal-470 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly111ugly396ugly581reach-goal-197 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly112ugly446ugly17reach-goal-469 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly113ugly615ugly463reach-goal-414 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd7) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly114ugly447ugly55reach-goal-120 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly115ugly163ugly280reach-goal-399 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly116ugly49ugly78wait_cb3-condeff1-yes :parameters () :precondition
+  (and (do-wait_cb3-condeffs) (closed-sd11) (closed-sd10) (closed-sd9)
+       (closed-sd16) (closed-sd8) (closed-sd7))
+  :effect (and (done-1) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly117ugly643ugly142reach-goal-109 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly118ugly173ugly648reach-goal-98 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly119ugly519ugly450reach-goal-129 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly120ugly417ugly583reach-goal-436 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly121ugly61ugly269reach-goal-192 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb4) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly122ugly222ugly660wait_cb3-condeff0-no-1 :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (not-closed-sd7)) :effect
+  (and (done-0)))
+ (:action ugly123ugly12ugly383reach-goal-85 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly124ugly309ugly84close_sd14 :parameters () :precondition
+  (and (do-normal) (not-closed-sd14) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (closed-sd14) (not (not-closed-sd14))))
+ (:action ugly125ugly127ugly351close_sd6-condeff0-yes :parameters ()
+  :precondition (and (do-close_sd6-condeffs) (closed-sd7) (closed-cb3)) :effect
+  (and (done-0) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly126ugly62ugly41reach-goal-370 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly127ugly351ugly638reach-goal-497 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly128ugly475ugly30reach-goal-115 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly129ugly626ugly191open-sd10 :parameters () :precondition
+  (and (do-normal) (closed-sd10) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (increase (total-cost) 1) (not-closed-sd10) (not (closed-sd10))))
+ (:action ugly130ugly126ugly62reach-goal-40 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly131ugly326ugly511reach-goal-205 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly132ugly436ugly254reach-goal-111 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly133ugly409ugly443close_sd11-condeff0-no-2 :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (not-closed-sd16)) :effect
+  (and (done-0)))
+ (:action ugly134ugly106ugly603reach-goal-113 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly135ugly395ugly76reach-goal-15 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly136ugly636ugly329reach-goal-423 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly137ugly297ugly271reach-goal-335 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly138ugly94ugly342reach-goal-365 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly139ugly492ugly250wait_cb3-condeff0-no-0 :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (not-closed-sd6)) :effect
+  (and (done-0)))
+ (:action ugly140ugly18ugly325reach-goal-321 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly141ugly137ugly297reach-goal-270 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly142ugly110ugly462reach-goal-24 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly143ugly555ugly134reach-goal-105 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly144ugly306ugly477reach-goal-137 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly145ugly265ugly410reach-goal-27 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly146ugly469ugly141reach-goal-136 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly147ugly589ugly633close_sd5 :parameters () :precondition
+  (and (do-normal) (not-closed-sd5) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (closed-sd5) (not (not-closed-sd5))))
+ (:action ugly148ugly187ugly483reach-goal-55 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly149ugly608ugly658reach-goal-333 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly150ugly256ugly601reach-goal-503 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly151ugly370ugly60reach-goal-473 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly152ugly190ugly562reach-goal-14 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly153ugly553ugly572reach-goal-466 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly154ugly404ugly661reach-goal-95 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-cb3) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly155ugly204ugly330reach-goal-84 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly156ugly74ugly21reach-goal-232 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly157ugly64ugly304reach-goal-359 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly158ugly175ugly243reach-goal-130 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly159ugly68ugly157reach-goal-63 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb3) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly160ugly466ugly352reach-goal-277 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly161ugly652ugly120reach-goal-416 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-cb4) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly162ugly451ugly473reach-goal-285 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly163ugly280ugly400reach-goal-374 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly164ugly535ugly397open-sd3 :parameters () :precondition
+  (and (do-normal) (closed-sd3) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-sd3) (not (closed-sd3))))
+ (:action ugly165ugly242ugly77reach-goal-384 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb4) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly166ugly559ugly305reach-goal-250 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly167ugly218ugly455reach-goal-306 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly168ugly267ugly546reach-goal-429 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly169ugly181ugly241reach-goal-287 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-cb3) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly170ugly512ugly628open-cb3 :parameters () :precondition
+  (and (do-normal) (closed-cb3) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly171ugly439ugly374wait_cb4-condeff0-no-0 :parameters ()
+  :precondition (and (do-wait_cb4-condeffs) (not-closed-sd11)) :effect
+  (and (done-0)))
+ (:action ugly172ugly464ugly291reach-goal-96 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-cb4) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly173ugly648ugly99reach-goal-161 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly174ugly11ugly100wait_cb4-condeff1-no-1 :parameters ()
+  :precondition (and (do-wait_cb4-condeffs) (not-closed-sd8)) :effect
+  (and (done-1)))
+ (:action ugly175ugly243ugly131reach-goal-325 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly176ugly365ugly618reach-goal-402 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly177ugly598ugly459reach-goal-378 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly178ugly621ugly594reach-goal-291 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly179ugly149ugly608wait_cb2-condeff0-yes :parameters ()
+  :precondition (and (do-wait_cb2-condeffs) (closed-sd4)) :effect
+  (and (done-0) (not-closed-cb2) (not (closed-cb2))))
+ (:action ugly180ugly63ugly641reach-goal-346 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly181ugly241ugly288reach-goal-269 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly182ugly517ugly113open-sd4 :parameters () :precondition
+  (and (do-normal) (closed-sd4) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-sd4) (not (closed-sd4))))
+ (:action ugly183ugly6ugly313close_sd11-condeff1-no-0 :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (not-closed-sd10)) :effect
+  (and (done-1)))
+ (:action ugly184ugly95ugly639close_sd7-condeff1-no-4 :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (not-closed-sd8)) :effect
+  (and (done-1)))
+ (:action ugly185ugly488ugly279close_sd6-condeff0-no-1 :parameters ()
+  :precondition (and (do-close_sd6-condeffs) (not-closed-cb3)) :effect
+  (and (done-0)))
+ (:action ugly186ugly578ugly420wait_cb3-condeff1-no-4 :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (not-closed-sd8)) :effect
+  (and (done-1)))
+ (:action ugly187ugly483ugly56reach-goal-375 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly188ugly489ugly402reach-goal-345 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly189ugly266ugly585close_sd10-condeff1-no-1 :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (not-closed-sd9)) :effect
+  (and (done-1)))
+ (:action ugly190ugly562ugly15reach-goal-53 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly191ugly609ugly183reach-goal-5 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly192ugly432ugly294reach-goal-47 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly193ugly73ugly569close_sd1 :parameters () :precondition
+  (and (do-normal) (not-closed-sd1) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (closed-sd1) (not (not-closed-sd1))))
+ (:action ugly194ugly281ugly398close_sd7 :parameters () :precondition
+  (and (do-normal) (not-closed-sd7) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (not (do-normal)) (do-close_sd7-condeffs) (closed-sd7)
+       (not (not-closed-sd7))))
+ (:action ugly195ugly529ugly461reach-goal-294 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly196ugly221ugly26reach-goal-380 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd14) (closed-sd16) (closed-sd8) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly197ugly607ugly317open-sd9 :parameters () :precondition
+  (and (do-normal) (closed-sd9) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-sd9) (not (closed-sd9))))
+ (:action ugly198ugly401ugly507reach-goal-70 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly199ugly87ugly102close_sd11-condeff1-yes :parameters ()
+  :precondition
+  (and (do-close_sd11-condeffs) (closed-sd10) (closed-sd9) (closed-cb4))
+  :effect (and (done-1) (not-closed-cb4) (not (closed-cb4))))
+ (:action ugly200ugly382ugly316close_sd10-condeff0-no-4 :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (not-closed-sd7)) :effect
+  (and (done-0)))
+ (:action ugly201ugly235ugly105close_sd8-condeff0-yes :parameters ()
+  :precondition
+  (and (do-close_sd8-condeffs) (closed-sd11) (closed-sd10) (closed-sd9)
+       (closed-sd16) (closed-sd7) (closed-cb3))
+  :effect (and (done-0) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly202ugly273ugly229reach-goal-372 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly203ugly153ugly553close_sd7-condeff1-yes :parameters ()
+  :precondition
+  (and (do-close_sd7-condeffs) (closed-sd11) (closed-sd10) (closed-sd9)
+       (closed-sd16) (closed-sd8) (closed-cb3))
+  :effect (and (done-1) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly204ugly330ugly85reach-goal-433 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly205ugly159ugly68reach-goal-156 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd8) (closed-sd16) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly206ugly53ugly587close_sd11-condeff0-no-5 :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (not-closed-cb3)) :effect
+  (and (done-0)))
+ (:action ugly207ugly575ugly496wait_cb3 :parameters () :precondition
+  (and (do-normal) (not-updated-cb3)) :effect
+  (and (not (do-normal)) (do-wait_cb3-condeffs) (updated-cb3)
+       (not (not-updated-cb3))))
+ (:action ugly208ugly390ugly35reach-goal-317 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly209ugly93ugly289close_sd16-condeff0-no-5 :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (not-closed-cb3)) :effect
+  (and (done-0)))
+ (:action ugly210ugly503ugly566close_sd11-condeff0-no-1 :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (not-closed-sd9)) :effect
+  (and (done-0)))
+ (:action ugly211ugly83ugly298reach-goal-118 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly212ugly359ugly508reach-goal-443 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly213ugly228ugly107close_sd10-condeff0-yes :parameters ()
+  :precondition
+  (and (do-close_sd10-condeffs) (closed-sd11) (closed-sd9) (closed-sd16)
+       (closed-sd8) (closed-sd7) (closed-cb3))
+  :effect (and (done-0) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly214ugly230ugly499reach-goal-100 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly215ugly576ugly442close_sd8 :parameters () :precondition
+  (and (do-normal) (not-closed-sd8) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (not (do-normal)) (do-close_sd8-condeffs) (closed-sd8)
+       (not (not-closed-sd8))))
+ (:action ugly216ugly391ugly248close_sd10-condeff0-no-3 :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (not-closed-sd8)) :effect
+  (and (done-0)))
+ (:action ugly217ugly160ugly466reach-goal-351 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-cb3) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly218ugly455ugly307reach-goal-176 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly219ugly560ugly31reach-goal-173 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly220ugly171ugly439reach-goal-373 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly221ugly26ugly381reach-goal-74 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly222ugly660ugly591close_sd6-endof-condeffs :parameters ()
+  :precondition (and (do-close_sd6-condeffs) (done-0) (done-1)) :effect
+  (and (do-normal) (not (do-close_sd6-condeffs)) (not (done-0))
+       (not (done-1))))
+ (:action ugly223ugly495ugly36reach-goal-493 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly224ugly34ugly80reach-goal-459 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly225ugly377ugly328reach-goal-7 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly226ugly207ugly575reach-goal-495 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly227ugly378ugly7reach-goal-261 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly228ugly107ugly543close_sd9-condeff1-no-1 :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (not-closed-sd10)) :effect
+  (and (done-1)))
+ (:action ugly229ugly373ugly413reach-goal-348 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd8) (closed-sd16) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly230ugly499ugly101reach-goal-284 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd8) (closed-sd16) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly231ugly165ugly242reach-goal-76 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly232ugly481ugly3reach-goal-267 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly233ugly311ugly194reach-goal-280 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly234ugly23ugly361reach-goal-371 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly235ugly105ugly625reach-goal-484 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly236ugly66ugly205reach-goal-158 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd7) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly237ugly226ugly207close_sd7-condeff1-no-2 :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (not-closed-sd9)) :effect
+  (and (done-1)))
+ (:action ugly238ugly482ugly246close_sd10-endof-condeffs :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (done-0) (done-1)) :effect
+  (and (do-normal) (not (do-close_sd10-condeffs)) (not (done-0))
+       (not (done-1))))
+ (:action ugly239ugly611ugly10close_sd8-condeff1-no-1 :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (not-closed-sd16)) :effect
+  (and (done-1)))
+ (:action ugly240ugly129ugly626reach-goal-190 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd7) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly241ugly288ugly270close_sd16-condeff0-no-0 :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (not-closed-sd11)) :effect
+  (and (done-0)))
+ (:action ugly242ugly77ugly385reach-goal-222 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd7) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly243ugly131ugly326reach-goal-510 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13) (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly244ugly152ugly190close_sd9-condeff0-no-5 :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (not-closed-cb3)) :effect
+  (and (done-0)))
+ (:action ugly245ugly541ugly92reach-goal-139 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly246ugly554ugly493reach-goal-246 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly247ugly82ugly154reach-goal-403 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly248ugly547ugly145reach-goal-264 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly249ugly303ugly465reach-goal-26 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly250ugly590ugly161wait_cb4-condeff1-yes :parameters ()
+  :precondition
+  (and (do-wait_cb4-condeffs) (closed-sd6) (closed-sd8) (closed-sd16)) :effect
+  (and (done-1) (not-closed-cb4) (not (closed-cb4))))
+ (:action ugly251ugly539ugly356reach-goal-138 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly252ugly545ugly544reach-goal-183 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly253ugly422ugly458reach-goal-439 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly254ugly112ugly446reach-goal-16 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly255ugly449ugly510reach-goal-218 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly256ugly601ugly504close_cb1 :parameters () :precondition
+  (and (do-normal) (not-closed-cb1) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (closed-cb1) (not-updated-cb1) (not (not-closed-cb1))
+       (not (updated-cb1))))
+ (:action ugly257ugly623ugly20close_sd16-condeff1-no-2 :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (not-closed-cb4)) :effect
+  (and (done-1)))
+ (:action ugly258ugly557ugly214reach-goal-229 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly259ugly170ugly512close_sd8-condeff0-no-2 :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (not-closed-sd9)) :effect
+  (and (done-0)))
+ (:action ugly260ugly45ugly358close_sd8-condeff0-no-5 :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (not-closed-cb3)) :effect
+  (and (done-0)))
+ (:action ugly261ugly147ugly589close_sd8-condeff1-no-0 :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (not-closed-sd6)) :effect
+  (and (done-1)))
+ (:action ugly262ugly255ugly449reach-goal-509 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly263ugly299ugly315reach-goal-188 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd14) (closed-sd8) (closed-sd13) (closed-sd16)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly264ugly490ugly526reach-goal-447 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb3) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly265ugly410ugly28reach-goal-292 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly266ugly585ugly552reach-goal-108 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly267ugly546ugly430reach-goal-485 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly268ugly150ugly256close_cb2 :parameters () :precondition
+  (and (do-normal) (not-closed-cb2) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (closed-cb2) (not-updated-cb2) (not (not-closed-cb2))
+       (not (updated-cb2))))
+ (:action ugly269ugly193ugly73close_sd7-condeff0-yes :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (closed-sd6) (closed-cb3)) :effect
+  (and (done-0) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly270ugly515ugly259reach-goal-169 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly271ugly336ugly579reach-goal-404 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly272ugly67ugly423reach-goal-301 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly273ugly229ugly373reach-goal-412 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd8) (closed-sd16) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly274ugly224ugly34reach-goal-79 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly275ugly180ugly63close_sd6-condeff1-yes :parameters ()
+  :precondition
+  (and (do-close_sd6-condeffs) (closed-sd8) (closed-sd16) (closed-cb4)) :effect
+  (and (done-1) (not-closed-cb4) (not (closed-cb4))))
+ (:action ugly276ugly364ugly123reach-goal-11 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly277ugly1ugly172reach-goal-463 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly278ugly484ugly584reach-goal-39 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly279ugly640ugly513reach-goal-116 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly280ugly400ugly375reach-goal-175 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly281ugly398ugly568close_sd8-condeff0-no-1 :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (not-closed-sd10)) :effect
+  (and (done-0)))
+ (:action ugly282ugly216ugly391reach-goal-247 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly283ugly115ugly163reach-goal-279 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly284ugly549ugly582reach-goal-196 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly285ugly89ugly651reach-goal-214 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly286ugly550ugly283reach-goal-114 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly287ugly333ugly332reach-goal-131 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly288ugly270ugly515reach-goal-258 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly289ugly520ugly593reach-goal-337 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly290ugly50ugly345reach-goal-387 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly291ugly97ugly457reach-goal-426 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly292ugly319ugly629reach-goal-64 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb4) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly293ugly394ugly188reach-goal-488 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly294ugly48ugly58wait_cb4-condeff1-no-0 :parameters ()
+  :precondition (and (do-wait_cb4-condeffs) (not-closed-sd6)) :effect
+  (and (done-1)))
+ (:action ugly295ugly213ugly228reach-goal-106 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly296ugly567ugly357reach-goal-235 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly297ugly271ugly336close_sd7-endof-condeffs :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (done-0) (done-1)) :effect
+  (and (do-normal) (not (do-close_sd7-condeffs)) (not (done-0))
+       (not (done-1))))
+ (:action ugly298ugly119ugly519reach-goal-449 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly299ugly315ugly189reach-goal-265 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly300ugly399ugly88reach-goal-499 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly301ugly505ugly468close_sd8-condeff1-no-2 :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (not-closed-cb4)) :effect
+  (and (done-1)))
+ (:action ugly302ugly239ugly611reach-goal-9 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly303ugly465ugly27reach-goal-479 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-cb3) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly304ugly360ugly51close_sd6-condeff1-no-0 :parameters ()
+  :precondition (and (do-close_sd6-condeffs) (not-closed-sd8)) :effect
+  (and (done-1)))
+ (:action ugly305ugly251ugly539reach-goal-355 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly306ugly477ugly138reach-goal-93 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly307ugly177ugly598reach-goal-458 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly308ugly323ugly308reach-goal-322 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly309ugly84ugly527reach-goal-319 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb3) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly310ugly487ugly530reach-goal-231 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly311ugly194ugly281reach-goal-397 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly312ugly133ugly409reach-goal-442 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly313ugly538ugly518reach-goal-184 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly314ugly368ugly456reach-goal-505 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly315ugly189ugly266close_sd2 :parameters () :precondition
+  (and (do-normal) (not-closed-sd2) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (closed-sd2) (not (not-closed-sd2))))
+ (:action ugly316ugly548ugly509reach-goal-362 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly317ugly610ugly380reach-goal-127 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb3) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly318ugly596ugly647reach-goal-69 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly319ugly629ugly65reach-goal-385 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly320ugly275ugly180reach-goal-62 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd7) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly321ugly200ugly382reach-goal-315 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly322ugly217ugly160reach-goal-465 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly323ugly308ugly323reach-goal-307 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly324ugly343ugly453close_sd9-condeff0-yes :parameters ()
+  :precondition
+  (and (do-close_sd9-condeffs) (closed-sd11) (closed-sd10) (closed-sd16)
+       (closed-sd8) (closed-sd7) (closed-cb3))
+  :effect (and (done-0) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly325ugly322ugly217reach-goal-159 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-cb3) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly326ugly511ugly206reach-goal-52 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly327ugly433ugly419reach-goal-12 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly328ugly8ugly416reach-goal-428 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly329ugly424ugly393reach-goal-38 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly330ugly85ugly434open-sd6 :parameters () :precondition
+  (and (do-normal) (closed-sd6) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-sd6) (not (closed-sd6))))
+ (:action ugly331ugly208ugly390reach-goal-34 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly332ugly132ugly436reach-goal-253 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly333ugly332ugly132reach-goal-435 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly334ugly344ugly523reach-goal-178 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly335ugly136ugly636reach-goal-328 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly336ugly579ugly405open-sd13 :parameters () :precondition
+  (and (do-normal) (closed-sd13) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (increase (total-cost) 1) (not-closed-sd13) (not (closed-sd13))))
+ (:action ugly337ugly19ugly355reach-goal-286 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd7) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly338ugly166ugly559reach-goal-304 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly339ugly72ugly656reach-goal-142 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly340ugly558ugly14reach-goal-121 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly341ugly331ugly208reach-goal-389 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly342ugly366ugly201reach-goal-234 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly343ugly453ugly556reach-goal-386 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly344ugly523ugly179reach-goal-148 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly345ugly388ugly454reach-goal-90 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly346ugly5ugly525reach-goal-103 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly347ugly261ugly147wait_cb3-condeff0-yes :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (closed-sd6) (closed-sd7)) :effect
+  (and (done-0) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly348ugly612ugly202reach-goal-272 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly349ugly339ugly72wait_cb4-endof-condeffs :parameters ()
+  :precondition (and (do-wait_cb4-condeffs) (done-0) (done-1)) :effect
+  (and (do-normal) (not (do-wait_cb4-condeffs)) (not (done-0)) (not (done-1))))
+ (:action ugly350ugly502ugly341reach-goal-330 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly351ugly638ugly498close_sd9-condeff0-no-4 :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (not-closed-sd7)) :effect
+  (and (done-0)))
+ (:action ugly352ugly278ugly484close_sd4-endof-condeffs :parameters ()
+  :precondition (and (do-close_sd4-condeffs) (done-0)) :effect
+  (and (do-normal) (not (do-close_sd4-condeffs)) (not (done-0))))
+ (:action ugly353ugly178ugly621wait_cb3-condeff1-no-1 :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (not-closed-sd10)) :effect
+  (and (done-1)))
+ (:action ugly354ugly38ugly144reach-goal-305 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly355ugly287ugly333reach-goal-331 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly356ugly139ugly492reach-goal-249 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly357ugly236ugly66reach-goal-204 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly358ugly631ugly277reach-goal-0 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13) (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly359ugly508ugly444reach-goal-490 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly360ugly51ugly642reach-goal-28 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd8) (closed-sd16) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly361ugly372ugly353reach-goal-177 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly362ugly312ugly133reach-goal-408 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly363ugly632ugly24reach-goal-1 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly364ugly123ugly12reach-goal-382 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd7) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly365ugly618ugly403reach-goal-410 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly366ugly201ugly235reach-goal-104 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly367ugly650ugly274reach-goal-223 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-cb3) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly368ugly456ugly506reach-goal-97 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly369ugly244ugly152reach-goal-189 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly370ugly60ugly474reach-goal-417 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly371ugly164ugly535reach-goal-396 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly372ugly353ugly178open-cb2 :parameters () :precondition
+  (and (do-normal) (closed-cb2) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-cb2) (not (closed-cb2))))
+ (:action ugly373ugly413ugly349reach-goal-338 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly374ugly649ugly407reach-goal-58 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly375ugly176ugly365open-sd1 :parameters () :precondition
+  (and (do-normal) (closed-sd1) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-sd1) (not (closed-sd1))))
+ (:action ugly376ugly573ugly425reach-goal-237 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly377ugly328ugly8reach-goal-415 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-cb3) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly378ugly7ugly262reach-goal-254 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13) (closed-sd7)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly379ugly431ugly619reach-goal-80 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly380ugly128ugly475reach-goal-29 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly381ugly75ugly300reach-goal-398 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly382ugly316ugly548reach-goal-508 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd14) (closed-sd16) (closed-sd13) (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly383ugly86ugly521wait_cb4-condeff1-no-2 :parameters ()
+  :precondition (and (do-wait_cb4-condeffs) (not-closed-sd16)) :effect
+  (and (done-1)))
+ (:action ugly384ugly314ugly368reach-goal-455 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly385ugly223ugly495reach-goal-35 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly386ugly258ugly557reach-goal-213 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly387ugly435ugly497reach-goal-209 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly388ugly454ugly91close_sd16-condeff0-yes :parameters ()
+  :precondition
+  (and (do-close_sd16-condeffs) (closed-sd11) (closed-sd10) (closed-sd9)
+       (closed-sd8) (closed-sd7) (closed-cb3))
+  :effect (and (done-0) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly389ugly335ugly136close_sd8-endof-condeffs :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (done-0) (done-1)) :effect
+  (and (do-normal) (not (do-close_sd8-condeffs)) (not (done-0))
+       (not (done-1))))
+ (:action ugly390ugly35ugly318wait_cb3-condeff1-no-3 :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (not-closed-sd16)) :effect
+  (and (done-1)))
+ (:action ugly391ugly248ugly547reach-goal-144 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly392ugly90ugly540reach-goal-8 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly393ugly39ugly203reach-goal-152 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly394ugly188ugly489reach-goal-401 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly395ugly76ugly16reach-goal-31 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-cb3) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly396ugly581ugly198reach-goal-400 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly397ugly616ugly408open-sd2 :parameters () :precondition
+  (and (do-normal) (closed-sd2) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-sd2) (not (closed-sd2))))
+ (:action ugly398ugly568ugly627reach-goal-185 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly399ugly88ugly500reach-goal-68 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly400ugly375ugly176reach-goal-364 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly401ugly507ugly71close_sd9-condeff1-no-0 :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (not-closed-sd11)) :effect
+  (and (done-1)))
+ (:action ugly402ugly346ugly5close_sd16-endof-condeffs :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (done-0) (done-1)) :effect
+  (and (do-normal) (not (do-close_sd16-condeffs)) (not (done-0))
+       (not (done-1))))
+ (:action ugly403ugly411ugly167reach-goal-217 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly404ugly661ugly96reach-goal-252 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd14) (closed-sd16) (closed-sd13) (closed-sd8)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly405ugly606ugly421reach-goal-134 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly406ugly284ugly549close_sd4-condeff0-yes :parameters ()
+  :precondition (and (do-close_sd4-condeffs) (closed-cb2)) :effect
+  (and (done-0) (not-closed-cb2) (not (closed-cb2))))
+ (:action ugly407ugly59ugly282reach-goal-215 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly408ugly617ugly321reach-goal-199 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly409ugly443ugly533reach-goal-21 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly410ugly28ugly293reach-goal-393 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly411ugly167ugly218reach-goal-454 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly412ugly622ugly245close_sd11-endof-condeffs :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (done-0) (done-1)) :effect
+  (and (do-normal) (not (do-close_sd11-condeffs)) (not (done-0))
+       (not (done-1))))
+ (:action ugly413ugly349ugly339reach-goal-71 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly414ugly227ugly378reach-goal-6 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly415ugly452ugly237reach-goal-225 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly416ugly429ugly252close_sd10-condeff0-no-1 :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (not-closed-sd9)) :effect
+  (and (done-0)))
+ (:action ugly417ugly583ugly437reach-goal-124 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd14) (closed-sd16) (closed-sd8) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly418ugly630ugly563reach-goal-411 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly419ugly13ugly195close_sd11 :parameters () :precondition
+  (and (do-normal) (not-closed-sd11) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (not (do-normal)) (do-close_sd11-condeffs) (closed-sd11)
+       (not (not-closed-sd11))))
+ (:action ugly420ugly597ugly301reach-goal-504 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly421ugly135ugly395reach-goal-75 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly422ugly458ugly440close_sd7-condeff0-no-1 :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (not-closed-cb3)) :effect
+  (and (done-0)))
+ (:action ugly423ugly302ugly239open-sd8 :parameters () :precondition
+  (and (do-normal) (closed-sd8) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-sd8) (not (closed-sd8))))
+ (:action ugly424ugly393ugly39reach-goal-202 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly425ugly238ugly482reach-goal-245 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly426ugly428ugly414reach-goal-226 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly427ugly42ugly260reach-goal-44 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly428ugly414ugly227reach-goal-377 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly429ugly252ugly545close_sd10-condeff0-no-0 :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (not-closed-sd11)) :effect
+  (and (done-0)))
+ (:action ugly430ugly486ugly657close_sd6 :parameters () :precondition
+  (and (do-normal) (not-closed-sd6) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (not (do-normal)) (do-close_sd6-condeffs) (closed-sd6)
+       (not (not-closed-sd6))))
+ (:action ugly431ugly619ugly81reach-goal-210 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly432ugly294ugly48reach-goal-57 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly433ugly419ugly13reach-goal-194 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly434ugly613ugly33open-sd14 :parameters () :precondition
+  (and (do-normal) (closed-sd14) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (increase (total-cost) 1) (not-closed-sd14) (not (closed-sd14))))
+ (:action ugly435ugly497ugly210reach-goal-502 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly436ugly254ugly112reach-goal-445 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly437ugly125ugly127reach-goal-350 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd7) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly438ugly44ugly595reach-goal-471 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly439ugly374ugly649reach-goal-406 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly440ugly571ugly310reach-goal-486 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly441ugly479ugly290reach-goal-49 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly442ugly624ugly296close_sd9-endof-condeffs :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (done-0) (done-1)) :effect
+  (and (do-normal) (not (do-close_sd9-condeffs)) (not (done-0))
+       (not (done-1))))
+ (:action ugly443ugly533ugly22reach-goal-157 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly444ugly491ugly534reach-goal-42 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly445ugly438ugly44wait_cb3-condeff1-no-2 :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (not-closed-sd9)) :effect
+  (and (done-1)))
+ (:action ugly446ugly17ugly470reach-goal-391 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly447ugly55ugly121reach-goal-60 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd14) (closed-sd8) (closed-sd16) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly448ugly209ugly93reach-goal-288 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-cb4) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly449ugly510ugly219close_sd9-condeff0-no-3 :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (not-closed-sd8)) :effect
+  (and (done-0)))
+ (:action ugly450ugly130ugly126reach-goal-61 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly451ugly473ugly286close_sd10-condeff1-yes :parameters ()
+  :precondition
+  (and (do-close_sd10-condeffs) (closed-sd11) (closed-sd9) (closed-cb4))
+  :effect (and (done-1) (not-closed-cb4) (not (closed-cb4))))
+ (:action ugly452ugly237ugly226reach-goal-206 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly453ugly556ugly387reach-goal-434 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly454ugly91ugly514reach-goal-248 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly455ugly307ugly177wait_cb3-condeff1-no-5 :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (not-closed-sd7)) :effect
+  (and (done-1)))
+ (:action ugly456ugly506ugly98reach-goal-347 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly457ugly427ugly42reach-goal-259 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly458ugly440ugly571reach-goal-309 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly459ugly379ugly431open-cb4 :parameters () :precondition
+  (and (do-normal) (closed-cb4) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-cb4) (not (closed-cb4))))
+ (:action ugly460ugly441ugly479reach-goal-289 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly461ugly295ugly213reach-goal-227 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly462ugly25ugly471reach-goal-224 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-cb4) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly463ugly415ugly452reach-goal-236 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly464ugly291ugly97reach-goal-456 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly465ugly27ugly480reach-goal-219 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly466ugly352ugly278reach-goal-483 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly467ugly384ugly314reach-goal-367 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly468ugly635ugly52close_sd7-condeff1-no-1 :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (not-closed-sd10)) :effect
+  (and (done-1)))
+ (:action ugly469ugly141ugly137reach-goal-296 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly470ugly392ugly90close_sd11-condeff1-no-2 :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (not-closed-cb4)) :effect
+  (and (done-1)))
+ (:action ugly471ugly225ugly377reach-goal-327 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly472ugly476ugly240reach-goal-128 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb4) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly473ugly286ugly550reach-goal-282 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly474ugly418ugly630close_sd9-condeff1-yes :parameters ()
+  :precondition
+  (and (do-close_sd9-condeffs) (closed-sd11) (closed-sd10) (closed-cb4))
+  :effect (and (done-1) (not-closed-cb4) (not (closed-cb4))))
+ (:action ugly475ugly30ugly116reach-goal-48 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly476ugly240ugly129close_sd8-condeff0-no-0 :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (not-closed-sd11)) :effect
+  (and (done-0)))
+ (:action ugly477ugly138ugly94reach-goal-341 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly478ugly47ugly272reach-goal-66 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly479ugly290ugly50reach-goal-344 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly480ugly220ugly171reach-goal-438 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly481ugly3ugly268reach-goal-149 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly482ugly246ugly554reach-goal-492 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly483ugly56ugly376close_sd7-condeff1-no-0 :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (not-closed-sd11)) :effect
+  (and (done-1)))
+ (:action ugly484ugly584ugly40reach-goal-150 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly485ugly445ugly438reach-goal-43 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly486ugly657ugly637open-sd5 :parameters () :precondition
+  (and (do-normal) (closed-sd5) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-sd5) (not (closed-sd5))))
+ (:action ugly487ugly530ugly232reach-goal-480 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-cb4) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly488ugly279ugly640close_sd16 :parameters () :precondition
+  (and (do-normal) (not-closed-sd16) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (not (do-normal)) (do-close_sd16-condeffs) (closed-sd16)
+       (not (not-closed-sd16))))
+ (:action ugly489ugly402ugly346reach-goal-4 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly490ugly526ugly448reach-goal-208 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly491ugly534ugly43reach-goal-191 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb3) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly492ugly250ugly590reach-goal-160 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-cb4) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly493ugly247ugly82reach-goal-153 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly494ugly156ugly74reach-goal-20 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly495ugly36ugly494reach-goal-155 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly496ugly588ugly168reach-goal-266 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly497ugly210ugly503close_sd9-condeff1-no-2 :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (not-closed-cb4)) :effect
+  (and (done-1)))
+ (:action ugly498ugly561ugly354reach-goal-37 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly499ugly101ugly285reach-goal-88 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly500ugly69ugly103reach-goal-275 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly501ugly362ugly312reach-goal-132 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly502ugly341ugly331reach-goal-207 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly503ugly566ugly532reach-goal-56 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly504ugly602ugly367wait_cb4-condeff0-no-1 :parameters ()
+  :precondition (and (do-wait_cb4-condeffs) (not-closed-sd10)) :effect
+  (and (done-0)))
+ (:action ugly505ugly468ugly635reach-goal-51 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly506ugly98ugly348open-sd7 :parameters () :precondition
+  (and (do-normal) (closed-sd7) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-sd7) (not (closed-sd7))))
+ (:action ugly507ugly71ugly564reach-goal-256 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13) (closed-cb4)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly508ugly444ugly491close_sd11-condeff0-no-3 :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (not-closed-sd8)) :effect
+  (and (done-0)))
+ (:action ugly509ugly363ugly632reach-goal-23 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly510ugly219ugly560reach-goal-30 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd7) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly511ugly206ugly53close_cb4 :parameters () :precondition
+  (and (do-normal) (not-closed-cb4) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (closed-cb4) (not-updated-cb4) (not (not-closed-cb4))
+       (not (updated-cb4))))
+ (:action ugly512ugly628ugly620close_cb3 :parameters () :precondition
+  (and (do-normal) (not-closed-cb3) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (closed-cb3) (not-updated-cb3) (not (not-closed-cb3))
+       (not (updated-cb3))))
+ (:action ugly513ugly117ugly643reach-goal-141 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly514ugly249ugly303reach-goal-464 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly515ugly259ugly170reach-goal-511 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13) (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly516ugly426ugly428reach-goal-413 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly517ugly113ugly615reach-goal-462 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly518ugly185ugly488reach-goal-278 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly519ugly450ugly130reach-goal-125 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly520ugly593ugly338reach-goal-165 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly521ugly655ugly644reach-goal-349 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly522ugly196ugly221reach-goal-25 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly523ugly179ugly149open-sd11 :parameters () :precondition
+  (and (do-normal) (closed-sd11) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (increase (total-cost) 1) (not-closed-sd11) (not (closed-sd11))))
+ (:action ugly524ugly531ugly337reach-goal-18 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly525ugly104ugly212reach-goal-358 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly526ugly448ugly209reach-goal-92 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd8) (closed-sd16) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly527ugly320ugly275reach-goal-179 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly528ugly570ugly199reach-goal-86 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly529ugly461ugly295reach-goal-212 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly530ugly232ugly481reach-goal-2 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly531ugly337ugly19reach-goal-354 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly532ugly57ugly604reach-goal-230 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly533ugly22ugly158reach-goal-174 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly534ugly43ugly192reach-goal-431 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly535ugly397ugly616reach-goal-407 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly536ugly124ugly309reach-goal-83 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly537ugly501ugly362reach-goal-311 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly538ugly518ugly185reach-goal-487 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly539ugly356ugly139reach-goal-491 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly540ugly9ugly369reach-goal-243 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly541ugly92ugly140reach-goal-17 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly542ugly234ugly23reach-goal-360 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly543ugly565ugly516reach-goal-425 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly544ugly184ugly95close_sd6-condeff0-no-0 :parameters ()
+  :precondition (and (do-close_sd6-condeffs) (not-closed-sd7)) :effect
+  (and (done-0)))
+ (:action ugly545ugly544ugly184reach-goal-94 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd7) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly546ugly430ugly486wait_cb2 :parameters () :precondition
+  (and (do-normal) (not-updated-cb2)) :effect
+  (and (not (do-normal)) (do-wait_cb2-condeffs) (updated-cb2)
+       (not (not-updated-cb2))))
+ (:action ugly547ugly145ugly265reach-goal-409 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly548ugly509ugly363close_sd8-condeff1-yes :parameters ()
+  :precondition
+  (and (do-close_sd8-condeffs) (closed-sd6) (closed-sd16) (closed-cb4)) :effect
+  (and (done-1) (not-closed-cb4) (not (closed-cb4))))
+ (:action ugly549ugly582ugly197open-sd12 :parameters () :precondition
+  (and (do-normal) (closed-sd12) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (increase (total-cost) 1) (not-closed-sd12) (not (closed-sd12))))
+ (:action ugly550ugly283ugly115reach-goal-162 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly551ugly4ugly146reach-goal-468 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly552ugly109ugly542reach-goal-233 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly553ugly572ugly467reach-goal-383 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb3) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly554ugly493ugly247reach-goal-81 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly555ugly134ugly106open-sd16 :parameters () :precondition
+  (and (do-normal) (closed-sd16) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (increase (total-cost) 1) (not-closed-sd16) (not (closed-sd16))))
+ (:action ugly556ugly387ugly435reach-goal-496 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly557ugly214ugly230reach-goal-498 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly558ugly14ugly122reach-goal-221 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly559ugly305ugly251close_sd11-condeff1-no-1 :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (not-closed-sd9)) :effect
+  (and (done-1)))
+ (:action ugly560ugly31ugly174reach-goal-10 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly561ugly354ugly38reach-goal-143 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly562ugly15ugly54reach-goal-110 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly563ugly412ugly622reach-goal-244 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly564ugly257ugly623reach-goal-19 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly565ugly516ugly426reach-goal-427 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly566ugly532ugly57open-sd15 :parameters () :precondition
+  (and (do-normal) (closed-sd15) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (increase (total-cost) 1) (not-closed-sd15) (not (closed-sd15))))
+ (:action ugly567ugly357ugly236reach-goal-65 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly568ugly627ugly186close_sd7-condeff1-no-5 :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (not-closed-cb3)) :effect
+  (and (done-1)))
+ (:action ugly569ugly586ugly406reach-goal-283 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly570ugly199ugly87reach-goal-101 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly571ugly310ugly487close_sd11-condeff0-yes :parameters ()
+  :precondition
+  (and (do-close_sd11-condeffs) (closed-sd10) (closed-sd9) (closed-sd16)
+       (closed-sd8) (closed-sd7) (closed-cb3))
+  :effect (and (done-0) (not-closed-cb3) (not (closed-cb3))))
+ (:action ugly572ugly467ugly384reach-goal-313 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly573ugly425ugly238reach-goal-481 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly574ugly389ugly335reach-goal-135 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly575ugly496ugly588reach-goal-167 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly576ugly442ugly624reach-goal-295 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly577ugly46ugly522reach-goal-195 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly578ugly420ugly597reach-goal-300 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly579ugly405ugly606reach-goal-420 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly580ugly108ugly528close_sd7-condeff0-no-0 :parameters ()
+  :precondition (and (do-close_sd7-condeffs) (not-closed-sd6)) :effect
+  (and (done-0)))
+ (:action ugly581ugly198ugly401reach-goal-506 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly582ugly197ugly607reach-goal-316 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd10) (closed-sd14) (closed-sd8) (closed-sd16) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly583ugly437ugly125reach-goal-126 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd7) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly584ugly40ugly151reach-goal-369 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly585ugly552ugly109close_sd10 :parameters () :precondition
+  (and (do-normal) (not-closed-sd10) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect
+  (and (not (do-normal)) (do-close_sd10-condeffs) (closed-sd10)
+       (not (not-closed-sd10))))
+ (:action ugly586ugly406ugly284close_sd10-condeff0-no-5 :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (not-closed-cb3)) :effect
+  (and (done-0)))
+ (:action ugly587ugly536ugly124reach-goal-308 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly588ugly168ugly267close_sd10-condeff0-no-2 :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (not-closed-sd16)) :effect
+  (and (done-0)))
+ (:action ugly589ugly633ugly580reach-goal-107 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly590ugly161ugly652reach-goal-119 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly591ugly645ugly79wait_cb2-condeff0-no-0 :parameters ()
+  :precondition (and (do-wait_cb2-condeffs) (not-closed-sd4)) :effect
+  (and (done-0)))
+ (:action ugly592ugly478ugly47reach-goal-271 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly593ugly338ugly166close_sd9-condeff0-no-2 :parameters ()
+  :precondition (and (do-close_sd9-condeffs) (not-closed-sd16)) :effect
+  (and (done-0)))
+ (:action ugly594ugly292ugly319close_sd8-condeff0-no-3 :parameters ()
+  :precondition (and (do-close_sd8-condeffs) (not-closed-sd16)) :effect
+  (and (done-0)))
+ (:action ugly595ugly472ugly476reach-goal-239 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-sd9) (closed-cb3) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly596ugly647ugly70reach-goal-168 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly597ugly301ugly505reach-goal-467 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly598ugly459ugly379reach-goal-430 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly599ugly264ugly490close_sd15 :parameters () :precondition
+  (and (do-normal) (not-closed-sd15) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (closed-sd15) (not (not-closed-sd15))))
+ (:action ugly600ugly327ugly433reach-goal-418 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly601ugly504ugly602reach-goal-366 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly602ugly367ugly650reach-goal-273 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly603ugly114ugly447reach-goal-54 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly604ugly231ugly165reach-goal-241 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly605ugly599ugly264reach-goal-489 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly606ugly421ugly135reach-goal-394 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly607ugly317ugly610reach-goal-379 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly608ugly658ugly334reach-goal-343 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly609ugly183ugly6reach-goal-312 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly610ugly380ugly128reach-goal-474 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly611ugly10ugly634reach-goal-262 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly612ugly202ugly273reach-goal-228 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly613ugly33ugly605wait_cb3-endof-condeffs :parameters ()
+  :precondition (and (do-wait_cb3-condeffs) (done-0) (done-1)) :effect
+  (and (do-normal) (not (do-wait_cb3-condeffs)) (not (done-0)) (not (done-1))))
+ (:action ugly614ugly118ugly173wait_cb4-condeff0-yes :parameters ()
+  :precondition
+  (and (do-wait_cb4-condeffs) (closed-sd11) (closed-sd10) (closed-sd9)) :effect
+  (and (done-0) (not-closed-cb4) (not (closed-cb4))))
+ (:action ugly615ugly463ugly415reach-goal-451 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly616ugly408ugly617reach-goal-320 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-cb4) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly617ugly321ugly200reach-goal-381 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly618ugly403ugly411reach-goal-166 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly619ugly81ugly211reach-goal-82 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly620ugly600ugly327reach-goal-432 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly621ugly594ugly292reach-goal-318 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd7) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly622ugly245ugly541reach-goal-91 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly623ugly20ugly524close_sd11-condeff0-no-0 :parameters ()
+  :precondition (and (do-close_sd11-condeffs) (not-closed-sd10)) :effect
+  (and (done-0)))
+ (:action ugly624ugly296ugly567reach-goal-356 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly625ugly485ugly445reach-goal-437 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly626ugly191ugly609reach-goal-182 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly627ugly186ugly578reach-goal-419 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly628ugly620ugly600reach-goal-326 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly629ugly65ugly386reach-goal-257 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly630ugly563ugly412open-cb1 :parameters () :precondition
+  (and (do-normal) (closed-cb1) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (increase (total-cost) 1) (not-closed-cb1) (not (closed-cb1))))
+ (:action ugly631ugly277ugly1reach-goal-171 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly632ugly24ugly2reach-goal-147 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly633ugly580ugly108close_sd13 :parameters () :precondition
+  (and (do-normal) (not-closed-sd13) (updated-cb1) (updated-cb2) (updated-cb3)
+       (updated-cb4))
+  :effect (and (closed-sd13) (not (not-closed-sd13))))
+ (:action ugly634ugly263ugly299reach-goal-314 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly635ugly52ugly574reach-goal-388 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly636ugly329ugly424reach-goal-392 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-cb4) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly637ugly614ugly118reach-goal-172 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd9)
+       (closed-sd8) (closed-sd16) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly638ugly498ugly561reach-goal-353 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly639ugly577ugly46close_sd16-condeff1-no-0 :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (not-closed-sd6)) :effect
+  (and (done-1)))
+ (:action ugly640ugly513ugly117close_sd6-condeff1-no-1 :parameters ()
+  :precondition (and (do-close_sd6-condeffs) (not-closed-sd16)) :effect
+  (and (done-1)))
+ (:action ugly641ugly347ugly261reach-goal-146 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly642ugly29ugly324reach-goal-342 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly643ugly142ugly110reach-goal-461 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly644ugly350ugly502reach-goal-340 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly645ugly79ugly659reach-goal-154 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly646ugly37ugly551reach-goal-3 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly647ugly70ugly169reach-goal-180 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-cb4) (closed-sd8)
+       (closed-sd16) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly648ugly99ugly162reach-goal-450 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd7) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly649ugly407ugly59reach-goal-281 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly650ugly274ugly224reach-goal-33 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly651ugly215ugly576reach-goal-441 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly652ugly120ugly417close_sd4-condeff0-no-0 :parameters ()
+  :precondition (and (do-close_sd4-condeffs) (not-closed-cb2)) :effect
+  (and (done-0)))
+ (:action ugly653ugly646ugly37close_sd10-condeff1-no-0 :parameters ()
+  :precondition (and (do-close_sd10-condeffs) (not-closed-sd11)) :effect
+  (and (done-1)))
+ (:action ugly654ugly182ugly517reach-goal-112 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-sd7) (closed-sd8) (closed-sd16)
+       (closed-sd9) (closed-cb4) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly655ugly644ugly350reach-goal-501 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly656ugly143ugly555reach-goal-133 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly657ugly637ugly614reach-goal-117 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly658ugly334ugly344close_sd16-condeff1-no-1 :parameters ()
+  :precondition (and (do-close_sd16-condeffs) (not-closed-sd8)) :effect
+  (and (done-1)))
+ (:action ugly659ugly155ugly204reach-goal-329 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly660ugly591ugly645reach-goal-78 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb3) (closed-cb4) (closed-sd16) (closed-sd8)
+       (closed-sd9) (closed-sd7) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))
+ (:action ugly661ugly96ugly253reach-goal-421 :parameters () :precondition
+  (and (do-normal) (updated-cb4) (updated-cb3) (updated-cb2) (updated-cb1)
+       (closed-cb2) (closed-cb4) (closed-sd16) (closed-sd8) (closed-sd7)
+       (closed-cb3) (closed-sd9) (closed-sd10) (closed-sd14) (closed-sd13)
+       (closed-sd15))
+  :effect (and (goal-reached)))) 

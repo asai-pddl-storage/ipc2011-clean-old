@@ -1,49 +1,17 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; 4 Op-blocks world
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(define (domain BLOCKS)
-  (:requirements :strips :action-costs)
-  (:predicates (on ?x ?y)
-	       (ontable ?x)
-	       (clear ?x)
-	       (handempty)
-	       (holding ?x)
-	       )
-  (:functions (total-cost) - number)
-  (:action pick-up
-	     :parameters (?x)
-	     :precondition (and (clear ?x) (ontable ?x) (handempty))
-	     :effect
-	     (and (not (ontable ?x))
-		   (not (clear ?x))
-		   (not (handempty))
-		   (holding ?x)))
-
-  (:action put-down
-	     :parameters (?x)
-	     :precondition (holding ?x)
-	     :effect
-	     (and (not (holding ?x))
-		   (clear ?x)
-		   (handempty)
-		   (ontable ?x)))
-  (:action stack
-	     :parameters (?x ?y)
-	     :precondition (and (holding ?x) (clear ?y))
-	     :effect
-	     (and (increase (total-cost) 1)
-                  (not (holding ?x))
-		   (not (clear ?y))
-		   (clear ?x)
-		   (handempty)
-		   (on ?x ?y)))
-  (:action unstack
-	     :parameters (?x ?y)
-	     :precondition (and (on ?x ?y) (clear ?x) (handempty))
-	     :effect
-	     (and (holding ?x)
-		   (clear ?y)
-		   (not (clear ?x))
-		   (not (handempty))
-		   (not (on ?x ?y)))))
+(define (domain blocks) (:requirements :strips :action-costs)
+ (:predicates (handempty) (on ?x ?y) (ontable ?x) (holding ?x) (clear ?x))
+ (:functions (total-cost) - number)
+ (:action ugly1ugly1ugly1pick-up :parameters (?x) :precondition
+  (and (clear ?x) (ontable ?x) (handempty)) :effect
+  (and (not (ontable ?x)) (not (clear ?x)) (not (handempty)) (holding ?x)))
+ (:action ugly2ugly3ugly4put-down :parameters (?x) :precondition (holding ?x)
+  :effect (and (not (holding ?x)) (clear ?x) (handempty) (ontable ?x)))
+ (:action ugly3ugly4ugly2stack :parameters (?x ?y) :precondition
+  (and (holding ?x) (clear ?y)) :effect
+  (and (increase (total-cost) 1) (not (holding ?x)) (not (clear ?y)) (clear ?x)
+       (handempty) (on ?x ?y)))
+ (:action ugly4ugly2ugly3unstack :parameters (?x ?y) :precondition
+  (and (on ?x ?y) (clear ?x) (handempty)) :effect
+  (and (holding ?x) (clear ?y) (not (clear ?x)) (not (handempty))
+       (not (on ?x ?y))))) 
