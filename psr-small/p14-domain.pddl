@@ -1,629 +1,130 @@
-(define (domain grounded-STRIPS-PSR)
-(:requirements
-:strips
-)
-(:predicates
-(NOT-CLOSED-CB1)
-(UPDATED-CB1)
-(NOT-CLOSED-CB2)
-(UPDATED-CB2)
-(CLOSED-SD4)
-(CLOSED-SD5)
-(NOT-CLOSED-SD1)
-(NOT-CLOSED-SD2)
-(NOT-CLOSED-SD3)
-(NOT-CLOSED-SD6)
-(NOT-CLOSED-SD7)
-(NOT-CLOSED-SD8)
-(NOT-CLOSED-SD9)
-(NOT-CLOSED-SD10)
-(NOT-CLOSED-SD11)
-(CLOSED-CB2)
-(CLOSED-SD11)
-(CLOSED-SD10)
-(CLOSED-SD9)
-(CLOSED-SD8)
-(CLOSED-SD7)
-(CLOSED-SD6)
-(CLOSED-SD3)
-(CLOSED-SD2)
-(CLOSED-SD1)
-(CLOSED-CB1)
-(NOT-CLOSED-SD5)
-(NOT-CLOSED-SD4)
-(NOT-UPDATED-CB2)
-(NOT-UPDATED-CB1)
-(do-CLOSE_SD8-condeffs)
-(do-CLOSE_SD7-condeffs)
-(do-WAIT_CB2-condeffs)
-(do-normal)
-(done-0)
-)
-(:action CLOSE_SD11
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD11)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-SD11)
-(not (NOT-CLOSED-SD11))
-)
-)
-(:action CLOSE_SD10
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD10)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-SD10)
-(not (NOT-CLOSED-SD10))
-)
-)
-(:action CLOSE_SD9
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD9)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-SD9)
-(not (NOT-CLOSED-SD9))
-)
-)
-(:action CLOSE_SD8
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD8)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD8-condeffs)
-(CLOSED-SD8)
-(not (NOT-CLOSED-SD8))
-)
-)
-(:action CLOSE_SD8-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(CLOSED-SD7)
-(CLOSED-CB2)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB2)
-(not (CLOSED-CB2))
-)
-)
-(:action CLOSE_SD8-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD8-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(NOT-CLOSED-CB2)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD8-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD8-condeffs)
-(done-0)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD8-condeffs))
-(not (done-0))
-)
-)
-(:action CLOSE_SD7
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD7)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(not (do-normal))
-(do-CLOSE_SD7-condeffs)
-(CLOSED-SD7)
-(not (NOT-CLOSED-SD7))
-)
-)
-(:action CLOSE_SD7-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(CLOSED-SD8)
-(CLOSED-CB2)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB2)
-(not (CLOSED-CB2))
-)
-)
-(:action CLOSE_SD7-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD7-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(NOT-CLOSED-CB2)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action CLOSE_SD7-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-CLOSE_SD7-condeffs)
-(done-0)
-)
-:effect
-(and
-(do-normal)
-(not (do-CLOSE_SD7-condeffs))
-(not (done-0))
-)
-)
-(:action CLOSE_SD6
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD6)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-SD6)
-(not (NOT-CLOSED-SD6))
-)
-)
-(:action CLOSE_SD3
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD3)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-SD3)
-(not (NOT-CLOSED-SD3))
-)
-)
-(:action CLOSE_SD2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD2)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-SD2)
-(not (NOT-CLOSED-SD2))
-)
-)
-(:action CLOSE_SD1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD1)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-SD1)
-(not (NOT-CLOSED-SD1))
-)
-)
-(:action CLOSE_CB2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-CB2)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-CB2)
-(NOT-UPDATED-CB2)
-(not (NOT-CLOSED-CB2))
-(not (UPDATED-CB2))
-)
-)
-(:action CLOSE_CB1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-CB1)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-CB1)
-(NOT-UPDATED-CB1)
-(not (NOT-CLOSED-CB1))
-(not (UPDATED-CB1))
-)
-)
-(:action OPEN-SD11
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD11)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD11)
-(not (CLOSED-SD11))
-)
-)
-(:action OPEN-SD10
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD10)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD10)
-(not (CLOSED-SD10))
-)
-)
-(:action OPEN-SD9
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD9)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD9)
-(not (CLOSED-SD9))
-)
-)
-(:action OPEN-SD8
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD8)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD8)
-(not (CLOSED-SD8))
-)
-)
-(:action OPEN-SD7
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD7)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD7)
-(not (CLOSED-SD7))
-)
-)
-(:action OPEN-SD6
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD6)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD6)
-(not (CLOSED-SD6))
-)
-)
-(:action OPEN-SD5
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD5)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD5)
-(not (CLOSED-SD5))
-)
-)
-(:action OPEN-SD4
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD4)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD4)
-(not (CLOSED-SD4))
-)
-)
-(:action OPEN-SD3
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD3)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD3)
-(not (CLOSED-SD3))
-)
-)
-(:action OPEN-SD2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD2)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD2)
-(not (CLOSED-SD2))
-)
-)
-(:action OPEN-SD1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-SD1)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-SD1)
-(not (CLOSED-SD1))
-)
-)
-(:action OPEN-CB2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-CB2)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-CB2)
-(not (CLOSED-CB2))
-)
-)
-(:action OPEN-CB1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(CLOSED-CB1)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(NOT-CLOSED-CB1)
-(not (CLOSED-CB1))
-)
-)
-(:action CLOSE_SD5
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD5)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-SD5)
-(not (NOT-CLOSED-SD5))
-)
-)
-(:action CLOSE_SD4
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-CLOSED-SD4)
-(UPDATED-CB1)
-(UPDATED-CB2)
-)
-:effect
-(and
-(CLOSED-SD4)
-(not (NOT-CLOSED-SD4))
-)
-)
-(:action WAIT_CB2
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-UPDATED-CB2)
-)
-:effect
-(and
-(not (do-normal))
-(do-WAIT_CB2-condeffs)
-(UPDATED-CB2)
-(not (NOT-UPDATED-CB2))
-)
-)
-(:action WAIT_CB2-condeff0-yes
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB2-condeffs)
-(CLOSED-SD8)
-(CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-(NOT-CLOSED-CB2)
-(not (CLOSED-CB2))
-)
-)
-(:action WAIT_CB2-condeff0-no-0
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB2-condeffs)
-(NOT-CLOSED-SD8)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action WAIT_CB2-condeff0-no-1
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB2-condeffs)
-(NOT-CLOSED-SD7)
-)
-:effect
-(and
-(done-0)
-)
-)
-(:action WAIT_CB2-endof-condeffs
-:parameters ()
-:precondition
-(and
-(do-WAIT_CB2-condeffs)
-(done-0)
-)
-:effect
-(and
-(do-normal)
-(not (do-WAIT_CB2-condeffs))
-(not (done-0))
-)
-)
-(:action WAIT_CB1
-:parameters ()
-:precondition
-(and
-(do-normal)
-(NOT-UPDATED-CB1)
-)
-:effect
-(and
-(NOT-CLOSED-CB1)
-(UPDATED-CB1)
-(not (CLOSED-CB1))
-(not (NOT-UPDATED-CB1))
-)
-)
-)
+
+(define (domain grounded-strips-psr) (:requirements :strips)
+ (:predicates (not-updated-cb2) (do-wait_cb2-condeffs) (not-closed-sd2)
+  (closed-sd4) (do-close_sd8-condeffs) (closed-sd11) (not-closed-sd6)
+  (not-closed-sd9) (not-closed-cb2) (closed-cb1) (closed-sd10) (closed-cb2)
+  (not-closed-sd10) (updated-cb2) (do-normal) (not-closed-sd1) (done-0)
+  (not-closed-sd3) (updated-cb1) (not-closed-sd5) (not-updated-cb1)
+  (closed-sd5) (not-closed-sd11) (do-close_sd7-condeffs) (closed-sd6)
+  (not-closed-sd8) (closed-sd2) (closed-sd8) (closed-sd3) (closed-sd9)
+  (closed-sd7) (not-closed-sd7) (not-closed-sd4) (not-closed-cb1) (closed-sd1))
+ (:action ugly1close_sd7-condeff0-no-1 :parameters () :precondition
+  (and (do-close_sd7-condeffs) (not-closed-cb2)) :effect (and (done-0)))
+ (:action ugly2open-sd11 :parameters () :precondition
+  (and (do-normal) (closed-sd11) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd11) (not (closed-sd11))))
+ (:action ugly3open-sd3 :parameters () :precondition
+  (and (do-normal) (closed-sd3) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd3) (not (closed-sd3))))
+ (:action ugly4close_sd8-condeff0-no-0 :parameters () :precondition
+  (and (do-close_sd8-condeffs) (not-closed-sd7)) :effect (and (done-0)))
+ (:action ugly5close_sd8-condeff0-no-1 :parameters () :precondition
+  (and (do-close_sd8-condeffs) (not-closed-cb2)) :effect (and (done-0)))
+ (:action ugly6close_sd3 :parameters () :precondition
+  (and (do-normal) (not-closed-sd3) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-sd3) (not (not-closed-sd3))))
+ (:action ugly7open-cb1 :parameters () :precondition
+  (and (do-normal) (closed-cb1) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-cb1) (not (closed-cb1))))
+ (:action ugly8close_sd1 :parameters () :precondition
+  (and (do-normal) (not-closed-sd1) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-sd1) (not (not-closed-sd1))))
+ (:action ugly9wait_cb2 :parameters () :precondition
+  (and (do-normal) (not-updated-cb2)) :effect
+  (and (not (do-normal)) (do-wait_cb2-condeffs) (updated-cb2)
+       (not (not-updated-cb2))))
+ (:action ugly10close_sd7-condeff0-no-0 :parameters () :precondition
+  (and (do-close_sd7-condeffs) (not-closed-sd8)) :effect (and (done-0)))
+ (:action ugly11close_cb2 :parameters () :precondition
+  (and (do-normal) (not-closed-cb2) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-cb2) (not-updated-cb2) (not (not-closed-cb2))
+       (not (updated-cb2))))
+ (:action ugly12open-cb2 :parameters () :precondition
+  (and (do-normal) (closed-cb2) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-cb2) (not (closed-cb2))))
+ (:action ugly13open-sd4 :parameters () :precondition
+  (and (do-normal) (closed-sd4) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd4) (not (closed-sd4))))
+ (:action ugly14close_sd8 :parameters () :precondition
+  (and (do-normal) (not-closed-sd8) (updated-cb1) (updated-cb2)) :effect
+  (and (not (do-normal)) (do-close_sd8-condeffs) (closed-sd8)
+       (not (not-closed-sd8))))
+ (:action ugly15open-sd8 :parameters () :precondition
+  (and (do-normal) (closed-sd8) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd8) (not (closed-sd8))))
+ (:action ugly16wait_cb2-condeff0-yes :parameters () :precondition
+  (and (do-wait_cb2-condeffs) (closed-sd8) (closed-sd7)) :effect
+  (and (done-0) (not-closed-cb2) (not (closed-cb2))))
+ (:action ugly17open-sd6 :parameters () :precondition
+  (and (do-normal) (closed-sd6) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd6) (not (closed-sd6))))
+ (:action ugly18open-sd7 :parameters () :precondition
+  (and (do-normal) (closed-sd7) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd7) (not (closed-sd7))))
+ (:action ugly19open-sd9 :parameters () :precondition
+  (and (do-normal) (closed-sd9) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd9) (not (closed-sd9))))
+ (:action ugly20close_sd11 :parameters () :precondition
+  (and (do-normal) (not-closed-sd11) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-sd11) (not (not-closed-sd11))))
+ (:action ugly21close_sd5 :parameters () :precondition
+  (and (do-normal) (not-closed-sd5) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-sd5) (not (not-closed-sd5))))
+ (:action ugly22wait_cb1 :parameters () :precondition
+  (and (do-normal) (not-updated-cb1)) :effect
+  (and (not-closed-cb1) (updated-cb1) (not (closed-cb1))
+       (not (not-updated-cb1))))
+ (:action ugly23close_sd8-condeff0-yes :parameters () :precondition
+  (and (do-close_sd8-condeffs) (closed-sd7) (closed-cb2)) :effect
+  (and (done-0) (not-closed-cb2) (not (closed-cb2))))
+ (:action ugly24wait_cb2-condeff0-no-1 :parameters () :precondition
+  (and (do-wait_cb2-condeffs) (not-closed-sd7)) :effect (and (done-0)))
+ (:action ugly25close_cb1 :parameters () :precondition
+  (and (do-normal) (not-closed-cb1) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-cb1) (not-updated-cb1) (not (not-closed-cb1))
+       (not (updated-cb1))))
+ (:action ugly26close_sd4 :parameters () :precondition
+  (and (do-normal) (not-closed-sd4) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-sd4) (not (not-closed-sd4))))
+ (:action ugly27close_sd2 :parameters () :precondition
+  (and (do-normal) (not-closed-sd2) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-sd2) (not (not-closed-sd2))))
+ (:action ugly28wait_cb2-endof-condeffs :parameters () :precondition
+  (and (do-wait_cb2-condeffs) (done-0)) :effect
+  (and (do-normal) (not (do-wait_cb2-condeffs)) (not (done-0))))
+ (:action ugly29close_sd9 :parameters () :precondition
+  (and (do-normal) (not-closed-sd9) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-sd9) (not (not-closed-sd9))))
+ (:action ugly30open-sd10 :parameters () :precondition
+  (and (do-normal) (closed-sd10) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd10) (not (closed-sd10))))
+ (:action ugly31open-sd2 :parameters () :precondition
+  (and (do-normal) (closed-sd2) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd2) (not (closed-sd2))))
+ (:action ugly32close_sd7-condeff0-yes :parameters () :precondition
+  (and (do-close_sd7-condeffs) (closed-sd8) (closed-cb2)) :effect
+  (and (done-0) (not-closed-cb2) (not (closed-cb2))))
+ (:action ugly33close_sd8-endof-condeffs :parameters () :precondition
+  (and (do-close_sd8-condeffs) (done-0)) :effect
+  (and (do-normal) (not (do-close_sd8-condeffs)) (not (done-0))))
+ (:action ugly34open-sd5 :parameters () :precondition
+  (and (do-normal) (closed-sd5) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd5) (not (closed-sd5))))
+ (:action ugly35close_sd7 :parameters () :precondition
+  (and (do-normal) (not-closed-sd7) (updated-cb1) (updated-cb2)) :effect
+  (and (not (do-normal)) (do-close_sd7-condeffs) (closed-sd7)
+       (not (not-closed-sd7))))
+ (:action ugly36wait_cb2-condeff0-no-0 :parameters () :precondition
+  (and (do-wait_cb2-condeffs) (not-closed-sd8)) :effect (and (done-0)))
+ (:action ugly37close_sd6 :parameters () :precondition
+  (and (do-normal) (not-closed-sd6) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-sd6) (not (not-closed-sd6))))
+ (:action ugly38open-sd1 :parameters () :precondition
+  (and (do-normal) (closed-sd1) (updated-cb1) (updated-cb2)) :effect
+  (and (not-closed-sd1) (not (closed-sd1))))
+ (:action ugly39close_sd7-endof-condeffs :parameters () :precondition
+  (and (do-close_sd7-condeffs) (done-0)) :effect
+  (and (do-normal) (not (do-close_sd7-condeffs)) (not (done-0))))
+ (:action ugly40close_sd10 :parameters () :precondition
+  (and (do-normal) (not-closed-sd10) (updated-cb1) (updated-cb2)) :effect
+  (and (closed-sd10) (not (not-closed-sd10))))) 
