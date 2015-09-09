@@ -1,199 +1,90 @@
-; IPC5 Domain: Pathways Propositional
-; Authors: Yannis Dimopoulos, Alfonso Gerevini and Alessandro Saetti
 
-(define (domain Pathways-Propositional) 
-(:requirements :typing :adl :action-costs)  
-
-(:types level molecule - object
-        simple complex - molecule) 
-
-(:constants cdk1-cks1 cdk1p1-cks1 cdk1p1p2p3-cycB cdk1p1p2p3-Gadd45 cdk1p1p3-cycB cdk1p2-cks1 cdk1p2p3-cks1 cdk1p2p3-cycA cdk1p2p3-cycB cdk1p3 cdk1p3-cks1 cdk1p3-cycA cdk1p3-cycB cdk1p3-Gadd45 cdk2p1-cycA cdk2p1-cycE cdk2p1p2-cycEp1 DMP1p1-cycDp1 HDAC1-pRb-E2F13p1-DP12-gE2 Mdm2-E2F13-DP12 p21-cdk2p1-cycE p21-cdk2p1p2-cycA p21-cdk2p1p2-cycE p27-cdk2p1-cycA p27-cdk2p1-cycE p27-cdk2p1-cycEp1 p27-cdk2p1p2-cycA p27-cdk2p1p2-cycE p57-cdk2p1-cycE p57-cdk2p1-cycEp1 p57-cdk2p1p2-cycA p57-cdk2p1p2-cycE pRbp1-AP2-gE-c pRbp1-Jun-c-Fos-gERCC1 Skp2-cdk2p1-cycA Wee1p1  - complex)
-
-(:predicates 
-	     (association-reaction ?x1 ?x2 - molecule ?x3 - complex)
-	     (catalyzed-association-reaction ?x1 ?x2 - molecule ?x3 - complex)
-	     (synthesis-reaction ?x1 ?x2 - molecule)
-             (possible ?x - molecule) 	
-	     (available ?x - molecule)
-             (chosen ?s - simple)
-	     (next ?l1 ?l2 - level)
-	     (num-subs ?l - level)
-	     (goal1)
-	     (goal2)
-	     (goal3)
-	     (goal4)
-	     (goal5)
-	     (goal6)
-	     (goal7)
-	     (goal8)
-	     (goal9)
-	     (goal10)
-	     (goal11)
-	     (goal12)
-	     (goal13)
-	     (goal14)
-	     (goal15)
-	     (goal16)
-	     (goal17)
-	     (goal18))
-
-(:functions (total-cost) - number)
-
-
-(:action choose
- :parameters (?x - simple ?l1 ?l2 - level)
- :precondition (and (possible ?x) (not (chosen ?x)) 
-		    (num-subs ?l2) (next ?l1 ?l2))
- :effect (and (chosen ?x) (not (num-subs ?l2)) (num-subs ?l1)))
-
-(:action initialize
-  :parameters (?x - simple)
-  :precondition (and (chosen ?x))
-  :effect (and (available ?x)))
-
-(:action associate
- :parameters (?x1 ?x2 - molecule ?x3 - complex)
- :precondition (and (association-reaction ?x1  ?x2  ?x3) 
-		    (available ?x1) (available ?x2))
- :effect (and (increase (total-cost) 1) (not (available ?x1)) (not (available ?x2)) (available ?x3)))
-
-(:action associate-with-catalyze 
- :parameters (?x1 ?x2 - molecule ?x3 - complex)
- :precondition (and (catalyzed-association-reaction ?x1 ?x2 ?x3) 
-		    (available ?x1) (available ?x2))
- :effect (and (increase (total-cost) 1) (not (available ?x1)) (available ?x3)))
-
-(:action synthesize
- :parameters (?x1 ?x2 - molecule)
- :precondition (and (synthesis-reaction ?x1 ?x2) (available ?x1))
- :effect (and (available ?x2)))
-
-
-
-(:action DUMMY-ACTION-1
- :parameters ()
- :precondition
-	(or (available cdk1p3-Gadd45)
-	    (available Wee1p1))
- :effect (and (goal1)))
-
-(:action DUMMY-ACTION-2
- :parameters ()
- :precondition
-	(or (available cdk1p3-cycA)
-	    (available cdk1p3-cks1))
- :effect (and (goal2)))
-
-(:action DUMMY-ACTION-3
- :parameters ()
- :precondition
-	(or (available cdk1p3-cycB)
-	    (available p57-cdk2p1-cycEp1))
- :effect (and (goal3)))
-
-(:action DUMMY-ACTION-4
- :parameters ()
- :precondition
-	(or (available p57-cdk2p1-cycE)
-	    (available cdk1p2p3-cks1))
- :effect (and (goal4)))
-
-(:action DUMMY-ACTION-5
- :parameters ()
- :precondition
-	(or (available cdk1p2-cks1)
-	    (available Mdm2-E2F13-DP12))
- :effect (and (goal5)))
-
-(:action DUMMY-ACTION-6
- :parameters ()
- :precondition
-	(or (available p27-cdk2p1-cycA)
-	    (available cdk1p2p3-cycA))
- :effect (and (goal6)))
-
-(:action DUMMY-ACTION-7
- :parameters ()
- :precondition
-	(or (available cdk2p1-cycE)
-	    (available cdk1p1p3-cycB))
- :effect (and (goal7)))
-
-(:action DUMMY-ACTION-8
- :parameters ()
- :precondition
-	(or (available cdk1p1p2p3-Gadd45)
-	    (available pRbp1-Jun-c-Fos-gERCC1))
- :effect (and (goal8)))
-
-(:action DUMMY-ACTION-9
- :parameters ()
- :precondition
-	(or (available cdk2p1p2-cycEp1)
-	    (available cdk1-cks1))
- :effect (and (goal9)))
-
-(:action DUMMY-ACTION-10
- :parameters ()
- :precondition
-	(or (available p21-cdk2p1p2-cycE)
-	    (available cdk1p1p2p3-cycB))
- :effect (and (goal10)))
-
-(:action DUMMY-ACTION-11
- :parameters ()
- :precondition
-	(or (available cdk1p3)
-	    (available p57-cdk2p1p2-cycE))
- :effect (and (goal11)))
-
-(:action DUMMY-ACTION-12
- :parameters ()
- :precondition
-	(or (available cdk1p2p3-cycB)
-	    (available cdk2p1-cycA))
- :effect (and (goal12)))
-
-(:action DUMMY-ACTION-13
- :parameters ()
- :precondition
-	(or (available p21-cdk2p1-cycE)
-	    (available p27-cdk2p1p2-cycA))
- :effect (and (goal13)))
-
-(:action DUMMY-ACTION-14
- :parameters ()
- :precondition
-	(or (available Skp2-cdk2p1-cycA)
-	    (available pRbp1-AP2-gE-c))
- :effect (and (goal14)))
-
-(:action DUMMY-ACTION-15
- :parameters ()
- :precondition
-	(or (available p27-cdk2p1-cycEp1)
-	    (available p27-cdk2p1p2-cycE))
- :effect (and (goal15)))
-
-(:action DUMMY-ACTION-16
- :parameters ()
- :precondition
-	(or (available p21-cdk2p1p2-cycA)
-	    (available p27-cdk2p1-cycE))
- :effect (and (goal16)))
-
-(:action DUMMY-ACTION-17
- :parameters ()
- :precondition
-	(or (available p57-cdk2p1p2-cycA)
-	    (available HDAC1-pRb-E2F13p1-DP12-gE2))
- :effect (and (goal17)))
-
-(:action DUMMY-ACTION-18
- :parameters ()
- :precondition
-	(or (available DMP1p1-cycDp1)
-	    (available cdk1p1-cks1))
- :effect (and (goal18)))
-)
-
+(define (domain pathways-propositional)
+ (:requirements :typing :adl :action-costs)
+ (:predicates (goal7) (chosen ?s - simple)
+  (catalyzed-association-reaction ?x1 ?x2 - molecule ?x3 - complex) (goal5)
+  (goal12) (possible ?x - molecule) (goal3)
+  (association-reaction ?x1 ?x2 - molecule ?x3 - complex) (goal14) (goal10)
+  (next ?l1 ?l2 - level) (available ?x - molecule) (goal15) (goal16) (goal8)
+  (goal9) (goal1) (goal2) (goal13) (num-subs ?l - level) (goal11)
+  (synthesis-reaction ?x1 ?x2 - molecule) (goal4) (goal6) (goal18) (goal17))
+ (:types level molecule - object simple complex - molecule)
+ (:constants cdk1-cks1 cdk1p1-cks1 cdk1p1p2p3-cycb cdk1p1p2p3-gadd45
+  cdk1p1p3-cycb cdk1p2-cks1 cdk1p2p3-cks1 cdk1p2p3-cyca cdk1p2p3-cycb cdk1p3
+  cdk1p3-cks1 cdk1p3-cyca cdk1p3-cycb cdk1p3-gadd45 cdk2p1-cyca cdk2p1-cyce
+  cdk2p1p2-cycep1 dmp1p1-cycdp1 hdac1-prb-e2f13p1-dp12-ge2 mdm2-e2f13-dp12
+  p21-cdk2p1-cyce p21-cdk2p1p2-cyca p21-cdk2p1p2-cyce p27-cdk2p1-cyca
+  p27-cdk2p1-cyce p27-cdk2p1-cycep1 p27-cdk2p1p2-cyca p27-cdk2p1p2-cyce
+  p57-cdk2p1-cyce p57-cdk2p1-cycep1 p57-cdk2p1p2-cyca p57-cdk2p1p2-cyce
+  prbp1-ap2-ge-c prbp1-jun-c-fos-gercc1 skp2-cdk2p1-cyca wee1p1 - complex)
+ (:functions (total-cost) - number)
+ (:action ugly1ugly18ugly7dummy-action-10 :parameters () :precondition
+  (or (available p21-cdk2p1p2-cyce) (available cdk1p1p2p3-cycb)) :effect
+  (and (goal10)))
+ (:action ugly2ugly16ugly8dummy-action-15 :parameters () :precondition
+  (or (available p27-cdk2p1-cycep1) (available p27-cdk2p1p2-cyce)) :effect
+  (and (goal15)))
+ (:action ugly3ugly10ugly3dummy-action-5 :parameters () :precondition
+  (or (available cdk1p2-cks1) (available mdm2-e2f13-dp12)) :effect
+  (and (goal5)))
+ (:action ugly4ugly13ugly9dummy-action-14 :parameters () :precondition
+  (or (available skp2-cdk2p1-cyca) (available prbp1-ap2-ge-c)) :effect
+  (and (goal14)))
+ (:action ugly5ugly1ugly18dummy-action-2 :parameters () :precondition
+  (or (available cdk1p3-cyca) (available cdk1p3-cks1)) :effect (and (goal2)))
+ (:action ugly6ugly17ugly14dummy-action-6 :parameters () :precondition
+  (or (available p27-cdk2p1-cyca) (available cdk1p2p3-cyca)) :effect
+  (and (goal6)))
+ (:action ugly7ugly15ugly6dummy-action-12 :parameters () :precondition
+  (or (available cdk1p2p3-cycb) (available cdk2p1-cyca)) :effect
+  (and (goal12)))
+ (:action ugly8ugly20ugly22associate-with-catalyze :parameters
+  (?x1 ?x2 - molecule ?x3 - complex) :precondition
+  (and (catalyzed-association-reaction ?x1 ?x2 ?x3) (available ?x1)
+       (available ?x2))
+  :effect
+  (and (increase (total-cost) 1) (not (available ?x1)) (available ?x3)))
+ (:action ugly9ugly19ugly12synthesize :parameters (?x1 ?x2 - molecule)
+  :precondition (and (synthesis-reaction ?x1 ?x2) (available ?x1)) :effect
+  (and (available ?x2)))
+ (:action ugly10ugly3ugly10associate :parameters
+  (?x1 ?x2 - molecule ?x3 - complex) :precondition
+  (and (association-reaction ?x1 ?x2 ?x3) (available ?x1) (available ?x2))
+  :effect
+  (and (increase (total-cost) 1) (not (available ?x1)) (not (available ?x2))
+       (available ?x3)))
+ (:action ugly11ugly2ugly16dummy-action-3 :parameters () :precondition
+  (or (available cdk1p3-cycb) (available p57-cdk2p1-cycep1)) :effect
+  (and (goal3)))
+ (:action ugly12ugly5ugly1dummy-action-13 :parameters () :precondition
+  (or (available p21-cdk2p1-cyce) (available p27-cdk2p1p2-cyca)) :effect
+  (and (goal13)))
+ (:action ugly13ugly9ugly19dummy-action-7 :parameters () :precondition
+  (or (available cdk2p1-cyce) (available cdk1p1p3-cycb)) :effect (and (goal7)))
+ (:action ugly14ugly11ugly2dummy-action-11 :parameters () :precondition
+  (or (available cdk1p3) (available p57-cdk2p1p2-cyce)) :effect (and (goal11)))
+ (:action ugly15ugly6ugly17dummy-action-9 :parameters () :precondition
+  (or (available cdk2p1p2-cycep1) (available cdk1-cks1)) :effect (and (goal9)))
+ (:action ugly16ugly8ugly20dummy-action-17 :parameters () :precondition
+  (or (available p57-cdk2p1p2-cyca) (available hdac1-prb-e2f13p1-dp12-ge2))
+  :effect (and (goal17)))
+ (:action ugly17ugly14ugly11initialize :parameters (?x - simple) :precondition
+  (and (chosen ?x)) :effect (and (available ?x)))
+ (:action ugly18ugly7ugly15dummy-action-1 :parameters () :precondition
+  (or (available cdk1p3-gadd45) (available wee1p1)) :effect (and (goal1)))
+ (:action ugly19ugly12ugly5choose :parameters (?x - simple ?l1 ?l2 - level)
+  :precondition
+  (and (possible ?x) (not (chosen ?x)) (num-subs ?l2) (next ?l1 ?l2)) :effect
+  (and (chosen ?x) (not (num-subs ?l2)) (num-subs ?l1)))
+ (:action ugly20ugly22ugly4dummy-action-8 :parameters () :precondition
+  (or (available cdk1p1p2p3-gadd45) (available prbp1-jun-c-fos-gercc1)) :effect
+  (and (goal8)))
+ (:action ugly21ugly21ugly21dummy-action-16 :parameters () :precondition
+  (or (available p21-cdk2p1p2-cyca) (available p27-cdk2p1-cyce)) :effect
+  (and (goal16)))
+ (:action ugly22ugly4ugly13dummy-action-4 :parameters () :precondition
+  (or (available p57-cdk2p1-cyce) (available cdk1p2p3-cks1)) :effect
+  (and (goal4)))
+ (:action ugly23ugly23ugly23dummy-action-18 :parameters () :precondition
+  (or (available dmp1p1-cycdp1) (available cdk1p1-cks1)) :effect
+  (and (goal18)))) 
