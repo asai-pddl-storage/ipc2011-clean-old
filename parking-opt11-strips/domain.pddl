@@ -1,24 +1,18 @@
 
 (define (domain parking) (:requirements :strips :typing :action-costs)
- (:predicates (behind-car ?car ?front-car - car) (curb-clear ?curb - curb)
-  (car-clear ?car - car) (at-curb-num ?car - car ?curb - curb)
-  (at-curb ?car - car))
+ (:predicates (at-curb ?car - car) (behind-car ?car ?front-car - car)
+  (at-curb-num ?car - car ?curb - curb) (curb-clear ?curb - curb)
+  (car-clear ?car - car))
  (:types car curb) (:functions (total-cost) - number)
- (:action ugly1ugly1ugly1ugly1move-curb-to-curb :parameters
-  (?car - car ?curbsrc ?curbdest - curb) :precondition
-  (and (car-clear ?car) (curb-clear ?curbdest) (at-curb-num ?car ?curbsrc))
+ (:action ugly1434374ugly4ugly2ugly3ugly4move-curb-to-car :parameters
+  (?car - car ?curbsrc - curb ?cardest - car) :precondition
+  (and (car-clear ?car) (car-clear ?cardest) (at-curb-num ?car ?curbsrc)
+       (at-curb ?cardest))
   :effect
-  (and (not (curb-clear ?curbdest)) (curb-clear ?curbsrc)
-       (at-curb-num ?car ?curbdest) (not (at-curb-num ?car ?curbsrc))
-       (increase (total-cost) 1)))
- (:action ugly2ugly3ugly4ugly2move-car-to-curb :parameters
-  (?car - car ?carsrc - car ?curbdest - curb) :precondition
-  (and (car-clear ?car) (curb-clear ?curbdest) (behind-car ?car ?carsrc))
-  :effect
-  (and (not (curb-clear ?curbdest)) (car-clear ?carsrc)
-       (at-curb-num ?car ?curbdest) (not (behind-car ?car ?carsrc))
-       (at-curb ?car) (increase (total-cost) 1)))
- (:action ugly3ugly4ugly2ugly3move-car-to-car :parameters
+  (and (not (car-clear ?cardest)) (curb-clear ?curbsrc)
+       (behind-car ?car ?cardest) (not (at-curb-num ?car ?curbsrc))
+       (not (at-curb ?car)) (increase (total-cost) 1)))
+ (:action ugly1434375ugly3ugly4ugly2ugly3move-car-to-car :parameters
   (?car - car ?carsrc - car ?cardest - car) :precondition
   (and (car-clear ?car) (car-clear ?cardest) (behind-car ?car ?carsrc)
        (at-curb ?cardest))
@@ -26,11 +20,17 @@
   (and (not (car-clear ?cardest)) (car-clear ?carsrc)
        (behind-car ?car ?cardest) (not (behind-car ?car ?carsrc))
        (increase (total-cost) 1)))
- (:action ugly4ugly2ugly3ugly4move-curb-to-car :parameters
-  (?car - car ?curbsrc - curb ?cardest - car) :precondition
-  (and (car-clear ?car) (car-clear ?cardest) (at-curb-num ?car ?curbsrc)
-       (at-curb ?cardest))
+ (:action ugly1434376ugly1ugly1ugly1ugly1move-curb-to-curb :parameters
+  (?car - car ?curbsrc ?curbdest - curb) :precondition
+  (and (car-clear ?car) (curb-clear ?curbdest) (at-curb-num ?car ?curbsrc))
   :effect
-  (and (not (car-clear ?cardest)) (curb-clear ?curbsrc)
-       (behind-car ?car ?cardest) (not (at-curb-num ?car ?curbsrc))
-       (not (at-curb ?car)) (increase (total-cost) 1)))) 
+  (and (not (curb-clear ?curbdest)) (curb-clear ?curbsrc)
+       (at-curb-num ?car ?curbdest) (not (at-curb-num ?car ?curbsrc))
+       (increase (total-cost) 1)))
+ (:action ugly1434377ugly2ugly3ugly4ugly2move-car-to-curb :parameters
+  (?car - car ?carsrc - car ?curbdest - curb) :precondition
+  (and (car-clear ?car) (curb-clear ?curbdest) (behind-car ?car ?carsrc))
+  :effect
+  (and (not (curb-clear ?curbdest)) (car-clear ?carsrc)
+       (at-curb-num ?car ?curbdest) (not (behind-car ?car ?carsrc))
+       (at-curb ?car) (increase (total-cost) 1)))) 

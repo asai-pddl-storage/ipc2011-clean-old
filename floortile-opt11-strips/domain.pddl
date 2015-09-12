@@ -1,37 +1,40 @@
 
 (define (domain floor-tile) (:requirements :typing)
- (:predicates (up ?x - tile ?y - tile) (robot-has ?r - robot ?c - color)
-  (down ?x - tile ?y - tile) (right ?x - tile ?y - tile)
-  (painted ?x - tile ?c - color) (clear ?x - tile)
-  (robot-at ?r - robot ?x - tile) (left ?x - tile ?y - tile)
-  (available-color ?c - color) (free-color ?r - robot))
+ (:predicates (down ?x - tile ?y - tile) (right ?x - tile ?y - tile)
+  (up ?x - tile ?y - tile) (clear ?x - tile) (left ?x - tile ?y - tile)
+  (painted ?x - tile ?c - color) (robot-has ?r - robot ?c - color)
+  (free-color ?r - robot) (available-color ?c - color)
+  (robot-at ?r - robot ?x - tile))
  (:types robot tile color - object) (:functions (total-cost) - number)
- (:action ugly1ugly1ugly1ugly1change-color :parameters
+ (:action ugly1432970ugly6ugly7ugly5ugly3up :parameters
+  (?r - robot ?x - tile ?y - tile) :precondition
+  (and (robot-at ?r ?x) (up ?y ?x) (clear ?y)) :effect
+  (and (robot-at ?r ?y) (not (robot-at ?r ?x)) (clear ?x) (not (clear ?y))
+       (increase (total-cost) 3)))
+ (:action ugly1432971ugly1ugly1ugly1ugly1change-color :parameters
   (?r - robot ?c - color ?c2 - color) :precondition
   (and (robot-has ?r ?c) (available-color ?c2)) :effect
   (and (not (robot-has ?r ?c)) (robot-has ?r ?c2) (increase (total-cost) 5)))
- (:action ugly2ugly6ugly7ugly5paint-down :parameters
+ (:action ugly1432972ugly7ugly5ugly3ugly4paint-up :parameters
+  (?r - robot ?y - tile ?x - tile ?c - color) :precondition
+  (and (robot-has ?r ?c) (robot-at ?r ?x) (up ?y ?x) (clear ?y)) :effect
+  (and (not (clear ?y)) (painted ?y ?c) (increase (total-cost) 2)))
+ (:action ugly1432973ugly3ugly4ugly2ugly6left :parameters
+  (?r - robot ?x - tile ?y - tile) :precondition
+  (and (robot-at ?r ?x) (left ?y ?x) (clear ?y)) :effect
+  (and (robot-at ?r ?y) (not (robot-at ?r ?x)) (clear ?x) (not (clear ?y))
+       (increase (total-cost) 1)))
+ (:action ugly1432974ugly4ugly2ugly6ugly7down :parameters
+  (?r - robot ?x - tile ?y - tile) :precondition
+  (and (robot-at ?r ?x) (down ?y ?x) (clear ?y)) :effect
+  (and (robot-at ?r ?y) (not (robot-at ?r ?x)) (clear ?x) (not (clear ?y))
+       (increase (total-cost) 1)))
+ (:action ugly1432975ugly2ugly6ugly7ugly5paint-down :parameters
   (?r - robot ?y - tile ?x - tile ?c - color) :precondition
   (and (robot-has ?r ?c) (robot-at ?r ?x) (down ?y ?x) (clear ?y)) :effect
   (and (not (clear ?y)) (painted ?y ?c) (increase (total-cost) 2)))
- (:action ugly3ugly4ugly2ugly6left :parameters (?r - robot ?x - tile ?y - tile)
-  :precondition (and (robot-at ?r ?x) (left ?y ?x) (clear ?y)) :effect
-  (and (robot-at ?r ?y) (not (robot-at ?r ?x)) (clear ?x) (not (clear ?y))
-       (increase (total-cost) 1)))
- (:action ugly4ugly2ugly6ugly7down :parameters (?r - robot ?x - tile ?y - tile)
-  :precondition (and (robot-at ?r ?x) (down ?y ?x) (clear ?y)) :effect
-  (and (robot-at ?r ?y) (not (robot-at ?r ?x)) (clear ?x) (not (clear ?y))
-       (increase (total-cost) 1)))
- (:action ugly5ugly3ugly4ugly2right :parameters
+ (:action ugly1432976ugly5ugly3ugly4ugly2right :parameters
   (?r - robot ?x - tile ?y - tile) :precondition
   (and (robot-at ?r ?x) (right ?y ?x) (clear ?y)) :effect
   (and (robot-at ?r ?y) (not (robot-at ?r ?x)) (clear ?x) (not (clear ?y))
-       (increase (total-cost) 1)))
- (:action ugly6ugly7ugly5ugly3up :parameters (?r - robot ?x - tile ?y - tile)
-  :precondition (and (robot-at ?r ?x) (up ?y ?x) (clear ?y)) :effect
-  (and (robot-at ?r ?y) (not (robot-at ?r ?x)) (clear ?x) (not (clear ?y))
-       (increase (total-cost) 3)))
- (:action ugly7ugly5ugly3ugly4paint-up :parameters
-  (?r - robot ?y - tile ?x - tile ?c - color) :precondition
-  (and (robot-has ?r ?c) (robot-at ?r ?x) (up ?y ?x) (clear ?y)) :effect
-  (and (not (clear ?y)) (painted ?y ?c) (increase (total-cost) 2)))) 
+       (increase (total-cost) 1)))) 
